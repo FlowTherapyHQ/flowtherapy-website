@@ -1,0 +1,2378 @@
+/* ==========================================================================
+   FLOWTHERAPY HOME
+   Clean Production Stylesheet
+   August 2026
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. DESIGN TOKENS
+   ========================================================================== */
+
+body.flowtherapy-home {
+  --ft-blue-light: #38b6ff;
+  --ft-blue: #368bfb;
+  --ft-blue-bright: #095eff;
+  --ft-blue-deep: #0f3699;
+
+  --ft-white: #ffffff;
+  --ft-off-white: #efeef1;
+  --ft-gray: #d9d9d9;
+  --ft-warm-gray: #5d5653;
+
+  --ft-dark: #1d2328;
+  --ft-dark-deep: #171c20;
+  --ft-dark-soft: #202a31;
+  --ft-dark-blue: #24333d;
+
+  --ft-text: #efeef1;
+  --ft-muted: #c9c9cb;
+  --ft-dark-text: #1d2328;
+  --ft-dark-muted: #505b64;
+
+  --ft-line:
+    rgba(255, 255, 255, 0.14);
+
+  --ft-radius: 14px;
+
+  --ft-max: 1160px;
+
+  --ft-brand-gradient:
+    linear-gradient(
+      90deg,
+      #38b6ff 0%,
+      #368bfb 38%,
+      #095eff 70%,
+      #0f3699 100%
+    );
+
+  --ft-divider-gradient:
+    linear-gradient(
+      90deg,
+      #d9d9d9 0%,
+      #8ca3b8 22%,
+      #436e98 48%,
+      #368bfb 72%,
+      #0f3699 100%
+    );
+
+  margin: 0;
+
+  background:
+    var(--ft-dark);
+
+  color:
+    var(--ft-text);
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  line-height: 1.65;
+}
+
+
+/* ==========================================================================
+   02. GLOBAL
+   ========================================================================== */
+
+.flowtherapy-home * {
+  box-sizing: border-box;
+}
+
+.flowtherapy-home {
+  overflow-x: hidden;
+}
+
+.flowtherapy-home img {
+  max-width: 100%;
+}
+
+.ft-shell {
+  width:
+    min(
+      var(--ft-max),
+      calc(100% - 44px)
+    );
+
+  margin-inline: auto;
+}
+
+.ft-section {
+  position: relative;
+
+  padding: 72px 0;
+
+  scroll-margin-top: 90px;
+}
+
+
+/* ==========================================================================
+   SECTION DIVIDERS
+   ========================================================================== */
+
+.ft-services::before,
+.ft-flowstart::before,
+.ft-about::before,
+.ft-reviews::before,
+.ft-flowhub::before,
+.ft-signature::before,
+.ft-final::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background:
+    var(--ft-divider-gradient);
+}
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+.ft-eyebrow {
+  margin: 0 0 10px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.64rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   03. BUTTONS
+   ========================================================================== */
+
+.ft-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 19px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 999px;
+
+  font-size: 0.77rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.ft-button:hover {
+  transform:
+    translateY(-1px);
+}
+
+.ft-button-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #38b6ff 0%,
+      #368bfb 48%,
+      #095eff 100%
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 8px 22px
+    rgba(9, 94, 255, 0.18);
+}
+
+.ft-button-outline {
+  border-color:
+    rgba(255, 255, 255, 0.38);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color:
+    #ffffff;
+}
+
+
+/* ==========================================================================
+   04. HEADER
+   ========================================================================== */
+
+.ft-header {
+  position: sticky;
+
+  z-index: 3000;
+
+  top: 0;
+
+  border-bottom:
+    1px solid
+    rgba(15, 54, 153, 0.16);
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #f6f7f8 14%,
+      #efeef1 30%,
+      #d9d9d9 48%,
+      #aeb8c1 63%,
+      #7a91a6 77%,
+      #436e98 89%,
+      #0f3699 100%
+    );
+
+  box-shadow:
+    0 3px 14px
+    rgba(0, 0, 0, 0.11);
+}
+
+.ft-nav {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 80px;
+}
+
+.ft-logo-link {
+  display: flex;
+
+  align-items: center;
+
+  width: 126px;
+}
+
+.ft-logo {
+  display: block;
+
+  width: 120px;
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(56, 182, 255, 0.35)
+    )
+    drop-shadow(
+      0 0 9px
+      rgba(9, 94, 255, 0.16)
+    );
+}
+
+.ft-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+.ft-nav-links > a {
+  color: #ffffff;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 1px 7px
+    rgba(0, 0, 0, 0.26);
+}
+
+.ft-nav-links > a:hover {
+  color:
+    var(--ft-blue-light);
+}
+
+.ft-nav-links
+.ft-nav-book {
+  padding: 8px 17px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38b6ff,
+      #368bfb 55%,
+      #095eff
+    );
+
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   05. HERO
+   ========================================================================== */
+
+.ft-hero {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  min-height: 640px;
+
+  overflow: hidden;
+
+  background:
+    url("/assets/images/home/flowtherapy-hero.jpg")
+    center center / cover
+    no-repeat;
+}
+
+.ft-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 9, 11, 0.90) 0%,
+      rgba(7, 9, 11, 0.72) 32%,
+      rgba(7, 9, 11, 0.30) 63%,
+      rgba(7, 9, 11, 0.04) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(6, 8, 10, 0.60) 0%,
+      transparent 56%
+    );
+}
+
+.ft-hero-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+}
+
+.ft-hero-content {
+  max-width: 650px;
+
+  padding:
+    72px 0 60px;
+}
+
+.ft-hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      3.5rem,
+      6.6vw,
+      6rem
+    );
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.035em;
+}
+
+.ft-hero h1 em {
+  color:
+    var(--ft-blue-light);
+
+  font-style: italic;
+  font-weight: 500;
+}
+
+.ft-hero-tagline {
+  margin:
+    24px 0 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.ft-hero-copy {
+  max-width: 500px;
+
+  margin:
+    12px 0 0;
+
+  color: #d9d9d9;
+
+  font-size: 0.9rem;
+
+  line-height: 1.75;
+}
+
+.ft-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.ft-hero-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px 26px;
+
+  margin-top: 25px;
+
+  color: #d9d9d9;
+
+  font-size: 0.69rem;
+}
+
+
+/* ==========================================================================
+   06. FLOW STATEMENT
+   ========================================================================== */
+
+.ft-flow-statement {
+  position: relative;
+
+  padding: 24px 0;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #202a31 0%,
+      #24333d 24%,
+      #36546c 48%,
+      #426e99 68%,
+      #368bfb 86%,
+      #0f3699 100%
+    );
+
+  text-align: center;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0
+    rgba(255, 255, 255, 0.08);
+}
+
+.ft-flow-statement p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1rem;
+
+  line-height: 1.5;
+}
+
+.ft-flow-statement em {
+  margin-left: 6px;
+
+  color: #7dd3ff;
+
+  font-style: italic;
+}
+
+
+/* ==========================================================================
+   07. SERVICES
+   ========================================================================== */
+
+.ft-services {
+  padding-bottom: 84px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #1d2328 0%,
+      #1b2025 78%,
+      #202a31 100%
+    );
+}
+
+.ft-services-layout {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr 0.85fr;
+
+  align-items: start;
+
+  gap: 72px;
+}
+
+.ft-services-menu {
+  border-top:
+    1px solid
+    var(--ft-line);
+}
+
+
+/* ==========================================================================
+   SERVICE ACCORDIONS
+   ========================================================================== */
+
+.ft-service-group {
+  border-bottom:
+    1px solid
+    var(--ft-line);
+}
+
+.ft-service-group summary {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 74px;
+
+  padding:
+    14px 4px;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.ft-service-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.ft-service-group summary small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.ft-service-group summary strong {
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.04rem;
+  font-weight: 500;
+}
+
+.ft-service-group:nth-of-type(3)
+summary strong,
+.ft-service-group:nth-of-type(4)
+summary strong {
+  font-size: 1.2rem;
+
+  font-weight: 600;
+}
+
+
+/* PLUS / MINUS */
+
+.ft-service-group summary b {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  font-size: 0;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.ft-service-group summary b::before {
+  content: "+";
+
+  font-size: 1rem;
+}
+
+.ft-service-group[open]
+summary b::before {
+  content: "−";
+}
+
+.ft-service-content {
+  padding-bottom: 20px;
+}
+
+.ft-service-intro {
+  margin:
+    4px 0 17px;
+
+  color: #d4d4d6;
+
+  font-size: 0.82rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   08. SIGNATURE FLOW ROWS
+   ========================================================================== */
+
+.ft-service-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 24px;
+
+  padding:
+    17px 14px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    background 0.18s ease;
+}
+
+.ft-service-row:nth-of-type(even) {
+  background:
+    rgba(255, 255, 255, 0.09);
+}
+
+.ft-service-row:hover {
+  background:
+    #2b353d;
+}
+
+.ft-service-row strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 0.84rem;
+}
+
+.ft-service-row small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #d9d9d9;
+
+  font-size: 0.74rem;
+
+  line-height: 1.55;
+}
+
+.ft-price {
+  align-self: start;
+
+  color: #ffffff;
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   09. SIMPLE SERVICES
+   ========================================================================== */
+
+.ft-simple-service {
+  padding: 15px 0;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+}
+
+.ft-simple-service strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 0.85rem;
+}
+
+.ft-simple-service span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #d0d0d2;
+
+  font-size: 0.76rem;
+
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   10. SPAFLOW
+   ========================================================================== */
+
+.ft-spaflow-list {
+  margin-top: 16px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+}
+
+
+/* ==========================================================================
+   11. FLOWBOOST
+   ========================================================================== */
+
+.ft-boost-list {
+  margin-top: 16px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+}
+
+.ft-boost-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(160px, 0.34fr)
+    minmax(0, 1fr)
+    auto;
+
+  gap: 22px;
+
+  align-items: start;
+
+  padding:
+    15px 10px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+}
+
+.ft-boost-row:nth-child(even) {
+  background:
+    rgba(255, 255, 255, 0.09);
+}
+
+.ft-boost-row strong {
+  color: #ffffff;
+
+  font-size: 0.84rem;
+}
+
+.ft-boost-row span {
+  color: #d9d9d9;
+
+  font-size: 0.76rem;
+
+  line-height: 1.55;
+}
+
+.ft-boost-row b {
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.ft-service-link {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.78rem;
+  font-weight: 650;
+
+  text-decoration: none;
+}
+
+.ft-service-link:hover {
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   12. MORE WAYS TO FLOW
+   ========================================================================== */
+
+.ft-featured-services {
+  margin-top: 44px;
+
+  padding-top: 28px;
+
+  border-top:
+    3px solid transparent;
+
+  border-image:
+    var(--ft-divider-gradient)
+    1;
+}
+
+.ft-featured-services-label {
+  margin:
+    0 0 10px;
+
+  color: #efeef1;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.ft-featured-service {
+  padding:
+    22px 4px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+}
+
+.ft-featured-service-heading {
+  display: block;
+}
+
+.ft-featured-service small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.ft-featured-service h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.ft-featured-service p {
+  max-width: 650px;
+
+  margin:
+    12px 0 0;
+
+  color: #d2d2d4;
+
+  font-size: 0.8rem;
+
+  line-height: 1.7;
+}
+
+.ft-featured-arrow {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   13. SERVICES SIDE
+   ========================================================================== */
+
+.ft-services-side {
+  position: sticky;
+
+  top: 120px;
+
+  max-width: 390px;
+
+  padding-top: 34px;
+
+  background: transparent;
+}
+
+.ft-services-side h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+.ft-services-side h2 em {
+  color:
+    var(--ft-blue-light);
+}
+
+.ft-services-side p {
+  color: #d1d1d3;
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+}
+
+.ft-services-side a {
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.8rem;
+  font-weight: 650;
+
+  text-decoration: none;
+}
+
+
+/* ==========================================================================
+   14. FLOWSTART
+   ========================================================================== */
+
+.ft-flowstart {
+  padding-top: 54px;
+  padding-bottom: 54px;
+
+  background:
+    linear-gradient(
+      115deg,
+      #eef0f2 0%,
+      #d9d9d9 26%,
+      #b9c5cf 50%,
+      #819bb2 74%,
+      #416d9b 90%,
+      #0f3699 100%
+    );
+}
+
+.ft-flowstart-card {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr 0.85fr;
+
+  align-items: center;
+
+  gap: 60px;
+
+  padding:
+    30px 34px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius:
+    var(--ft-radius);
+
+  background:
+    linear-gradient(
+      135deg,
+      #344958 0%,
+      #2b3f4d 50%,
+      #243745 100%
+    );
+
+  box-shadow:
+    0 14px 38px
+    rgba(16, 30, 42, 0.14);
+}
+
+.ft-flowstart-card h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.1rem,
+      4vw,
+      3.5rem
+    );
+
+  line-height: 1.06;
+}
+
+.ft-flowstart-card h2 em {
+  color:
+    var(--ft-blue-light);
+
+  font-style: italic;
+}
+
+.ft-flowstart-card
+> div:first-child
+> p:last-child {
+  color: #e0e0e0;
+}
+
+.ft-flowstart-offer {
+  padding-left: 38px;
+
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+}
+
+.ft-flowstart-price {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 6px;
+}
+
+.ft-flowstart-price strong {
+  color:
+    var(--ft-blue-light);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 4.3rem;
+
+  line-height: 0.88;
+}
+
+.ft-flowstart-price span {
+  margin-bottom: 6px;
+
+  color: #ffffff;
+
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.ft-flowstart-offer p {
+  color: #e0e0e0;
+
+  font-size: 0.82rem;
+}
+
+
+/* ==========================================================================
+   15. ABOUT
+   ========================================================================== */
+
+.ft-about {
+  background:
+    linear-gradient(
+      180deg,
+      #202a31 0%,
+      #24333d 100%
+    );
+}
+
+.ft-about-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 62px;
+}
+
+.ft-about-photo {
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #d9d9d9;
+}
+
+.ft-about-photo img {
+  display: block;
+
+  width: 100%;
+  height: 500px;
+
+  object-fit: cover;
+
+  object-position:
+    45% top;
+
+  filter:
+    brightness(1.03)
+    contrast(0.98)
+    saturate(0.98);
+}
+
+.ft-about-copy h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.3rem,
+      4.5vw,
+      4rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.05;
+}
+
+.ft-about-copy blockquote {
+  margin:
+    22px 0;
+
+  padding-left: 16px;
+
+  border-left:
+    2px solid
+    var(--ft-blue-light);
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.08rem;
+}
+
+.ft-about-copy p {
+  color: #d4d4d6;
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
+}
+
+
+/* ==========================================================================
+   16. CLIENT EXPERIENCES
+   DARK LIKE FLOW ON
+   ========================================================================== */
+
+.ft-reviews {
+  background:
+    linear-gradient(
+      180deg,
+      #202a31 0%,
+      #1b242b 48%,
+      #172128 100%
+    );
+}
+
+.ft-reviews .ft-eyebrow {
+  color:
+    #38b6ff;
+}
+
+.ft-reviews h2 {
+  margin:
+    0 0 30px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.3rem,
+      4.5vw,
+      3.8rem
+    );
+
+  font-weight: 600;
+}
+
+.ft-review-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+}
+
+.ft-review-grid article {
+  padding: 26px;
+
+  border:
+    1px solid
+    rgba(56, 182, 255, 0.20);
+
+  border-radius:
+    var(--ft-radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      #304858 0%,
+      #293e4c 52%,
+      #233642 100%
+    );
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.18);
+}
+
+.ft-stars {
+  color:
+    var(--ft-blue-light);
+
+  letter-spacing: 0.08em;
+}
+
+.ft-review-grid blockquote {
+  margin:
+    17px 0 14px;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+.ft-review-grid
+article > p {
+  margin: 0;
+
+  color: #d9d9d9;
+
+  font-size: 0.74rem;
+}
+
+
+/* ==========================================================================
+   17. FLOWHUB
+   DARK → LIGHT
+   ========================================================================== */
+
+.ft-flowhub {
+  position: relative;
+
+  padding-bottom: 82px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #55789a 0%,
+      #718da5 18%,
+      #9aabba 38%,
+      #c8d0d7 62%,
+      #efeef1 84%,
+      #ffffff 100%
+    );
+
+  color:
+    #1d2328;
+}
+
+
+/* FLOWHUB → FLOW ON TRANSITION */
+
+.ft-flowhub::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #55789a 0%,
+      #718da5 18%,
+      #aeb8c1 38%,
+      #38b6ff 62%,
+      #368bfb 80%,
+      #0f3699 100%
+    );
+}
+
+
+.ft-flowhub-intro {
+  max-width: 720px;
+
+  margin-bottom: 34px;
+}
+
+.ft-flowhub-intro
+.ft-eyebrow {
+  color:
+    #095eff;
+}
+
+.ft-flowhub-intro h2 {
+  margin: 0;
+
+  color:
+    #1d2328;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      4.4rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.ft-flowhub-intro h2 em {
+  color:
+    #095eff;
+
+  font-style: italic;
+}
+
+.ft-flowhub-intro
+> p:last-child {
+  max-width: 680px;
+
+  color:
+    #3f4c56;
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
+}
+
+
+/* FLOWHUB CARDS */
+
+.ft-flowhub-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 16px;
+}
+
+.ft-flowhub-grid article {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 285px;
+
+  padding: 26px;
+
+  border:
+    1px solid
+    rgba(15, 54, 153, 0.24);
+
+  border-radius:
+    var(--ft-radius);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.97
+    );
+
+  box-shadow:
+    0 14px 34px
+    rgba(20, 37, 55, 0.17);
+}
+
+.ft-flowhub-grid small {
+  color:
+    #095eff;
+
+  font-size: 0.59rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.ft-flowhub-grid h3 {
+  margin:
+    9px 0;
+
+  color:
+    #182028;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.38rem;
+  font-weight: 600;
+}
+
+.ft-flowhub-grid p {
+  margin: 0;
+
+  color:
+    #505b64;
+
+  font-size: 0.79rem;
+
+  line-height: 1.65;
+}
+
+
+/* FLOWHUB FEATURE LIST */
+
+.ft-flowhub-features {
+  margin:
+    16px 0 4px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.ft-flowhub-features li {
+  position: relative;
+
+  margin:
+    7px 0;
+
+  padding-left: 16px;
+
+  color:
+    #5d6670;
+
+  font-size: 0.72rem;
+
+  line-height: 1.45;
+}
+
+.ft-flowhub-features li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0.62em;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #368bfb;
+}
+
+.ft-flowhub-grid a {
+  display: inline-block;
+
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  color:
+    #095eff;
+
+  font-size: 0.75rem;
+  font-weight: 650;
+
+  text-decoration: none;
+}
+
+.ft-flowhub-grid a:hover {
+  color:
+    #0f3699;
+}
+
+
+/* ==========================================================================
+   18. FLOW ON
+   ========================================================================== */
+
+.ft-signature {
+  position: relative;
+
+  padding:
+    36px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #202a31 0%,
+      #172128 100%
+    );
+
+  text-align: center;
+}
+
+.ft-signature-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.55rem;
+
+  font-style: italic;
+}
+
+.ft-signature
+p:last-child {
+  margin:
+    5px 0 0;
+
+  color:
+    #c5c5c7;
+
+  font-size: 0.73rem;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* ==========================================================================
+   19. FINAL CTA
+   ========================================================================== */
+
+.ft-final {
+  position: relative;
+
+  padding:
+    34px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #efeef1 15%,
+      #d9d9d9 30%,
+      #aeb8c1 47%,
+      #718da5 64%,
+      #426e99 82%,
+      #0f3699 100%
+    );
+}
+
+.ft-final-grid {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.ft-final-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+}
+
+.ft-final-logo {
+  width: 125px;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(56, 182, 255, 0.36)
+    )
+    drop-shadow(
+      0 0 10px
+      rgba(9, 94, 255, 0.18)
+    );
+}
+
+.ft-final
+.ft-eyebrow {
+  color:
+    #0f3699;
+
+  text-shadow: none;
+}
+
+.ft-final-brand h2 {
+  margin: 0;
+
+  color:
+    #243745;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    2.35rem;
+}
+
+.ft-final-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.ft-final
+.ft-button-outline {
+  border-color:
+    rgba(36, 55, 69, 0.48);
+
+  color:
+    #243745;
+
+  background:
+    rgba(255, 255, 255, 0.16);
+}
+
+
+/* ==========================================================================
+   20. FOOTER
+   ========================================================================== */
+
+.ft-footer {
+  padding:
+    48px 0 92px;
+
+  background:
+    #101419;
+}
+
+.ft-footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr
+    1fr;
+
+  gap: 50px;
+}
+
+.ft-footer strong {
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.15rem;
+}
+
+.ft-footer p,
+.ft-footer a,
+.ft-footer span {
+  color:
+    #b6b6b8;
+
+  font-size: 0.71rem;
+}
+
+.ft-footer small {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.59rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.ft-footer-grid
+> div:nth-child(2),
+.ft-footer-grid
+> div:nth-child(3) {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.ft-footer a {
+  text-decoration: none;
+}
+
+.ft-footer a:hover {
+  color:
+    var(--ft-blue-light);
+}
+
+
+/* ==========================================================================
+   21. MOBILE ACTION BAR
+   ========================================================================== */
+
+.ft-mobile-bar {
+  display: none;
+}
+
+
+/* ==========================================================================
+   22. TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .ft-services-layout,
+  .ft-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ft-services-layout {
+    gap: 42px;
+  }
+
+  .ft-services-side {
+    position: static;
+
+    max-width: 620px;
+
+    padding-top: 10px;
+  }
+
+  .ft-flowstart-card {
+    gap: 34px;
+  }
+
+}
+
+
+/* ==========================================================================
+   23. MOBILE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+  body.flowtherapy-home {
+    padding-bottom: 67px;
+  }
+
+
+  /* GLOBAL */
+
+  .ft-shell {
+    width:
+      min(
+        calc(100% - 24px),
+        var(--ft-max)
+      );
+  }
+
+  .ft-section {
+    padding:
+      55px 0;
+  }
+
+
+  /* HEADER */
+
+  .ft-header {
+    background:
+      linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #efeef1 28%,
+        #d9d9d9 48%,
+        #9baab7 68%,
+        #55789a 84%,
+        #0f3699 100%
+      );
+  }
+
+  .ft-nav {
+    min-height: 70px;
+  }
+
+  .ft-logo-link {
+    width: 100px;
+  }
+
+  .ft-logo {
+    width: 96px;
+  }
+
+  .ft-nav-links {
+    gap: 10px;
+  }
+
+  .ft-nav-links
+  > a:not(.ft-nav-book) {
+    display: none;
+  }
+
+
+  /* HERO */
+
+  .ft-hero {
+    min-height: 650px;
+
+    background-position:
+      58% center;
+  }
+
+  .ft-hero-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(7, 9, 11, 0.96) 0%,
+        rgba(7, 9, 11, 0.78) 48%,
+        rgba(7, 9, 11, 0.15) 100%
+      );
+  }
+
+  .ft-hero-content {
+    padding:
+      235px 0 45px;
+  }
+
+  .ft-hero h1 {
+    font-size:
+      clamp(
+        2.85rem,
+        13vw,
+        4.2rem
+      );
+  }
+
+  .ft-hero-actions {
+    justify-content:
+      flex-start;
+  }
+
+  .ft-hero-actions
+  .ft-button {
+    width: auto;
+
+    min-width: 150px;
+
+    max-width: 240px;
+  }
+
+  .ft-hero-meta {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+
+  /* FLOW STATEMENT */
+
+  .ft-flow-statement {
+    padding:
+      20px 14px;
+
+    background:
+      linear-gradient(
+        115deg,
+        #202a31 0%,
+        #2d4352 32%,
+        #426e99 63%,
+        #368bfb 82%,
+        #0f3699 100%
+      );
+  }
+
+
+  /* SERVICES */
+
+  .ft-services {
+    padding-bottom: 60px;
+  }
+
+  .ft-services-layout {
+    gap: 34px;
+  }
+
+  .ft-service-group summary {
+    min-height: 62px;
+  }
+
+  .ft-service-row {
+    grid-template-columns:
+      1fr auto;
+
+    gap:
+      8px 14px;
+
+    padding:
+      15px 10px;
+  }
+
+  .ft-price {
+    font-size: 0.68rem;
+  }
+
+  .ft-boost-row {
+    grid-template-columns:
+      1fr auto;
+
+    gap:
+      4px 14px;
+  }
+
+  .ft-boost-row span {
+    grid-column:
+      1 / -1;
+  }
+
+  .ft-featured-services {
+    margin-top: 34px;
+
+    padding-top: 24px;
+  }
+
+
+  /* FLOWSTART */
+
+  .ft-flowstart {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .ft-flowstart-card {
+    grid-template-columns: 1fr;
+
+    padding: 24px;
+  }
+
+  .ft-flowstart-offer {
+    padding:
+      24px 0 0;
+
+    border-left: 0;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.18);
+  }
+
+  .ft-flowstart-offer
+  .ft-button {
+    width: auto;
+
+    min-width: 170px;
+
+    max-width: 240px;
+  }
+
+
+  /* ABOUT */
+
+  .ft-about-grid {
+    gap: 34px;
+  }
+
+  .ft-about-photo img {
+    height: 430px;
+  }
+
+
+  /* REVIEWS */
+
+  .ft-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ft-reviews {
+    background:
+      linear-gradient(
+        180deg,
+        #202a31 0%,
+        #192127 52%,
+        #131a1f 100%
+      );
+  }
+
+
+  /* FLOWHUB */
+
+  .ft-flowhub {
+    padding-bottom: 72px;
+
+    background:
+      linear-gradient(
+        155deg,
+        #354f64 0%,
+        #456680 17%,
+        #5f7f99 34%,
+        #7f9aaf 52%,
+        #a7b8c6 70%,
+        #ccd5dc 86%,
+        #eef1f3 100%
+      );
+  }
+
+  .ft-flowhub::after {
+    height: 9px;
+
+    background:
+      linear-gradient(
+        90deg,
+        #36546c 0%,
+        #55789a 22%,
+        #38b6ff 55%,
+        #368bfb 76%,
+        #0f3699 100%
+      );
+  }
+
+  .ft-flowhub-intro {
+    margin-bottom: 28px;
+  }
+
+  .ft-flowhub-intro h2 {
+    color: #13212c;
+  }
+
+  .ft-flowhub-intro
+  > p:last-child {
+    color: #2f414f;
+  }
+
+  .ft-flowhub-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .ft-flowhub-grid article {
+    min-height: 0;
+
+    padding:
+      24px 20px;
+
+    background:
+      rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+      0 16px 36px
+      rgba(20, 37, 55, 0.20);
+  }
+
+  .ft-flowhub-grid article p {
+    margin-bottom: 4px;
+  }
+
+  .ft-flowhub-grid article a {
+    margin-top: 14px;
+  }
+
+
+  /* FLOW ON */
+
+  .ft-signature {
+    padding:
+      32px 0;
+  }
+
+
+  /* FINAL CTA */
+
+  .ft-final-grid {
+    flex-direction: column;
+
+    align-items:
+      flex-start;
+  }
+
+  .ft-final-brand {
+    gap: 18px;
+  }
+
+  .ft-final-logo {
+    width: 96px;
+  }
+
+  .ft-final-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .ft-final-actions
+  .ft-button {
+    width: auto;
+
+    min-width: 150px;
+
+    max-width: 240px;
+  }
+
+
+  /* FOOTER */
+
+  .ft-footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  /* MOBILE BOOKING BAR */
+
+  .ft-mobile-bar {
+    position: fixed;
+
+    z-index: 6000;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      0.72fr 1.28fr;
+
+    gap: 7px;
+
+    padding:
+      7px 9px
+      calc(
+        7px +
+        env(safe-area-inset-bottom)
+      );
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.13);
+
+    background:
+      rgba(9, 12, 15, 0.97);
+
+    backdrop-filter:
+      blur(15px);
+  }
+
+  .ft-mobile-bar a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    text-decoration: none;
+  }
+
+  .ft-mobile-bar
+  a:last-child {
+    background:
+      linear-gradient(
+        135deg,
+        #38b6ff,
+        #368bfb 50%,
+        #095eff
+      );
+  }
+
+}
+
+
+/* ==========================================================================
+   24. SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 440px) {
+
+  .ft-hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .ft-hero-actions {
+    gap: 8px;
+  }
+
+  .ft-button {
+    padding:
+      9px 15px;
+  }
+
+  .ft-flowstart-card h2 {
+    font-size: 2.25rem;
+  }
+
+  .ft-flowstart-price strong {
+    font-size: 3.7rem;
+  }
+
+  .ft-flowhub-grid article {
+    border-radius: 13px;
+  }
+
+  .ft-final-brand h2 {
+    color: #243745;
+
+    font-size: 2rem;
+  }
+
+}
