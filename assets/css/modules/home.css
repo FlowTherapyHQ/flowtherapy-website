@@ -15,6 +15,22 @@ body.flowtherapy-home {
   --ft-blue-bright: #095eff;
   --ft-blue-deep: #0f3699;
 
+  /* FLOW BRAND GRADIENT */
+  --ft-logo-gradient:
+    linear-gradient(
+      120deg,
+      #38b6ff 0%,
+      #2fa7ff 22%,
+      #368bfb 45%,
+      #095eff 70%,
+      #0f3699 100%
+    );
+
+  --ft-logo-glow:
+  drop-shadow(0 0 4px rgba(56, 182, 255, 0.38))
+  drop-shadow(0 0 10px rgba(54, 139, 251, 0.26))
+  drop-shadow(0 0 18px rgba(9, 94, 255, 0.16));
+
   --ft-white: #ffffff;
   --ft-off-white: #efeef1;
   --ft-gray: #d9d9d9;
@@ -406,11 +422,24 @@ body.flowtherapy-home {
 }
 
 .ft-hero h1 em {
-  color:
-    var(--ft-blue-light);
+  display: inline-block;
+
+  background:
+    var(--ft-logo-gradient);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 
   font-style: italic;
   font-weight: 500;
+
+  filter:
+  drop-shadow(0 0 1px rgba(255, 255, 255, 0.55))
+  drop-shadow(0 0 4px rgba(56, 182, 255, 0.42))
+  drop-shadow(0 0 10px rgba(54, 139, 251, 0.24));
 }
 
 .ft-hero-tagline {
@@ -740,12 +769,19 @@ summary b::before {
 .ft-price {
   align-self: start;
 
-  color: #ffffff;
+  padding: 4px 0;
+
+  color: var(--ft-blue-light);
 
   font-size: 0.76rem;
   font-weight: 700;
 
   white-space: nowrap;
+
+  text-align: right;
+
+  text-shadow:
+    0 0 8px rgba(56, 182, 255, 0.12);
 }
 
 
@@ -882,9 +918,9 @@ summary b::before {
    ========================================================================== */
 
 .ft-featured-services {
-  margin-top: 44px;
+  margin-top: 48px;
 
-  padding-top: 28px;
+  padding-top: 32px;
 
   border-top:
     3px solid transparent;
@@ -894,11 +930,21 @@ summary b::before {
     1;
 }
 
+
+/* INTRO */
+
+.ft-featured-services-intro {
+  max-width: 640px;
+
+  margin-bottom: 24px;
+}
+
 .ft-featured-services-label {
   margin:
-    0 0 10px;
+    0 0 8px;
 
-  color: #efeef1;
+  color:
+    var(--ft-blue-light);
 
   font-size: 0.62rem;
   font-weight: 700;
@@ -908,37 +954,153 @@ summary b::before {
   text-transform: uppercase;
 }
 
-.ft-featured-service {
+.ft-featured-services-title {
+  margin:
+    0 0 10px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.55rem,
+      2.2vw,
+      2rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.ft-featured-services-copy {
+  margin: 0;
+
+  color:
+    #cfd1d4;
+
+  font-size: 0.8rem;
+
+  line-height: 1.7;
+}
+
+
+/* GRID */
+
+.ft-featured-services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* CARDS */
+
+.ft-featured-service-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 250px;
+
   padding:
-    22px 4px;
+    28px 26px;
 
-  border-bottom:
+  overflow: hidden;
+
+  border:
     1px solid
-    rgba(255, 255, 255, 0.16);
+    rgba(56, 182, 255, 0.18);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.035) 60%,
+      rgba(56, 139, 251, 0.055) 100%
+    );
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
-.ft-featured-service-heading {
-  display: block;
+.ft-featured-service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    0 auto 0 0;
+
+  width: 3px;
+
+  background:
+    var(--ft-logo-gradient);
+
+  opacity: 0.85;
 }
 
-.ft-featured-service small {
+.ft-featured-service-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(56, 182, 255, 0.36);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.085) 0%,
+      rgba(255, 255, 255, 0.045) 58%,
+      rgba(56, 139, 251, 0.085) 100%
+    );
+}
+
+
+/* CARD TEXT */
+
+.ft-featured-service-card small {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 7px;
 
   color:
     var(--ft-blue-light);
 
-  font-size: 0.6rem;
+  font-size: 0.58rem;
+
   font-weight: 700;
 
   letter-spacing: 0.11em;
+
+  line-height: 1.45;
 }
 
-.ft-featured-service h3 {
+.ft-featured-service-card h3 {
   margin: 0;
 
-  color: #ffffff;
+  color:
+    #ffffff;
 
   font-family:
     "Playfair Display",
@@ -946,24 +1108,43 @@ summary b::before {
     serif;
 
   font-size: 1.35rem;
+
   font-weight: 600;
 }
 
-.ft-featured-service p {
-  max-width: 650px;
-
+.ft-featured-service-card p {
   margin:
-    12px 0 0;
+    13px 0 20px;
 
-  color: #d2d2d4;
+  color:
+    #d2d2d4;
 
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 
   line-height: 1.7;
 }
 
-.ft-featured-arrow {
-  display: none !important;
+
+/* CARD LINK */
+
+.ft-featured-card-link {
+  display: inline-block;
+
+  margin-top: auto;
+
+  color:
+    var(--ft-blue-light);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.ft-featured-card-link:hover {
+  color:
+    #ffffff;
 }
 
 
@@ -1869,7 +2050,10 @@ p:last-child {
   .ft-about-grid {
     grid-template-columns: 1fr;
   }
-
+.ft-featured-services-grid {
+  grid-template-columns:
+    1fr;
+}
   .ft-services-layout {
     gap: 42px;
   }
@@ -1900,31 +2084,25 @@ p:last-child {
 
 @media (min-width: 901px) {
 
-    /* Header spans desktop width with a consistent inset */
-    .ft-header .ft-nav {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding-inline: 48px;
-    }
+  /* Desktop header + hero rail */
+  .ft-header .ft-nav,
+  .ft-hero-inner {
+    width: min(calc(100% - 64px), 1320px);
+    max-width: 1320px;
 
-    /* Hero uses the same desktop inset */
-    .ft-hero-inner {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding-inline: 48px;
-    }
+    margin-inline: auto;
+    padding-inline: 0;
+  }
 
-    .ft-hero-content {
-        padding:
-            72px 0 60px;
-    }
+  .ft-hero-content {
+    padding:
+      72px 0 60px;
+  }
 
-    /* Never show mobile booking bar on desktop */
-    .ft-mobile-bar {
-        display: none !important;
-    }
+  /* Never show mobile booking bar on desktop */
+  .ft-mobile-bar {
+    display: none !important;
+  }
 }
   /* ==========================================================================
    23. MOBILE
