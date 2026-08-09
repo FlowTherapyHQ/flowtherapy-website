@@ -90,8 +90,8 @@ body.flowtherapy-home {
 }
 
 .ft-shell {
-  width: min(calc(100% - 64px), var(--ft-max));
-  margin-inline: auto;
+    width: min(calc(100% - 64px), var(--ft-max));
+    margin-inline: auto;
 }
 
 .ft-section {
@@ -219,6 +219,7 @@ body.flowtherapy-home {
    04. HEADER
    ========================================================================== */
 
+
 .ft-header {
   position: sticky;
 
@@ -256,7 +257,6 @@ body.flowtherapy-home {
 
   min-height: 80px;
 }
-
 .ft-logo-link {
   display: flex;
 
@@ -370,18 +370,15 @@ body.flowtherapy-home {
 }
 
 .ft-hero-inner {
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .ft-hero-content {
-  max-width: 650px;
+    max-width: 650px;
 
-  padding:
-    72px 0 60px;
+    padding:
+        72px 24px 60px;
 }
 
 .ft-hero h1 {
@@ -1896,6 +1893,39 @@ p:last-child {
     padding:
       55px 0;
   }
+
+  /* ==========================================================================
+   DESKTOP HEADER + HERO ALIGNMENT
+   ========================================================================== */
+
+@media (min-width: 901px) {
+
+    /* Header spans desktop width with a consistent inset */
+    .ft-header .ft-nav {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding-inline: 48px;
+    }
+
+    /* Hero uses the same desktop inset */
+    .ft-hero-inner {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding-inline: 48px;
+    }
+
+    .ft-hero-content {
+        padding:
+            72px 0 60px;
+    }
+
+    /* Never show mobile booking bar on desktop */
+    .ft-mobile-bar {
+        display: none !important;
+    }
+}
   /* ==========================================================================
    23. MOBILE
    ========================================================================== */
@@ -1909,7 +1939,6 @@ p:last-child {
     width: min(calc(100% - 28px), var(--ft-max));
   }
 
-}
 
 
   /* HEADER */
@@ -1960,17 +1989,18 @@ p:last-child {
 
   .ft-hero-overlay {
     background:
-      linear-gradient(
-        0deg,
-        rgba(7, 9, 11, 0.96) 0%,
-        rgba(7, 9, 11, 0.78) 48%,
-        rgba(7, 9, 11, 0.15) 100%
-      );
-  }
+        linear-gradient(
+            0deg,
+            rgba(7, 9, 11, 0.96) 0%,
+            rgba(7, 9, 11, 0.78) 48%,
+            rgba(7, 9, 11, 0.15) 100%
+        );
+}
 
-  .ft-hero-content {
+.ft-hero-content {
     padding:
-      235px 0 45px;
+        235px 24px 45px;
+}
   }
 
   .ft-hero h1 {
@@ -2323,7 +2353,6 @@ p:last-child {
       );
   }
 
-}
 
 
 /* ==========================================================================
@@ -2360,7 +2389,5 @@ p:last-child {
   .ft-final-brand h2 {
     color: #243745;
 
-    font-size: 2rem;
+    font-size: 2rem;}
   }
-
-}

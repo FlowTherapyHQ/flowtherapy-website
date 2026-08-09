@@ -3,7 +3,7 @@
 @import url("./modules/components.css");
 @import url("./modules/articles.css");
 @import url("./modules/pages.css");
-@import url("./modules/home.css");
+@import url("./modules/home.css?v=2");
 @import url("./modules/responsive.css");
 
 
