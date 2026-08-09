@@ -90,12 +90,7 @@ body.flowtherapy-home {
 }
 
 .ft-shell {
-  width:
-    min(
-      var(--ft-max),
-      calc(100% - 44px)
-    );
-
+  width: min(calc(100% - 64px), var(--ft-max));
   margin-inline: auto;
 }
 
@@ -1897,31 +1892,24 @@ p:last-child {
 }
 
 
-/* ==========================================================================
+  .ft-section {
+    padding:
+      55px 0;
+  }
+  /* ==========================================================================
    23. MOBILE
    ========================================================================== */
-
 @media (max-width: 700px) {
 
   body.flowtherapy-home {
     padding-bottom: 67px;
   }
 
-
-  /* GLOBAL */
-
-  .ft-shell {
-    width:
-      min(
-        calc(100% - 24px),
-        var(--ft-max)
-      );
+.ft-shell {
+    width: min(calc(100% - 28px), var(--ft-max));
   }
 
-  .ft-section {
-    padding:
-      55px 0;
-  }
+}
 
 
   /* HEADER */
