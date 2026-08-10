@@ -700,7 +700,7 @@ summary strong {
 
 .ft-service-group[open]
 summary b::before {
-  content: "âˆ’";
+  content: "\2212";
 }
 
 .ft-service-content {
@@ -1010,9 +1010,15 @@ summary b::before {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(
+      auto-fit,
+      minmax(230px, 1fr)
+    );
 
   gap: 22px;
+
+  width: 100%;
+  max-width: 1040px;
 }
 
 
@@ -1058,6 +1064,7 @@ summary b::before {
     background 0.2s ease;
 }
 
+
 .ft-featured-service-card::before {
   content: "";
 
@@ -1102,19 +1109,16 @@ summary b::before {
     var(--ft-blue-light);
 
   font-size: 0.58rem;
-
   font-weight: 700;
 
   letter-spacing: 0.11em;
-
   line-height: 1.45;
 }
 
 .ft-featured-service-card h3 {
   margin: 0;
 
-  color:
-    #ffffff;
+  color: #ffffff;
 
   font-family:
     "Playfair Display",
@@ -1122,7 +1126,6 @@ summary b::before {
     serif;
 
   font-size: 1.35rem;
-
   font-weight: 600;
 }
 
@@ -1137,7 +1140,6 @@ summary b::before {
 
   line-height: 1.7;
 }
-
 
 /* CARD LINK */
 
@@ -1254,6 +1256,9 @@ summary b::before {
   align-items: center;
 
   gap: 44px;
+
+  max-width: 900px;
+  margin-inline: auto;
 
   padding:
     42px 40px;
@@ -1651,7 +1656,7 @@ summary b::before {
 }
 
 /* --------------------------------------------------
-   PORTRAIT CAPTION â€” DESKTOP
+   PORTRAIT CAPTION DESKTOP
 -------------------------------------------------- */
 
 .ft-about-photo-caption {
@@ -1841,17 +1846,22 @@ summary b::before {
   position: absolute;
   top: -1px;
   left: 0;
-  width: 210px;
+
+  width: min(100%, 430px);
   height: 2px;
+
   border-radius: 999px;
+
   background:
     linear-gradient(
       90deg,
       #38b6ff 0%,
-      #8edcff 28%,
-      #368bfb 62%,
+      #8edcff 26%,
+      #368bfb 58%,
+      rgba(56, 182, 255, 0.42) 78%,
       rgba(9, 94, 255, 0) 100%
     );
+
   box-shadow:
     0 0 5px rgba(142, 220, 255, 0.30),
     0 0 10px rgba(56, 182, 255, 0.20);
@@ -1866,7 +1876,7 @@ summary b::before {
 }
 
 /* ==========================================================================
-   ABOUT â€” TABLET
+   ABOUT TABLET
    ========================================================================== */
 
 @media (max-width: 900px) {
@@ -1901,10 +1911,42 @@ summary b::before {
 }
 
 /* ==========================================================================
-   ABOUT â€” MOBILE
-   ========================================================================== */
+   ABOUT — MOBILE
+========================================================================== */
+@media (max-width: 768px) {
+
+  .ft-about-content {
+    width: 100%;
+    max-width: 430px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-align: left;
+  }
+
+  .ft-about-eyebrow,
+  .ft-about-title,
+  .ft-about-quote,
+  .ft-about-copy,
+  .ft-about-tagline {
+    text-align: left;
+  }
+
+  .ft-about-title {
+    max-width: 390px;
+  }
+  .ft-about-signature::before {
+  width: min(100%, 390px);
+}
+  
+}
 
 @media (max-width: 700px) {
+
   .ft-about {
     padding: 52px 0 92px;
   }
@@ -1927,8 +1969,7 @@ summary b::before {
   .ft-about-photo-frame {
     width: 100%;
     aspect-ratio: 3 / 4;
-    border-radius:
-      18px 18px 52px 18px;
+    border-radius: 18px 18px 52px 18px;
   }
 
   .ft-about-photo {
@@ -1939,19 +1980,23 @@ summary b::before {
   }
 
   /* --------------------------------------------------
-     ABOUT PHOTO CREDENTIALS â€” MOBILE
+     ABOUT PHOTO CREDENTIALS — MOBILE
   -------------------------------------------------- */
 
   .ft-about-photo-caption {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
-    max-width: 100%;
-    gap: 7px;
-    margin: 14px auto 0;
-    padding-inline: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 430px;
+
+  gap: 7px;
+
+  margin: 14px auto 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
   .ft-about-photo-caption span,
   .ft-about-photo-caption span:nth-child(4) {
@@ -1974,6 +2019,7 @@ summary b::before {
     height: 6px;
     margin: 0;
     border-radius: 50%;
+
     background:
       radial-gradient(
         circle at 35% 35%,
@@ -1983,91 +2029,18 @@ summary b::before {
         #38b6ff 60%,
         #095eff 100%
       );
+
     box-shadow:
       0 0 4px rgba(255, 255, 255, 0.35),
       0 0 8px rgba(56, 182, 255, 0.45),
       0 0 14px rgba(9, 94, 255, 0.28);
+
     transform: none;
-  }
-
-  /* CONTENT */
-
-  .ft-about-content {
-    width: 100%;
-    max-width: none;
-  }
-
-  .ft-about-content h2 {
-    max-width: 100%;
-    margin: 0 0 18px;
-    font-size:
-      clamp(
-        2.3rem,
-        9vw,
-        3rem
-      );
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-  }
-
-  .ft-about-belief {
-    margin: 10px 0 34px;
-    padding: 5px 0 5px 16px;
-    font-size: 0.96rem;
-    line-height: 1.55;
-  }
-
-  .ft-about-content .ft-about-copy p {
-    margin-bottom: 16px;
-    font-size: 0.84rem;
-    line-height: 1.72;
-  }
-
-  .ft-about-signature {
-    position: relative;
-    gap: 7px 16px;
-    margin-top: 26px;
-    padding-top: 20px;
-    border-top: 0;
-  }
-
-  .ft-about-signature::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 175px;
-    height: 1px;
-    border-radius: 999px;
-    background:
-      linear-gradient(
-        90deg,
-        #38b6ff 0%,
-        #8edcff 32%,
-        #368bfb 68%,
-        rgba(9, 94, 255, 0) 100%
-      );
-    box-shadow:
-      0 0 5px rgba(56, 182, 255, 0.22);
-  }
-
-  .ft-about-signature span {
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
-    color: var(--ft-blue-light);
-    font-size: 0.64rem;
-    font-weight: 700;
-    letter-spacing: 0.055em;
-    text-transform: uppercase;
-    filter: none;
   }
 }
 
 /* ==========================================================================
-   ABOUT â€” SMALL MOBILE
+   ABOUT SMALL MOBILE
    ========================================================================== */
 
 @media (max-width: 440px) {
@@ -2111,31 +2084,86 @@ summary b::before {
     gap: 6px 13px;
   }
 }
+/* --------------------------------------------------
+   ABOUT → CLIENT EXPERIENCES PREMIUM DIVIDER
+-------------------------------------------------- */
 
+.ft-reviews::before {
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(232, 237, 242, 0.45) 0%,
+      #c7cdd4 16%,
+      #8edcff 36%,
+      #38b6ff 58%,
+      #368bfb 78%,
+      #0f3699 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(199, 205, 212, 0.18),
+    0 0 10px rgba(56, 182, 255, 0.24),
+    0 0 16px rgba(9, 94, 255, 0.12);
+}
 
 /* ==========================================================================
    16. CLIENT EXPERIENCES
-   DARK LIKE FLOW ON
-   ========================================================================== */
+   PREMIUM CLIENT GRATITUDE
+========================================================================== */
 
 .ft-reviews {
+  position: relative;
+  overflow: hidden;
+
+  padding:
+    84px 0 88px;
+
   background:
+    radial-gradient(
+      circle at 78% 12%,
+      rgba(56, 182, 255, 0.055) 0%,
+      rgba(9, 94, 255, 0.018) 28%,
+      transparent 55%
+    ),
     linear-gradient(
       180deg,
-      #202a31 0%,
-      #1b242b 48%,
-      #172128 100%
+      #151c21 0%,
+      #11181d 52%,
+      #0d1317 100%
     );
 }
 
+
+/* --------------------------------------------------
+   SECTION INTRO
+-------------------------------------------------- */
+
+.ft-reviews .ft-eyebrow,
+.ft-reviews h2 {
+  width: 100%;
+  max-width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ft-reviews .ft-eyebrow {
+  margin-bottom: 12px;
+
   color:
     #38b6ff;
 }
 
+
+/* --------------------------------------------------
+   HEADING
+-------------------------------------------------- */
+
 .ft-reviews h2 {
-  margin:
-    0 0 30px;
+  margin-top: 0;
+  margin-bottom: 42px;
 
   color:
     #ffffff;
@@ -2147,13 +2175,62 @@ summary b::before {
 
   font-size:
     clamp(
-      2.3rem,
-      4.5vw,
-      3.8rem
+      2.8rem,
+      5vw,
+      4.6rem
     );
 
   font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.035em;
 }
+
+
+/* "remember." */
+
+.ft-reviews h2 em {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      110deg,
+      #8edcff 0%,
+      #38b6ff 28%,
+      #2f9dff 52%,
+      #368bfb 76%,
+      #095eff 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  color:
+    transparent;
+
+  font-style: italic;
+  font-weight: 500;
+
+  filter:
+    drop-shadow(
+      0 0 1px
+      rgba(255, 255, 255, 0.46)
+    )
+    drop-shadow(
+      0 0 7px
+      rgba(56, 182, 255, 0.22)
+    );
+}
+
+
+/* --------------------------------------------------
+   REVIEW GRID
+-------------------------------------------------- */
 
 .ft-review-grid {
   display: grid;
@@ -2164,68 +2241,391 @@ summary b::before {
       minmax(0, 1fr)
     );
 
-  gap: 14px;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin-inline: auto;
 }
 
+
+/* --------------------------------------------------
+   REVIEW CARDS
+-------------------------------------------------- */
+
 .ft-review-grid article {
-  padding: 26px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 340px;
+
+  padding:
+    34px 32px 30px;
+
+  overflow: hidden;
 
   border:
     1px solid
-    rgba(56, 182, 255, 0.20);
+    rgba(199, 205, 212, 0.20);
 
   border-radius:
-    var(--ft-radius);
+    18px;
 
   background:
     linear-gradient(
       145deg,
-      #304858 0%,
-      #293e4c 52%,
-      #233642 100%
+      rgba(35, 45, 52, 0.98) 0%,
+      rgba(27, 36, 42, 0.99) 56%,
+      rgba(19, 27, 32, 1) 100%
     );
 
   box-shadow:
-    0 14px 34px
-    rgba(0, 0, 0, 0.18);
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.045),
+    0 20px 44px
+      rgba(0, 0, 0, 0.28);
 }
+
+
+/* Flow accent edge */
+
+.ft-review-grid article::before {
+  content: "";
+
+  position: absolute;
+
+  top: 22px;
+  bottom: 22px;
+  left: 0;
+
+  width: 3px;
+
+  border-radius:
+    0 999px 999px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e8edf2 0%,
+      #8edcff 20%,
+      #38b6ff 48%,
+      #368bfb 72%,
+      #095eff 100%
+    );
+
+  box-shadow:
+    0 0 7px
+      rgba(56, 182, 255, 0.40),
+    0 0 16px
+      rgba(9, 94, 255, 0.18);
+}
+
+
+/* subtle card atmosphere */
+
+.ft-review-grid article::after {
+  content: "";
+
+  position: absolute;
+
+  top: -90px;
+  right: -90px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 182, 255, 0.055) 0%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* --------------------------------------------------
+   STARS
+-------------------------------------------------- */
 
 .ft-stars {
-  color:
-    var(--ft-blue-light);
+  position: relative;
+  z-index: 1;
 
-  letter-spacing: 0.08em;
+  color:
+    #8edcff;
+
+  font-size: 0.8rem;
+
+  letter-spacing:
+    0.16em;
+
+  text-shadow:
+    0 0 8px
+      rgba(56, 182, 255, 0.32);
 }
 
-.ft-review-grid blockquote {
-  margin:
-    17px 0 14px;
 
-  color: #ffffff;
+/* --------------------------------------------------
+   CLIENT WORDS
+-------------------------------------------------- */
+
+.ft-review-grid blockquote {
+  position: relative;
+  z-index: 1;
+
+  margin:
+    26px 0 28px;
+
+  color:
+    #f7f8f9;
 
   font-family:
     "Playfair Display",
     Georgia,
     serif;
 
-  font-size: 1rem;
+  font-size:
+    1.08rem;
 
-  line-height: 1.6;
+  font-weight: 500;
+
+  line-height:
+    1.72;
 }
 
-.ft-review-grid
-article > p {
-  margin: 0;
 
-  color: #d9d9d9;
+/* --------------------------------------------------
+   CLIENT NAME
+-------------------------------------------------- */
 
-  font-size: 0.74rem;
+.ft-review-grid article > p {
+  position: relative;
+  z-index: 1;
+
+  margin:
+    auto 0 0;
+
+  padding-top:
+    18px;
+
+  border-top:
+    1px solid
+    rgba(232, 237, 242, 0.13);
+
+  color:
+    #d8e0e6;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    650;
+
+  letter-spacing:
+    0.025em;
+}
+
+
+/* --------------------------------------------------
+   CLIENT GRATITUDE
+-------------------------------------------------- */
+
+.ft-reviews-thank-you {
+  position: relative;
+
+  width:
+    fit-content;
+
+  margin:
+    44px auto 0;
+
+  padding:
+    20px 34px 0;
+
+  color:
+    #eef2f5;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    1.08rem;
+
+  font-style:
+    italic;
+
+  font-weight:
+    500;
+
+  text-align:
+    center;
+
+  letter-spacing:
+    0.01em;
+}
+
+
+/* premium line above gratitude */
+
+.ft-reviews-thank-you::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 180px;
+  height: 1px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #c7cdd4 18%,
+      #ffffff 34%,
+      #8edcff 52%,
+      #38b6ff 70%,
+      #368bfb 84%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 6px
+      rgba(199, 205, 212, 0.18),
+    0 0 12px
+      rgba(56, 182, 255, 0.20);
+}
+
+
+/* --------------------------------------------------
+   DESKTOP CARD HOVER
+-------------------------------------------------- */
+
+@media (hover: hover) {
+
+  .ft-review-grid article {
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .ft-review-grid article:hover {
+    transform:
+      translateY(-4px);
+
+    border-color:
+      rgba(142, 220, 255, 0.34);
+
+    box-shadow:
+      inset 0 1px 0
+        rgba(255, 255, 255, 0.055),
+      0 24px 52px
+        rgba(0, 0, 0, 0.34);
+  }
 }
 
 
 /* ==========================================================================
+   CLIENT EXPERIENCES — MOBILE
+========================================================================== */
+
+@media (max-width: 760px) {
+
+  .ft-reviews {
+    padding:
+      64px 0 72px;
+  }
+
+  .ft-reviews .ft-eyebrow,
+  .ft-reviews h2,
+  .ft-review-grid {
+    width: 100%;
+    max-width: none;
+  }
+
+  .ft-reviews h2 {
+    margin-bottom:
+      30px;
+
+    font-size:
+      clamp(
+        2.65rem,
+        11vw,
+        3.5rem
+      );
+
+    line-height:
+      1.01;
+  }
+
+  .ft-review-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      16px;
+  }
+
+  .ft-review-grid article {
+    min-height:
+      0;
+
+    padding:
+      28px 24px 26px;
+
+    border-radius:
+      16px;
+  }
+
+  .ft-review-grid article::before {
+    top: 18px;
+    bottom: 18px;
+  }
+
+  .ft-review-grid blockquote {
+    margin:
+      22px 0 24px;
+
+    font-size:
+      1rem;
+
+    line-height:
+      1.66;
+  }
+
+  .ft-reviews-thank-you {
+    margin-top:
+      34px;
+
+    padding:
+      19px 12px 0;
+
+    font-size:
+      0.96rem;
+  }
+
+  .ft-reviews-thank-you::before {
+    width:
+      150px;
+  }
+}
+/* ==========================================================================
    17. FLOWHUB
-   DARK â†’ LIGHT
+   DARK LIGHT
    ========================================================================== */
 
 .ft-flowhub {
@@ -3361,3 +3761,16 @@ p:last-child {
 
     font-size: 2rem;}
   }
+/* ==========================================================================
+   CLIENT EXPERIENCES — FINAL RESPONSIVE GUARD
+========================================================================== */
+
+@media (min-width: 761px) {
+  .ft-review-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
