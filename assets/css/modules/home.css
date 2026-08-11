@@ -3783,7 +3783,76 @@ box-shadow:
     0 0 12px rgba(56, 182, 255, 0.14);
 }
 
+/* --------------------------------------------------
+   STAY IN THE FLOW — PREMIUM ATMOSPHERE
+-------------------------------------------------- */
 
+.ft-flowhub {
+  position: relative;
+  overflow: hidden;
+
+  padding-top: 74px;
+  padding-bottom: 64px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 34%,
+      rgba(142, 220, 255, 0.075) 0%,
+      rgba(56, 182, 255, 0.035) 28%,
+      transparent 58%
+    ),
+
+    radial-gradient(
+      ellipse at 86% 62%,
+      rgba(9, 94, 255, 0.08) 0%,
+      rgba(54, 139, 251, 0.03) 34%,
+      transparent 64%
+    ),
+
+    linear-gradient(
+      118deg,
+      #1b2b35 0%,
+      #172a36 34%,
+      #10283a 66%,
+      #0b2440 100%
+    );
+}
+
+
+/* soft central atmosphere behind heading + cards */
+
+.ft-flowhub::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 0;
+
+  top: 78px;
+  left: 50%;
+
+  width: min(760px, 72vw);
+  height: 420px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(142, 220, 255, 0.07) 0%,
+      rgba(56, 182, 255, 0.028) 38%,
+      transparent 72%
+    );
+
+  filter:
+    blur(22px);
+
+  pointer-events: none;
+}
 /* --------------------------------------------------
    STAY IN THE FLOW
 -------------------------------------------------- */
@@ -3796,7 +3865,7 @@ box-shadow:
     850px;
 
   margin:
-    0 0 22px;
+    0 0 18px;
 
   font-family:
     "Playfair Display",
@@ -3824,28 +3893,25 @@ box-shadow:
 }
 
 
-/* "Stay in the" — DARKER, spotlight provides the shimmer */
+/* "Stay in the" — restrained steel-blue */
 
 .ft-flowhub-stay {
-  display:
-    inline-block;
+  display: inline-block;
 
-  color: #102b42;
+  color: #89a3b6;
 
   font-family:
     "Playfair Display",
     Georgia,
     serif;
 
-  font-style:
-    italic;
-
-  font-weight:
-    500;
+  font-style: italic;
+  font-weight: 500;
 
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.20),
-    0 0 2px rgba(235, 246, 252, 0.10);
+  0 1px 0 rgba(255, 255, 255, 0.22),
+  0 0 6px rgba(142, 220, 255, 0.11),
+  0 0 14px rgba(56, 182, 255, 0.06);
 }
 
 
