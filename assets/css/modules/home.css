@@ -281,11 +281,20 @@ body.flowtherapy-home {
 
 .ft-nav {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
-  min-height: 80px;
+  width:
+    min(
+      calc(100% - 64px),
+      1120px
+    );
+
+  max-width: none;
+
+  margin-inline: auto;
+
+  min-height: 90px;
 }
 .ft-logo-link {
   display: flex;
@@ -644,6 +653,10 @@ body.flowtherapy-home {
   letter-spacing: 0.11em;
 }
 
+/* --------------------------------------------------
+   SERVICES — PREMIUM TYPE SCALE
+-------------------------------------------------- */
+
 .ft-service-group summary strong {
   color: #ffffff;
 
@@ -652,17 +665,12 @@ body.flowtherapy-home {
     Georgia,
     serif;
 
-  font-size: 1.04rem;
-  font-weight: 500;
-}
-
-.ft-service-group:nth-of-type(3)
-summary strong,
-.ft-service-group:nth-of-type(4)
-summary strong {
-  font-size: 1.2rem;
-
+  font-size: 1.18rem;
   font-weight: 600;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.01em;
 }
 
 
@@ -932,18 +940,111 @@ summary b::before {
    ========================================================================== */
 
 .ft-featured-services {
+  position: relative;
+
+  width: 100%;
+
   margin-top: 48px;
+  margin-left: 0;
+  margin-right: 0;
 
   padding-top: 32px;
 
-  border-top:
-    3px solid transparent;
-
-  border-image:
-    var(--ft-divider-gradient)
-    1;
+  border-top: 0;
 }
 
+/* --------------------------------------------------
+   MORE WAYS TO FLOW — PREMIUM DIVIDER
+-------------------------------------------------- */
+
+.ft-featured-services::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #c7cdd4 0%,
+      #8edcff 28%,
+      #38b6ff 58%,
+      #368bfb 82%,
+      rgba(9, 94, 255, 0.16) 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(142, 220, 255, 0.24),
+    0 0 12px rgba(56, 182, 255, 0.15);
+
+  pointer-events: none;
+}
+
+
+/* FlowTherapy sparkle */
+
+.ft-featured-services::after {
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+  left: 40%;
+
+  width: 120px;
+  height: 7px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(142, 220, 255, 0.16) 18%,
+      rgba(220, 245, 255, 0.72) 40%,
+      #ffffff 50%,
+      rgba(220, 245, 255, 0.72) 60%,
+      rgba(56, 182, 255, 0.16) 82%,
+      transparent 100%
+    );
+
+  filter: blur(1.4px);
+
+  box-shadow:
+    0 0 7px rgba(220, 245, 255, 0.48),
+    0 0 14px rgba(56, 182, 255, 0.24);
+
+  pointer-events: none;
+
+  animation:
+    ft-moreways-sparkle 4.8s ease-in-out infinite;
+}
+
+
+@keyframes ft-moreways-sparkle {
+
+  0%,
+  100% {
+    opacity: 0.62;
+
+    transform:
+      translateX(-12px);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translateX(12px);
+  }
+}
 
 /* INTRO */
 
@@ -1010,15 +1111,13 @@ summary b::before {
   display: grid;
 
   grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(230px, 1fr)
-    );
+    repeat(2, minmax(0, 1fr));
 
-  gap: 22px;
+  gap:
+    18px;
 
-  width: 100%;
-  max-width: 1040px;
+  width:
+    100%;
 }
 
 
@@ -1163,22 +1262,188 @@ summary b::before {
     #ffffff;
 }
 
+/* --------------------------------------------------
+   MORE WAYS TO FLOW — PREMIUM DIVIDER
+-------------------------------------------------- */
+
+.ft-featured-services::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(199, 205, 212, 0.58) 0%,
+      #c7cdd4 16%,
+      #8edcff 38%,
+      #38b6ff 62%,
+      #368bfb 82%,
+      rgba(9, 94, 255, 0.18) 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(142, 220, 255, 0.24),
+    0 0 12px rgba(56, 182, 255, 0.15);
+
+  pointer-events:
+    none;
+}
+
+
+/* concentrated FlowTherapy sparkle */
+
+.ft-featured-services::after {
+  content: "";
+
+  position: absolute;
+
+  top:
+    -2px;
+
+  left:
+    42%;
+
+  width:
+    120px;
+
+  height:
+    7px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(142, 220, 255, 0.16) 18%,
+      rgba(220, 245, 255, 0.72) 40%,
+      #ffffff 50%,
+      rgba(220, 245, 255, 0.72) 60%,
+      rgba(56, 182, 255, 0.16) 82%,
+      transparent 100%
+    );
+
+  filter:
+    blur(1.4px);
+
+  box-shadow:
+    0 0 7px rgba(220, 245, 255, 0.48),
+    0 0 14px rgba(56, 182, 255, 0.24);
+
+  pointer-events:
+    none;
+
+  animation:
+    ft-moreways-sparkle 4.8s ease-in-out infinite;
+}
+
+
+@keyframes ft-moreways-sparkle {
+
+  0%,
+  100% {
+    opacity:
+      0.64;
+
+    transform:
+      translateX(-14px);
+  }
+
+  48% {
+    opacity:
+      1;
+  }
+
+  52% {
+    opacity:
+      1;
+
+    transform:
+      translateX(14px);
+  }
+}
 
 /* ==========================================================================
    13. SERVICES SIDE
+   THERAPEUTIC CARE — FLOWTHERAPY PREMIUM
    ========================================================================== */
 
 .ft-services-side {
-  position: sticky;
+  position: relative;
 
-  top: 120px;
+  display: grid;
 
-  max-width: 390px;
+  grid-template-columns:
+    minmax(320px, 0.9fr)
+    minmax(390px, 1.1fr);
 
-  padding-top: 34px;
+  align-items: center;
+
+  gap: 28px;
+
+  width: 100%;
+  max-width: 940px;
+
+  margin-top: 68px;
+
+  padding: 28px 0 20px;
 
   background: transparent;
 }
+.ft-services-side::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 520px;
+  height: 420px;
+
+  right: -70px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(211, 118, 35, 0.10) 0%,
+      rgba(150, 77, 24, 0.05) 32%,
+      transparent 70%
+    );
+
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------
+   THERAPEUTIC CARE — COPY
+-------------------------------------------------- */
+
+.ft-services-side-content {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 0;
+
+  padding-right: 6px;
+}
+
+
+.ft-services-side .ft-eyebrow {
+  margin-bottom: 13px;
+}
+
 
 .ft-services-side h2 {
   margin: 0;
@@ -1192,40 +1457,529 @@ summary b::before {
 
   font-size:
     clamp(
-      2rem,
+      2.5rem,
       4vw,
-      3rem
+      3.7rem
     );
 
   font-weight: 600;
 
-  line-height: 1.1;
+  line-height: 1.02;
+
+  letter-spacing: -0.03em;
 }
+
 
 .ft-services-side h2 em {
-  color:
-    var(--ft-blue-light);
+  display: inline-block;
+
+  position: relative;
+
+  background:
+  linear-gradient(
+    105deg,
+    #8edcff 0%,
+    #56c7ff 20%,
+    #38b6ff 42%,
+    #2fa7ff 66%,
+    #368bfb 84%,
+    #248cff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-style: italic;
+  font-weight: 600;
+
+  text-shadow: none;
+
+  filter:
+  drop-shadow(
+    0 0 1px
+    rgba(255, 255, 255, 0.38)
+  )
+  drop-shadow(
+    0 0 5px
+    rgba(56, 182, 255, 0.26)
+  )
+  drop-shadow(
+    0 0 11px
+    rgba(54, 139, 251, 0.15)
+  );
 }
 
-.ft-services-side p {
+/* tiny premium glint under "your way." */
+
+.ft-services-side h2 em::after {
+  content: "";
+
+  position: absolute;
+
+  right: 6%;
+  bottom: -5px;
+
+  width: 54%;
+  height: 1px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(142, 220, 255, 0.30) 20%,
+      rgba(223, 247, 255, 0.72) 48%,
+      #38b6ff 68%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(142, 220, 255, 0.28),
+    0 0 10px rgba(56, 182, 255, 0.16);
+
+  opacity: 0.78;
+
+  pointer-events: none;
+}
+
+
+.ft-services-side-content > p:not(.ft-eyebrow) {
+  max-width: 410px;
+
+  margin:
+    24px 0 0;
+
   color: #d1d1d3;
 
-  font-size: 0.9rem;
+  font-size: 0.96rem;
 
-  line-height: 1.8;
+  line-height: 1.82;
 }
 
-.ft-services-side a {
+
+.ft-services-side-content > a {
+  position: relative;
+
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-top: 22px;
+
   color:
     var(--ft-blue-light);
 
-  font-size: 0.8rem;
-  font-weight: 650;
+  font-size: 0.83rem;
+  font-weight: 700;
 
   text-decoration: none;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #dff7ff 0%,
+      #8edcff 26%,
+      #38b6ff 60%,
+      #368bfb 100%
+    );
+
+  background-repeat: no-repeat;
+
+  background-position:
+    left bottom;
+
+  background-size:
+    0 1px;
+
+  transition:
+    color 180ms ease,
+    background-size 220ms ease;
 }
 
 
+@media (hover: hover) {
+
+  .ft-services-side-content > a:hover {
+    color: #8edcff;
+
+    background-size:
+      100% 1px;
+
+    filter:
+      drop-shadow(
+        0 2px 3px
+        rgba(56, 182, 255, 0.30)
+      );
+  }
+}
+
+
+/* --------------------------------------------------
+   ATMOSPHERE IMAGE — IMMERSIVE 3D TREATMENT
+-------------------------------------------------- */
+
+.ft-services-atmosphere {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+  max-width: 440px;
+
+  margin: 0;
+
+  justify-self: end;
+
+  perspective:
+    1200px;
+
+  transform:
+    translateX(-18px);
+}
+
+
+/* soft ambient warmth behind the image */
+
+.ft-services-atmosphere::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -2;
+
+  top: 12%;
+  right: 4%;
+  bottom: 8%;
+  left: 6%;
+
+  border-radius:
+    40%;
+
+  background:
+    radial-gradient(
+      circle at 55% 48%,
+      rgba(255, 173, 70, 0.16) 0%,
+      rgba(255, 133, 30, 0.07) 34%,
+      rgba(56, 182, 255, 0.035) 58%,
+      transparent 76%
+    );
+
+  filter:
+    blur(26px);
+
+  pointer-events:
+    none;
+}
+
+
+.ft-services-atmosphere-frame {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio:
+    16 / 10;
+
+  border:
+    1px solid
+    rgba(142, 220, 255, 0.30);
+
+  border-radius:
+    22px;
+
+  background:
+    #10171c;
+
+  transform:
+    rotateY(-8deg)
+    rotateX(2deg)
+    rotateZ(-1deg);
+
+  transform-origin:
+    center left;
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.08),
+
+    -8px 10px 18px
+      rgba(0, 0, 0, 0.18),
+
+    18px 28px 48px
+      rgba(0, 0, 0, 0.34),
+
+    0 0 20px
+      rgba(56, 182, 255, 0.10),
+
+    0 0 40px
+      rgba(255, 145, 45, 0.05);
+
+  transition:
+    transform 420ms ease,
+    box-shadow 420ms ease;
+}
+
+
+/* FlowTherapy luminous edge */
+
+.ft-services-atmosphere-frame::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 3;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #dff7ff 0%,
+      #8edcff 20%,
+      #38b6ff 48%,
+      #368bfb 74%,
+      rgba(9, 94, 255, 0.16) 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(223, 247, 255, 0.36),
+    0 0 11px rgba(142, 220, 255, 0.34),
+    0 0 20px rgba(56, 182, 255, 0.18);
+
+  pointer-events: none;
+}
+
+
+/* subtle depth shading */
+
+.ft-services-atmosphere-frame::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(9, 18, 25, 0.16) 0%,
+      transparent 22%,
+      transparent 72%,
+      rgba(7, 13, 18, 0.18) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+.ft-services-atmosphere img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center 27%;
+
+  filter:
+    saturate(0.96)
+    contrast(1.08)
+    brightness(0.93);
+
+  transform:
+    scale(1.22);
+
+  transition:
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+
+/* --------------------------------------------------
+   DESKTOP — GENTLE IMMERSIVE RESPONSE
+-------------------------------------------------- */
+
+@media (hover: hover) {
+
+  .ft-services-atmosphere:hover
+  .ft-services-atmosphere-frame {
+    transform:
+      rotateY(-4deg)
+      rotateX(1deg)
+      rotateZ(-0.4deg)
+      translateY(-3px);
+
+    box-shadow:
+      inset 0 1px 0
+        rgba(255, 255, 255, 0.09),
+
+      -6px 12px 18px
+        rgba(0, 0, 0, 0.16),
+
+      20px 32px 54px
+        rgba(0, 0, 0, 0.36),
+
+      0 0 24px
+        rgba(56, 182, 255, 0.14),
+
+      0 0 46px
+        rgba(255, 145, 45, 0.08);
+  }
+
+
+  .ft-services-atmosphere:hover img {
+    transform:
+      scale(1.27);
+
+    filter:
+      saturate(1)
+      contrast(1.08)
+      brightness(0.98);
+  }
+}
+
+/* --------------------------------------------------
+   SOFT LAYER BETWEEN COPY + IMAGE
+-------------------------------------------------- */
+
+.ft-services-atmosphere::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  top: 12%;
+  left: -78px;
+
+  width: 180px;
+  height: 72%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(56, 182, 255, 0.09) 0%,
+      rgba(54, 139, 251, 0.035) 42%,
+      transparent 74%
+    );
+
+  filter:
+    blur(18px);
+
+  pointer-events: none;
+}
+
+
+/* --------------------------------------------------
+   CAPTION
+-------------------------------------------------- */
+
+.ft-services-atmosphere figcaption {
+  max-width: 320px;
+
+  margin:
+    16px 0 0 8px;
+
+  color: #aab5bc;
+
+  font-size: 0.7rem;
+
+  line-height: 1.55;
+
+  letter-spacing: 0.025em;
+}
+
+
+/* ==========================================================================
+   SERVICES SIDE — MOBILE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+  .ft-services-side {
+    grid-template-columns:
+      1fr;
+
+    gap: 34px;
+
+    max-width: none;
+
+    margin-top: 52px;
+
+    padding-top: 18px;
+  }
+
+
+  .ft-services-side h2 {
+    font-size:
+      clamp(
+        2.4rem,
+        11vw,
+        3.25rem
+      );
+  }
+
+
+  .ft-services-side-content > p:not(.ft-eyebrow) {
+    max-width: none;
+
+    font-size: 0.92rem;
+  }
+
+
+  .ft-services-atmosphere {
+    width:
+      min(92%, 420px);
+
+    max-width:
+      420px;
+
+    justify-self: center;
+
+    transform:
+      none;
+  }
+
+
+  .ft-services-atmosphere-frame {
+    aspect-ratio:
+      16 / 10;
+
+    transform:
+      rotate(-0.8deg);
+  }
+
+
+  .ft-services-atmosphere img {
+    object-position:
+      center 31%;
+
+    transform:
+      scale(1.16)
+      rotate(0.8deg);
+  }
+
+
+  .ft-services-atmosphere figcaption {
+    margin:
+      14px auto 0;
+
+    text-align: center;
+  }
+}
 /* ==========================================================================
    14. FLOWSTART
 ========================================================================== */
@@ -1270,19 +2024,18 @@ max-width: 1080px;
     var(--ft-radius);
 
   background:
-    linear-gradient(
-      135deg,
-      #344f61 0%,
-      #2c4353 52%,
-      #253b4d 78%,
-      #21456b 100%
-    );
+  linear-gradient(
+    140deg,
+    #263b49 0%,
+    #223541 38%,
+    #1d303c 68%,
+    #1b3449 100%
+  );
 
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.05),
-    0 18px 42px
-    rgba(16, 30, 42, 0.18);
+  inset 0 1px 0 rgba(255, 255, 255, 0.08),
+  inset 0 0 30px rgba(142, 220, 255, 0.025),
+  0 18px 42px rgba(16, 30, 42, 0.20);
 }
 
 
@@ -1314,42 +2067,42 @@ max-width: 1080px;
 
 
 .ft-flowstart-card h2 em {
-  display:
-    inline-block;
+  display: inline-block;
 
   background:
-    var(--ft-logo-gradient);
+    linear-gradient(
+      105deg,
+      #8edcff 0%,
+      #56c7ff 20%,
+      #38b6ff 42%,
+      #2fa7ff 66%,
+      #368bfb 84%,
+      #248cff 100%
+    );
 
-  -webkit-background-clip:
-    text;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-  background-clip:
-    text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 
-  -webkit-text-fill-color:
-    transparent;
+  font-style: italic;
+  font-weight: 600;
 
-  color:
-    transparent;
-
-  font-style:
-    italic;
-
-  font-weight:
-    500;
+  text-shadow: none;
 
   filter:
     drop-shadow(
       0 0 1px
-      rgba(255, 255, 255, 0.45)
+      rgba(255, 255, 255, 0.38)
     )
     drop-shadow(
-      0 0 4px
-      rgba(56, 182, 255, 0.34)
+      0 0 5px
+      rgba(56, 182, 255, 0.26)
     )
     drop-shadow(
-      0 0 10px
-      rgba(54, 139, 251, 0.18)
+      0 0 11px
+      rgba(54, 139, 251, 0.15)
     );
 }
 
@@ -1697,6 +2450,11 @@ max-width: 1080px;
 -------------------------------------------------- */
 
 .ft-flowstart-offer .ft-button {
+  
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
   min-height: 46px;
   padding: 11px 22px;
 
@@ -1733,6 +2491,67 @@ max-width: 1080px;
     box-shadow 180ms ease;
 }
 
+/* --------------------------------------------------
+   FLOWSTART BUTTON — PREMIUM SHINE
+-------------------------------------------------- */
+
+.ft-flowstart-offer .ft-button::after {
+  content: "";
+
+  position: absolute;
+  z-index: 2;
+
+  top: -35%;
+  bottom: -35%;
+  left: -38%;
+
+  width: 24%;
+
+  transform: skewX(-18deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.10) 24%,
+      rgba(220, 245, 255, 0.66) 50%,
+      rgba(255, 255, 255, 0.12) 76%,
+      transparent 100%
+    );
+
+  filter: blur(1px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+    ft-flowstart-button-shine 5.8s ease-in-out infinite;
+}
+
+@keyframes ft-flowstart-button-shine {
+  0%,
+  68% {
+    left: -38%;
+    opacity: 0;
+  }
+
+  72% {
+    opacity: 0.75;
+  }
+
+  82% {
+    left: 118%;
+    opacity: 0.55;
+  }
+
+  86%,
+  100% {
+    left: 118%;
+    opacity: 0;
+  }
+}
+
 @media (hover: hover) {
   .ft-flowstart-offer .ft-button:hover {
     transform: translateY(-2px);
@@ -1742,6 +2561,13 @@ max-width: 1080px;
       0 0 11px rgba(142, 220, 255, 0.50),
       0 0 22px rgba(56, 182, 255, 0.38),
       0 0 34px rgba(9, 94, 255, 0.24);
+
+  }
+}
+
+ @media (prefers-reduced-motion: reduce) {
+  .ft-flowstart-offer .ft-button::after {
+    animation: none;
   }
 }
 /* ==========================================================================
@@ -2324,18 +3150,32 @@ max-width: 1080px;
     84px 0 88px;
 
   background:
-    radial-gradient(
-      circle at 78% 12%,
-      rgba(56, 182, 255, 0.055) 0%,
-      rgba(9, 94, 255, 0.018) 28%,
-      transparent 55%
-    ),
-    linear-gradient(
-      180deg,
-      #151c21 0%,
-      #11181d 52%,
-      #0d1317 100%
-    );
+  /* soft silver illumination */
+  radial-gradient(
+    ellipse at 28% 24%,
+    rgba(248, 252, 255, 0.28) 0%,
+    rgba(215, 232, 243, 0.16) 26%,
+    transparent 56%
+  ),
+
+  /* restrained Flow blue atmosphere */
+  radial-gradient(
+    ellipse at 90% 66%,
+    rgba(9, 94, 255, 0.18) 0%,
+    rgba(54, 139, 251, 0.08) 34%,
+    transparent 64%
+  ),
+
+  /* silver → steel → blue foundation */
+  linear-gradient(
+    118deg,
+    #aebbc5 0%,
+    #92a7b6 24%,
+    #758da1 46%,
+    #587896 66%,
+    #42689a 83%,
+    #31589a 100%
+  );
 }
 
 
@@ -2835,22 +3675,32 @@ box-shadow:
   position: relative;
   overflow: hidden;
 
-  padding:
-    86px 0 94px;
-
   background:
-  linear-gradient(
-    115deg,
-    #8799a8 0%,
-    #778da1 24%,
-    #657f99 48%,
-    #506f91 68%,
-    #3d6192 84%,
-    #234d91 100%
-  );
+  /* very restrained blue illumination */
+  radial-gradient(
+    ellipse at 26% 22%,
+    rgba(142, 220, 255, 0.08) 0%,
+    rgba(56, 182, 255, 0.035) 30%,
+    transparent 58%
+  ),
 
-  color:
-    #f4f7f9;
+  /* deeper Flow-blue atmosphere */
+  radial-gradient(
+    ellipse at 92% 64%,
+    rgba(9, 94, 255, 0.14) 0%,
+    rgba(54, 139, 251, 0.055) 34%,
+    transparent 64%
+  ),
+
+  /* premium charcoal / navy foundation */
+  linear-gradient(
+    135deg,
+    #202a31 0%,
+    #1b2932 28%,
+    #162631 52%,
+    #122432 74%,
+    #0d1d2b 100%
+  );
 }
 
 
@@ -3005,34 +3855,40 @@ box-shadow:
   display: inline-block;
 
   background:
-    linear-gradient(
-      110deg,
-      #bfeaff 0%,
-      #8edcff 24%,
-      #38b6ff 55%,
-      #368bfb 78%,
-      #176ee8 100%
-    );
+  linear-gradient(
+    105deg,
+    #8edcff 0%,
+    #56c7ff 20%,
+    #38b6ff 42%,
+    #2fa7ff 66%,
+    #368bfb 84%,
+    #248cff 100%
+  );
 
-  -webkit-background-clip: text;
-  background-clip: text;
+-webkit-background-clip: text;
+background-clip: text;
 
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+-webkit-text-fill-color: transparent;
+color: transparent;
 
-  font-family:
-    "Playfair Display",
-    Georgia,
-    serif;
+font-style: italic;
+font-weight: 600;
 
-  font-style: italic;
-  font-weight: 500;
+text-shadow: none;
 
-  filter:
-    drop-shadow(
-      0 0 3px
-      rgba(56, 182, 255, 0.28)
-    );
+filter:
+  drop-shadow(
+    0 0 1px
+    rgba(255, 255, 255, 0.38)
+  )
+  drop-shadow(
+    0 0 5px
+    rgba(56, 182, 255, 0.26)
+  )
+  drop-shadow(
+    0 0 11px
+    rgba(54, 139, 251, 0.15)
+  );
 }
 
 /* --------------------------------------------------
@@ -3129,31 +3985,28 @@ box-shadow:
 
   border:
     1px solid
-    rgba(142, 220, 255, 0.30);
+    rgba(142, 220, 255, 0.26);
 
   border-radius:
     18px;
 
   background:
-    linear-gradient(
-      145deg,
-      rgba(18, 48, 70, 0.98) 0%,
-      rgba(11, 38, 59, 0.99) 50%,
-      rgba(6, 28, 47, 1) 100%
-    );
+  linear-gradient(
+    145deg,
+    #15354b 0%,
+    #0d2d43 48%,
+    #08263d 100%
+  );
 
   box-shadow:
-    inset 0 1px 0
+  inset 0 1px 0
     rgba(255, 255, 255, 0.055),
 
-    inset 0 0 26px
-    rgba(56, 182, 255, 0.025),
+  0 18px 38px
+    rgba(0, 0, 0, 0.26),
 
-    0 20px 44px
-    rgba(4, 20, 34, 0.30),
-
-    0 0 22px
-    rgba(9, 94, 255, 0.05);
+  0 0 18px
+    rgba(56, 182, 255, 0.07);
 }
 
 
@@ -3847,48 +4700,117 @@ box-shadow:
 }
 /* ==========================================================================
    18. FLOW ON
+   PREMIUM TRANSITION STRIP
    ========================================================================== */
 
 .ft-signature {
   position: relative;
+  overflow: hidden;
 
   padding:
-    36px 0;
+    20px 0 22px;
 
   background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.20) 0%,
+      rgba(220, 240, 250, 0.08) 28%,
+      transparent 58%
+    ),
+
     linear-gradient(
-      180deg,
-      #202a31 0%,
-      #172128 100%
+      115deg,
+      #eef1f4 0%,
+      #d9e0e5 24%,
+      #bcc9d3 46%,
+      #91a8ba 66%,
+      #6686a3 82%,
+      #3f6596 100%
     );
 
   text-align: center;
 }
 
 .ft-signature-title {
+  position: relative;
+
+  display: inline-block;
+
   margin: 0;
 
-  color: #ffffff;
+  color: #17324a;
 
   font-family:
     "Playfair Display",
     Georgia,
     serif;
 
-  font-size: 1.55rem;
+  font-size:
+    clamp(
+      1.75rem,
+      2vw,
+      2.15rem
+    );
 
   font-style: italic;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.38),
+    0 3px 12px rgba(23, 50, 74, 0.10);
 }
 
+/* --------------------------------------------------
+   FLOW ON — PREMIUM GLINT
+-------------------------------------------------- */
+
+.ft-signature-title::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 78px;
+  height: 1.5px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(142, 220, 255, 0.28) 16%,
+      #dff7ff 38%,
+      #38b6ff 52%,
+      #368bfb 70%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 5px rgba(190, 235, 255, 0.30),
+    0 0 10px rgba(56, 182, 255, 0.18);
+
+  pointer-events: none;
+}
 .ft-signature
 p:last-child {
   margin:
-    5px 0 0;
+  13px 0 0;
 
   color:
-    #c5c5c7;
+  #304b61;
 
-  font-size: 0.73rem;
+  font-size: 0.72rem;
 
   letter-spacing: 0.04em;
 }
@@ -3905,16 +4827,28 @@ p:last-child {
     34px 0;
 
   background:
-    linear-gradient(
-      90deg,
-      #ffffff 0%,
-      #efeef1 15%,
-      #d9d9d9 30%,
-      #aeb8c1 47%,
-      #718da5 64%,
-      #426e99 82%,
-      #0f3699 100%
-    );
+  radial-gradient(
+    ellipse at 28% 38%,
+    rgba(142, 220, 255, 0.09) 0%,
+    rgba(56, 182, 255, 0.035) 30%,
+    transparent 58%
+  ),
+
+  radial-gradient(
+    ellipse at 88% 60%,
+    rgba(9, 94, 255, 0.13) 0%,
+    rgba(54, 139, 251, 0.05) 34%,
+    transparent 64%
+  ),
+
+  linear-gradient(
+    118deg,
+    #202b32 0%,
+    #1c2931 26%,
+    #172731 52%,
+    #122533 76%,
+    #0d2032 100%
+  );
 }
 
 .ft-final-grid {
@@ -3937,30 +4871,40 @@ p:last-child {
 .ft-final-logo {
   width: 125px;
 
+  position: relative;
+
   filter:
     drop-shadow(
-      0 0 4px
-      rgba(56, 182, 255, 0.36)
+      0 0 2px
+      rgba(255, 255, 255, 0.18)
     )
     drop-shadow(
-      0 0 10px
-      rgba(9, 94, 255, 0.18)
+      0 0 8px
+      rgba(190, 235, 255, 0.34)
+    )
+    drop-shadow(
+      0 0 18px
+      rgba(142, 220, 255, 0.24)
+    )
+    drop-shadow(
+      0 0 34px
+      rgba(56, 182, 255, 0.12)
     );
 }
-
 .ft-final
 .ft-eyebrow {
-  color:
-    #0f3699;
+  color: #8edcff;
 
-  text-shadow: none;
+  text-shadow:
+    0 0 6px rgba(142, 220, 255, 0.22),
+    0 0 12px rgba(56, 182, 255, 0.12);
 }
 
 .ft-final-brand h2 {
   margin: 0;
 
   color:
-    #243745;
+    #ffffff;
 
   font-family:
     "Playfair Display",
@@ -3971,24 +4915,51 @@ p:last-child {
     2.35rem;
 }
 
+.ft-final-brand h2 em {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      105deg,
+      #8edcff 0%,
+      #56c7ff 20%,
+      #38b6ff 42%,
+      #2fa7ff 66%,
+      #368bfb 84%,
+      #248cff 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-style: italic;
+  font-weight: 600;
+
+  text-shadow: none;
+
+  filter:
+    drop-shadow(
+      0 0 1px
+      rgba(255, 255, 255, 0.38)
+    )
+    drop-shadow(
+      0 0 5px
+      rgba(56, 182, 255, 0.26)
+    )
+    drop-shadow(
+      0 0 11px
+      rgba(54, 139, 251, 0.15)
+    );
+}
 .ft-final-actions {
   display: flex;
 
   align-items: center;
 
   gap: 8px;
-}
-
-.ft-final
-.ft-button-outline {
-  border-color:
-    rgba(36, 55, 69, 0.48);
-
-  color:
-    #243745;
-
-  background:
-    rgba(255, 255, 255, 0.16);
 }
 
 /* --------------------------------------------------
@@ -4105,14 +5076,28 @@ p:last-child {
     rgba(142, 220, 255, 0.22);
 
   background:
-    linear-gradient(
-      135deg,
-      #172128 0%,
-      #162833 34%,
-      #12222d 62%,
-      #0d171e 82%,
-      #0a1116 100%
-    );
+  radial-gradient(
+    ellipse at 20% 0%,
+    rgba(142, 220, 255, 0.055) 0%,
+    rgba(56, 182, 255, 0.022) 28%,
+    transparent 54%
+  ),
+
+  radial-gradient(
+    ellipse at 88% 72%,
+    rgba(9, 94, 255, 0.09) 0%,
+    rgba(54, 139, 251, 0.032) 34%,
+    transparent 64%
+  ),
+
+  linear-gradient(
+    135deg,
+    #142129 0%,
+    #101b22 30%,
+    #0c161c 58%,
+    #081116 80%,
+    #050a0d 100%
+  );
 }
 
 
@@ -4226,17 +5211,21 @@ p:last-child {
   position: relative;
   z-index: 1;
 
+  width: 100%;
+  max-width: 1040px;
+
+  margin-inline: auto;
+
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(160px, 0.72fr)
-    minmax(220px, 0.9fr);
+    minmax(0, 1.3fr)
+    minmax(170px, 0.68fr)
+    minmax(230px, 0.82fr);
 
   align-items: start;
 
-  gap:
-    58px;
+  gap: 52px;
 }
 
 
@@ -4288,7 +5277,7 @@ p:last-child {
   display: inline-block;
 
   margin-bottom:
-    14px;
+    12px;
 
   color:
     #ffffff;
@@ -4299,34 +5288,29 @@ p:last-child {
     serif;
 
   font-size:
-    1.65rem;
+    1.7rem;
 
   font-weight:
     600;
 
   letter-spacing:
-    -0.02em;
+    -0.025em;
 
   text-shadow:
-    0 0 8px rgba(56, 182, 255, 0.08);
+     0 0 8px rgba(142, 220, 255, 0.08);
 }
 
 
 .ft-footer-grid > div:first-child p {
-  max-width:
-    320px;
+  max-width: 300px;
 
-  margin:
-    0;
+  margin: 0;
 
-  color:
-    #aebbc4;
+  color: #9eacb5;
 
-  font-size:
-    0.79rem;
+  font-size: 0.76rem;
 
-  line-height:
-    1.75;
+  line-height: 1.7;
 }
 
 
@@ -4440,50 +5424,7 @@ p:last-child {
     );
 }
 
-/* --------------------------------------------------
-   FOOTER HOVER LINE — SUBTLE SPARKLE
--------------------------------------------------- */
 
-@media (hover: hover) {
-
-  .ft-footer a:hover,
-  .ft-footer span:hover {
-    animation:
-      ft-footer-sparkle 1.4s ease-in-out infinite;
-  }
-}
-
-@keyframes ft-footer-sparkle {
-
-  0%,
-  100% {
-    filter:
-      drop-shadow(
-        0 2px 3px
-        rgba(56, 182, 255, 0.28)
-      );
-  }
-
-  45% {
-    filter:
-      drop-shadow(
-        0 2px 4px
-        rgba(142, 220, 255, 0.52)
-      )
-      drop-shadow(
-        0 0 3px
-        rgba(255, 255, 255, 0.22)
-      );
-  }
-
-  60% {
-    filter:
-      drop-shadow(
-        0 2px 5px
-        rgba(56, 182, 255, 0.38)
-      );
-  }
-}
 /* --------------------------------------------------
    DESKTOP HOVER
 -------------------------------------------------- */
@@ -4571,6 +5512,33 @@ p:last-child {
   display: none;
 }
 
+/* ==========================================================================
+   21A. HOME PAGE CONTENT ALIGNMENT
+   ========================================================================== */
+
+/*
+   Keeps the major homepage content areas on the same
+   centered horizontal rail.
+*/
+
+.ft-services-layout,
+.ft-flowstart-card,
+.ft-about-grid,
+.ft-review-grid,
+.ft-flowhub-intro,
+.ft-flowhub-grid,
+.ft-final-grid,
+.ft-footer-grid {
+  width: min(
+    calc(100% - 64px),
+    1120px
+  );
+
+  max-width: 1120px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ==========================================================================
    22. TABLET
@@ -4609,20 +5577,36 @@ p:last-child {
       55px 0;
   }
 
-  /* ==========================================================================
+ /* ==========================================================================
    DESKTOP HEADER + HERO ALIGNMENT
    ========================================================================== */
 
 @media (min-width: 901px) {
 
-  /* Desktop header + hero rail */
-  .ft-header .ft-nav,
-  .ft-hero-inner {
-    width: min(calc(100% - 64px), 1320px);
-    max-width: 1320px;
+  /* --------------------------------------------------
+     HEADER — DESKTOP CONTENT RAIL
+  -------------------------------------------------- */
 
-    margin-inline: auto;
-    padding-inline: 0;
+
+  /* --------------------------------------------------
+     HERO — DESKTOP CONTENT RAIL
+  -------------------------------------------------- */
+
+  .ft-hero-inner {
+    width:
+      min(
+        calc(100% - 64px),
+        1320px
+      );
+
+    max-width:
+      1320px;
+
+    margin-inline:
+      auto;
+
+    padding-inline:
+      0;
   }
 
   .ft-hero-content {
@@ -4630,36 +5614,44 @@ p:last-child {
       72px 0 60px;
   }
 
-  /* Never show mobile booking bar on desktop */
+
+  /* --------------------------------------------------
+     MOBILE BOOKING BAR — HIDE ON DESKTOP
+  -------------------------------------------------- */
+
   .ft-mobile-bar {
-    display: none !important;
+    display:
+      none !important;
   }
+
 }
-  /* ==========================================================================
+/* ==========================================================================
    23. MOBILE
    ========================================================================== */
+
 @media (max-width: 700px) {
 
-  .ft-flowstart-offer::before {
-  width: 100%;
-}
 
-.ft-flowstart-offer::after {
-  left: 22%;
-  width: 24%;
-}
+  /* --------------------------------------------------
+     23A. GLOBAL
+  -------------------------------------------------- */
 
   body.flowtherapy-home {
     padding-bottom: 67px;
   }
 
-.ft-shell {
-    width: min(calc(100% - 28px), var(--ft-max));
+  .ft-shell {
+    width:
+      min(
+        calc(100% - 28px),
+        var(--ft-max)
+      );
   }
 
 
-
-  /* HEADER */
+  /* --------------------------------------------------
+     23B. HEADER
+  -------------------------------------------------- */
 
   .ft-header {
     background:
@@ -4690,13 +5682,14 @@ p:last-child {
     gap: 10px;
   }
 
-  .ft-nav-links
-  > a:not(.ft-nav-book) {
+  .ft-nav-links > a:not(.ft-nav-book) {
     display: none;
   }
 
 
-  /* HERO */
+  /* --------------------------------------------------
+     23C. HERO
+  -------------------------------------------------- */
 
   .ft-hero {
     min-height: 650px;
@@ -4707,19 +5700,18 @@ p:last-child {
 
   .ft-hero-overlay {
     background:
-        linear-gradient(
-            0deg,
-            rgba(7, 9, 11, 0.96) 0%,
-            rgba(7, 9, 11, 0.78) 48%,
-            rgba(7, 9, 11, 0.15) 100%
-        );
-}
+      linear-gradient(
+        0deg,
+        rgba(7, 9, 11, 0.96) 0%,
+        rgba(7, 9, 11, 0.78) 48%,
+        rgba(7, 9, 11, 0.15) 100%
+      );
+  }
 
-.ft-hero-content {
+  .ft-hero-content {
     padding:
-        235px 24px 45px;
-}
-  
+      235px 24px 45px;
+  }
 
   .ft-hero h1 {
     font-size:
@@ -4735,12 +5727,10 @@ p:last-child {
       flex-start;
   }
 
-  .ft-hero-actions
-  .ft-button {
+  .ft-hero-actions .ft-button {
     width: auto;
 
     min-width: 150px;
-
     max-width: 240px;
   }
 
@@ -4751,7 +5741,9 @@ p:last-child {
   }
 
 
-  /* FLOW STATEMENT */
+  /* --------------------------------------------------
+     23D. FLOW STATEMENT
+  -------------------------------------------------- */
 
   .ft-flow-statement {
     padding:
@@ -4769,7 +5761,9 @@ p:last-child {
   }
 
 
-  /* SERVICES */
+  /* --------------------------------------------------
+     23E. SERVICES
+  -------------------------------------------------- */
 
   .ft-services {
     padding-bottom: 60px;
@@ -4818,17 +5812,49 @@ p:last-child {
   }
 
 
-  /* FLOWSTART */
+  /* --------------------------------------------------
+     23F. FLOWSTART
+  -------------------------------------------------- */
 
   .ft-flowstart {
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .ft-flowstart-card {
     grid-template-columns: 1fr;
 
-    padding: 24px;
+    gap: 28px;
+
+    padding:
+      28px 24px;
+  }
+
+  .ft-flowstart-card h2 {
+    font-size:
+      clamp(
+        2rem,
+        9vw,
+        2.75rem
+      );
+  }
+
+  .ft-flowstart-tagline {
+    margin-top: 12px;
+
+    font-size: 0.94rem;
+  }
+
+  .ft-flowstart-includes {
+    margin-top: 22px;
+
+    padding-top: 18px;
+  }
+
+  .ft-flowstart-includes ul {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
   }
 
   .ft-flowstart-offer {
@@ -4842,118 +5868,76 @@ p:last-child {
       rgba(255, 255, 255, 0.18);
   }
 
-  .ft-flowstart-offer
-  .ft-button {
+  .ft-flowstart-offer::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+      var(--ft-logo-gradient);
+  }
+
+  .ft-flowstart-offer::after {
+    left: 22%;
+
+    width: 24%;
+  }
+
+  .ft-flowstart-offer .ft-button {
     width: auto;
 
     min-width: 170px;
-
     max-width: 240px;
   }
 
+  .ft-flowstart-price strong {
+    font-size: 3.6rem;
+  }
 
-  /* ABOUT */
+  .ft-flowstart-note {
+    margin-top: 12px;
+
+    font-size: 0.68rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* --------------------------------------------------
+     23G. ABOUT
+  -------------------------------------------------- */
 
   .ft-about-grid {
     gap: 34px;
   }
 
 
-  /* REVIEWS */
+  /* --------------------------------------------------
+     23H. REVIEWS
+  -------------------------------------------------- */
 
   .ft-review-grid {
     grid-template-columns: 1fr;
   }
 
-  .ft-reviews {
-    background:
-      linear-gradient(
-        180deg,
-        #202a31 0%,
-        #192127 52%,
-        #131a1f 100%
-      );
-  }
 
-
-/* FLOWSTART MOBILE */
-
-.ft-flowstart {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.ft-flowstart-card {
-  grid-template-columns: 1fr;
-  gap: 28px;
-
-  padding:
-    28px 24px;
-}
-
-.ft-flowstart-card h2 {
-  font-size:
-    clamp(
-      2rem,
-      9vw,
-      2.75rem
-    );
-}
-
-.ft-flowstart-tagline {
-  margin-top: 12px;
-  font-size: 0.94rem;
-}
-
-.ft-flowstart-includes {
-  margin-top: 22px;
-  padding-top: 18px;
-}
-
-.ft-flowstart-includes ul {
-  grid-template-columns: 1fr;
-  gap: 9px;
-}
-
-.ft-flowstart-offer {
-  padding:
-    24px 0 0;
-
-  border-left: 0;
-}
-
-.ft-flowstart-offer::before {
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background:
-    var(--ft-logo-gradient);
-}
-
-.ft-flowstart-price strong {
-  font-size: 3.6rem;
-}
-
-.ft-flowstart-note {
-  margin-top: 12px;
-
-  font-size: 0.68rem;
-  line-height: 1.5;
-}
-  /* FLOW ON */
+  /* --------------------------------------------------
+     23I. FLOW ON
+  -------------------------------------------------- */
 
   .ft-signature {
     padding:
-      32px 0;
+      20px 0 22px;
   }
 
 
-  /* FINAL CTA */
+  /* --------------------------------------------------
+     23J. FINAL CTA
+  -------------------------------------------------- */
 
   .ft-final-grid {
     flex-direction: column;
@@ -4971,29 +5955,32 @@ p:last-child {
   }
 
   .ft-final-actions {
-  display: flex;
+    display: flex;
 
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  gap: 10px;
-}
+    gap: 10px;
+  }
 
-.ft-final-actions .ft-button,
-.ft-final-actions .ft-button-outline {
-  width: auto;
+  .ft-final-actions .ft-button,
+  .ft-final-actions .ft-button-outline {
+    width: auto;
 
-  min-width: 150px;
-  max-width: 240px;
+    min-width: 150px;
+    max-width: 240px;
 
-  min-height: 46px;
+    min-height: 46px;
 
-  padding:
-    10px 18px;
+    padding:
+      10px 18px;
 
-  font-size:
-    0.84rem;
-}
-  /* FOOTER */
+    font-size: 0.84rem;
+  }
+
+
+  /* --------------------------------------------------
+     23K. FOOTER
+  -------------------------------------------------- */
 
   .ft-footer-grid {
     grid-template-columns: 1fr;
@@ -5002,48 +5989,58 @@ p:last-child {
   }
 
 
-  /* MOBILE BOOKING BAR */
+  /* --------------------------------------------------
+     23L. MOBILE BOOKING BAR
+     FLOWTHERAPY PREMIUM
+  -------------------------------------------------- */
 
   .ft-mobile-bar {
     position: fixed;
+
     z-index: 6000;
+
     right: 0;
     bottom: 0;
     left: 0;
 
     display: grid;
+
     grid-template-columns:
       1fr 1.25fr;
 
-    gap: 7px;
+    gap: 9px;
 
     padding:
-      7px 9px
+      8px 9px
       calc(
-        7px +
+        8px +
         env(safe-area-inset-bottom)
       );
 
     border-top:
       1px solid
-      rgba(255, 255, 255, 0.13);
+      rgba(142, 220, 255, 0.18);
 
     background:
-      rgba(9, 12, 15, 0.97);
+      rgba(7, 11, 15, 0.97);
 
     backdrop-filter:
       blur(15px);
   }
 
   .ft-mobile-bar a {
-    display: flex;
+    display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    min-height: 39px;
+    min-height: 46px;
+
+    padding:
+      10px 16px;
 
     border:
-      1px solid transparent;
+      2px solid transparent;
 
     border-radius:
       999px;
@@ -5056,24 +6053,40 @@ p:last-child {
 
       linear-gradient(
         120deg,
-        #38b6ff 0%,
-        #8edcff 22%,
-        #368bfb 55%,
+        #dff7ff 0%,
+        #8edcff 18%,
+        #38b6ff 38%,
+        #368bfb 66%,
         #095eff 100%
       ) border-box;
 
-    color: #ffffff;
+    color:
+      #ffffff;
 
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size:
+      0.84rem;
 
-    text-decoration: none;
+    font-weight:
+      800;
+
+    line-height:
+      1;
+
+    text-decoration:
+      none;
 
     box-shadow:
-      0 0 0 1px rgba(142, 220, 255, 0.18),
-      0 0 8px rgba(56, 182, 255, 0.35),
-      0 0 16px rgba(56, 182, 255, 0.28),
-      0 0 26px rgba(9, 94, 255, 0.20);
+      0 0 0 1px
+      rgba(142, 220, 255, 0.22),
+
+      0 0 8px
+      rgba(142, 220, 255, 0.38),
+
+      0 0 16px
+      rgba(56, 182, 255, 0.34),
+
+      0 0 26px
+      rgba(9, 94, 255, 0.24);
 
     transition:
       box-shadow 180ms ease,
@@ -5087,41 +6100,74 @@ p:last-child {
 
   .ft-mobile-bar a:last-child {
     width: 100%;
+
     max-width: 220px;
+
     justify-self: end;
+
+    background:
+      linear-gradient(
+        #172128,
+        #172128
+      ) padding-box,
+
+      linear-gradient(
+        120deg,
+        #c7d0d8 0%,
+        #8edcff 24%,
+        #38b6ff 50%,
+        #368bfb 76%,
+        #095eff 100%
+      ) border-box;
   }
 
   .ft-mobile-bar a:focus-visible {
     outline: none;
 
     box-shadow:
-      0 0 0 1px rgba(190, 235, 255, 0.32),
-      0 0 10px rgba(56, 182, 255, 0.52),
-      0 0 20px rgba(56, 182, 255, 0.36),
-      0 0 32px rgba(9, 94, 255, 0.26);
+      0 0 0 1px
+      rgba(220, 247, 255, 0.34),
+
+      0 0 11px
+      rgba(142, 220, 255, 0.54),
+
+      0 0 22px
+      rgba(56, 182, 255, 0.40),
+
+      0 0 34px
+      rgba(9, 94, 255, 0.28);
 
     transform:
       translateY(-1px);
   }
 
-  @media (hover: hover) {
-    .ft-mobile-bar a:hover {
-      box-shadow:
-        0 0 0 1px rgba(190, 235, 255, 0.32),
-        0 0 10px rgba(56, 182, 255, 0.52),
-        0 0 20px rgba(56, 182, 255, 0.36),
-        0 0 32px rgba(9, 94, 255, 0.26);
 
+  @media (hover: hover) {
+
+    .ft-mobile-bar a:hover {
       transform:
         translateY(-1px);
+
+      box-shadow:
+        0 0 0 1px
+        rgba(220, 247, 255, 0.34),
+
+        0 0 11px
+        rgba(142, 220, 255, 0.54),
+
+        0 0 22px
+        rgba(56, 182, 255, 0.40),
+
+        0 0 34px
+        rgba(9, 94, 255, 0.28);
     }
+
   }
 }
 
 /* ==========================================================================
    24. SMALL MOBILE
    ========================================================================== */
-
 @media (max-width: 440px) {
 
   .ft-hero h1 {
