@@ -4957,12 +4957,15 @@ textarea {
     font-size: 0.8rem;
   }
 }
+
 /* ==========================================================================
    FLOW STATEMENT
    FLOWTHERAPY PREMIUM — GALACTIC FLOAT
 ========================================================================== */
 
 .ft-flow-statement {
+
+
   position: relative;
 
   width: 100%;
@@ -5033,6 +5036,8 @@ textarea {
 -------------------------------------------------- */
 
 .ft-flow-statement p {
+
+
   position: relative;
 
   z-index: 1;
@@ -5278,8 +5283,6 @@ textarea {
   background:
     #06090c;
 }
-
-
 
 /* --------------------------------------------------
    LOW HORIZON GLOW
