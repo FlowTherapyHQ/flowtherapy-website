@@ -4923,11 +4923,17 @@ textarea {
 ========================================================================== */
 
 @media (max-width: 900px) {
+  .ft-footer {
+    padding: 44px 0 62px;
+  }
+
   .ft-footer-grid {
     grid-template-columns:
       1.1fr
       0.85fr
       1fr;
+
+    align-items: start;
 
     gap: 34px;
   }
@@ -4935,32 +4941,21 @@ textarea {
   .ft-footer-grid > div:nth-child(2),
   .ft-footer-grid > div:nth-child(3) {
     padding-left: 22px;
+
+    gap: 10px;
   }
-}
 
-.ft-footer {
-  padding: 44px 0 62px;
-}
+  .ft-footer small {
+    margin-bottom: 16px;
 
-.ft-footer-grid {
-  align-items: start;
-}
+    font-size: 0.68rem;
+  }
 
-.ft-footer small {
-  margin-bottom: 16px;
-
-  font-size: 0.68rem;
-}
-
-.ft-footer p,
-.ft-footer a,
-.ft-footer span {
-  font-size: 0.8rem;
-}
-
-.ft-footer-grid > div:nth-child(2),
-.ft-footer-grid > div:nth-child(3) {
-  gap: 10px;
+  .ft-footer p,
+  .ft-footer a,
+  .ft-footer span {
+    font-size: 0.8rem;
+  }
 }
 
 /* ==========================================================================
@@ -5038,10 +5033,6 @@ textarea {
 
     background-position: center center;
   }
-
-  /* --------------------------------------------------
-     HEADER — DESKTOP CONTENT RAIL
-  -------------------------------------------------- */
 
   /* --------------------------------------------------
      HERO — DESKTOP CONTENT RAIL
@@ -5501,35 +5492,25 @@ textarea {
 -------------------------------------------------- */
 
 .ft-footer-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
     minmax(0, 0.68fr)
     minmax(0, 1.32fr);
 
-  column-gap:
-    22px;
+  column-gap: 22px;
+  row-gap: 24px;
 
-  row-gap:
-    24px;
+  align-items: start;
 
-  align-items:
-    start;
+  width: calc(100% - 32px);
+max-width: none;
+margin-inline: 20px;
 
-  width:
-    min(
-      calc(100% - 28px),
-      1120px
-    );
+  padding-inline: 24px;
 
-  max-width:
-    1120px;
-
-  margin-inline:
-    auto;
+  box-sizing: border-box;
 }
-
 
 /* --------------------------------------------------
    BRAND — FULL WIDTH
