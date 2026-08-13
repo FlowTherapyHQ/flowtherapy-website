@@ -3561,7 +3561,7 @@ textarea {
       rgba(5, 8, 10, 0.08) 48%,
       rgba(5, 8, 10, 0.44) 100%
     ),
-    url("/assets/images/home/flowtherapy-bodywork-bw.jpg");
+    url("/assets/images/home/flowtherapy-bodywork-bw1.jpg");
 
   background-repeat: no-repeat;
 
@@ -3602,7 +3602,7 @@ textarea {
       rgba(7, 10, 12, 0.08) 42%,
       rgba(7, 10, 12, 0.42) 100%
     ),
-    url("/assets/images/home/flowtherapy-bodywork-bw.jpg");
+    url("/assets/images/home/flowtherapy-bodywork-bw1.jpg");
 
   background-repeat: no-repeat;
 
@@ -5300,90 +5300,14 @@ textarea {
       #202a31 100%
     );
 }
-  /* --------------------------------------------------
-     23F. FLOWSTART
-  -------------------------------------------------- */
+/* --------------------------------------------------
+   23F. FLOWSTART
+-------------------------------------------------- */
 
-  .ft-flowstart {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .ft-flowstart-card {
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-
-    padding: 28px 24px;
-  }
-
-  .ft-flowstart-card h2 {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-  }
-
-  .ft-flowstart-tagline {
-    margin-top: 12px;
-
-    font-size: 0.94rem;
-  }
-
-  .ft-flowstart-includes {
-    margin-top: 22px;
-
-    padding-top: 18px;
-  }
-
-  .ft-flowstart-includes ul {
-    grid-template-columns: 1fr;
-
-    gap: 9px;
-  }
-
-  .ft-flowstart-offer {
-    padding: 24px 0 0;
-
-    border-left: 0;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  .ft-flowstart-offer::before {
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--ft-logo-gradient);
-  }
-
-  .ft-flowstart-offer::after {
-    left: 22%;
-
-    width: 24%;
-  }
-
-  .ft-flowstart-offer .ft-button {
-    width: auto;
-
-    min-width: 170px;
-    max-width: 240px;
-  }
-
-  .ft-flowstart-price strong {
-    font-size: 3.6rem;
-  }
-
-  .ft-flowstart-note {
-    margin-top: 12px;
-
-    font-size: 0.68rem;
-
-    line-height: 1.5;
-  }
-
+.ft-flowstart {
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
   /* --------------------------------------------------
      23G. ABOUT
   -------------------------------------------------- */
@@ -5408,76 +5332,101 @@ textarea {
     padding: 20px 0 22px;
   }
 
+/* --------------------------------------------------
+   23J. FINAL CTA
+   MOBILE — CENTERED + BALANCED
+-------------------------------------------------- */
+
+.ft-final {
+  width: 100%;
+  padding: 34px 0;
+}
+
+.ft-final-grid {
+  width: calc(100% - 32px);
+  max-width: 420px;
+
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+}
+
+.ft-final-brand {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.ft-final-brand > div {
+  min-width: 0;
+}
+
+.ft-final-logo {
+  flex: 0 0 auto;
+
+  width: 96px;
+  max-width: 28vw;
+  height: auto;
+}
+
+.ft-final .ft-eyebrow {
+  margin-bottom: 8px;
+}
+
+.ft-final-brand h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 9vw, 2.7rem);
+
+  line-height: 1.05;
+
+  white-space: nowrap;
+}
+
+.ft-final-brand h2 em {
+  background: linear-gradient(
+    105deg,
+    #8edcff 0%,
+    #56c7ff 20%,
+    #38b6ff 42%,
+    #2fa7ff 66%,
+    #368bfb 84%,
+    #248cff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-style: italic;
+  font-weight: 600;
+
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.38))
+    drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
+    drop-shadow(0 0 11px rgba(54, 139, 251, 0.15));
+}
+
+/* Desktop CTA buttons are replaced by mobile action bar */
+.ft-final-actions {
+  display: none;
+}
   /* --------------------------------------------------
-     23J. FINAL CTA
-  -------------------------------------------------- */
-
-  .ft-final-grid {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .ft-final-brand {
-    gap: 18px;
-  }
-  .ft-final-brand h2 {
-    color: #ffffff;
-  }
-
-  .ft-final-brand h2 em {
-    background: linear-gradient(
-      105deg,
-      #8edcff 0%,
-      #56c7ff 20%,
-      #38b6ff 42%,
-      #2fa7ff 66%,
-      #368bfb 84%,
-      #248cff 100%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-
-    font-style: italic;
-    font-weight: 600;
-
-    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.38))
-      drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
-      drop-shadow(0 0 11px rgba(54, 139, 251, 0.15));
-  }
-  .ft-final-logo {
-    width: 96px;
-  }
-
-  .ft-final-actions {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-  }
-
-  .ft-final-actions .ft-button,
-  .ft-final-actions .ft-button-outline {
-    width: auto;
-
-    min-width: 150px;
-    max-width: 240px;
-
-    min-height: 46px;
-
-    padding: 10px 18px;
-
-    font-size: 0.84rem;
-  }
-
-  .ft-final-actions {
-    display: none;
-  }/* --------------------------------------------------
    23K. FOOTER
 -------------------------------------------------- */
 
@@ -5505,11 +5454,11 @@ textarea {
 
   width: calc(100% - 32px);
 max-width: none;
-margin-inline: 20px;
+margin-inline: 16px;
 
-  padding-inline: 24px;
+padding-inline: 24px;
 
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 /* --------------------------------------------------
