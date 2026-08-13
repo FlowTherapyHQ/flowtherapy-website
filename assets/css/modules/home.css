@@ -5431,8 +5431,12 @@ textarea {
 -------------------------------------------------- */
 
 .ft-footer {
-  padding:
-    44px 0 42px;
+  width: 100%;
+  max-width: none;
+
+  margin-inline: 0;
+
+  padding: 44px 0 42px;
 }
 
 
@@ -5453,24 +5457,24 @@ textarea {
   align-items: start;
 
   width: calc(100% - 32px);
-max-width: none;
-margin-inline: 16px;
+  max-width: 420px;
 
-padding-inline: 24px;
+  margin-inline: auto;
 
-box-sizing: border-box;
+  padding-inline: 0;
+
+  box-sizing: border-box;
 }
+
 
 /* --------------------------------------------------
    BRAND — FULL WIDTH
 -------------------------------------------------- */
 
 .ft-footer-grid > div:first-child {
-  grid-column:
-    1 / -1;
+  grid-column: 1 / -1;
 
-  min-width:
-    0;
+  min-width: 0;
 }
 
 
@@ -5480,23 +5484,17 @@ box-sizing: border-box;
 
 .ft-footer-grid > div:nth-child(2),
 .ft-footer-grid > div:nth-child(3) {
-  display:
-    flex;
+  display: flex;
 
-  flex-direction:
-    column;
+  flex-direction: column;
 
-  align-items:
-    flex-start;
+  align-items: flex-start;
 
-  gap:
-    9px;
+  gap: 9px;
 
-  min-width:
-    0;
+  min-width: 0;
 
-  padding-left:
-    0;
+  padding-left: 0;
 }
 
 
@@ -5506,8 +5504,7 @@ box-sizing: border-box;
 
 .ft-footer-grid > div:nth-child(2)::before,
 .ft-footer-grid > div:nth-child(3)::before {
-  display:
-    none;
+  display: none;
 }
 
 
@@ -5516,12 +5513,9 @@ box-sizing: border-box;
 -------------------------------------------------- */
 
 .ft-footer-grid > div:nth-child(3) {
-  padding-left:
-    8px;
+  padding-left: 8px;
 
-  border-left:
-    1px solid
-    rgba(142, 220, 255, 0.14);
+  border-left: 1px solid rgba(142, 220, 255, 0.14);
 }
 
 
@@ -5531,8 +5525,7 @@ box-sizing: border-box;
 
 .ft-footer-grid > div:nth-child(2) > small,
 .ft-footer-grid > div:nth-child(3) > small {
-  margin-bottom:
-    0;
+  margin-bottom: 0;
 }
 
 
@@ -5542,14 +5535,10 @@ box-sizing: border-box;
 
 .ft-footer-grid > div:nth-child(2) > small + a,
 .ft-footer-grid > div:nth-child(3) > small + a {
-  min-height:
-    34px;
+  min-height: 34px;
 
-  padding-top:
-    2px;
-
-  padding-bottom:
-    2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 
@@ -5560,8 +5549,7 @@ box-sizing: border-box;
 .ft-footer,
 .ft-footer-grid,
 .ft-footer-grid > div {
-  text-align:
-    left;
+  text-align: left;
 }
 
 
@@ -5572,20 +5560,15 @@ box-sizing: border-box;
 .ft-footer-grid p,
 .ft-footer-grid a,
 .ft-footer-grid span {
-  max-width:
-    100%;
+  max-width: 100%;
 
-  min-width:
-    0;
+  min-width: 0;
 
-  white-space:
-    normal;
+  white-space: normal;
 
-  overflow-wrap:
-    anywhere;
+  overflow-wrap: anywhere;
 
-  word-break:
-    normal;
+  word-break: normal;
 }
 
 
@@ -5594,39 +5577,17 @@ box-sizing: border-box;
 -------------------------------------------------- */
 
 .ft-footer-grid a {
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    center;
+  align-items: center;
 
-  width:
-    100%;
+  width: 100%;
 
-  min-height:
-    34px;
+  min-height: 34px;
 
-  padding:
-    3px 0;
+  padding: 3px 0;
 
-  line-height:
-    1.35;
-}
-
-
-/* Reapply the tighter first-link treatment
-   after the general link rule */
-
-.ft-footer-grid > div:nth-child(2) > small + a,
-.ft-footer-grid > div:nth-child(3) > small + a {
-  min-height:
-    34px;
-
-  padding-top:
-    2px;
-
-  padding-bottom:
-    2px;
+  line-height: 1.35;
 }
 
 
@@ -5635,17 +5596,14 @@ box-sizing: border-box;
 -------------------------------------------------- */
 
 .ft-footer-grid > div:nth-child(2) a {
-  font-size:
-    0.78rem;
+  font-size: 0.78rem;
 }
 
 .ft-footer-grid > div:nth-child(3) a,
 .ft-footer-grid > div:nth-child(3) span {
-  font-size:
-    0.72rem;
+  font-size: 0.72rem;
 
-  line-height:
-    1.45;
+  line-height: 1.45;
 }
 
 
@@ -5654,13 +5612,10 @@ box-sizing: border-box;
 -------------------------------------------------- */
 
 .ft-footer-grid > div:nth-child(2) a {
-  overflow-wrap:
-    normal;
+  overflow-wrap: normal;
 
-  word-break:
-    normal;
+  word-break: normal;
 }
-
   /* --------------------------------------------------
    23L. MOBILE BOOKING BAR
    FLOWTHERAPY PREMIUM
