@@ -133,10 +133,7 @@ textarea {
    ========================================================================== */
 
 .ft-services::before,
-.ft-flowstart::before,
-.ft-about::before,
 .ft-reviews::before,
-.ft-flowhub::before,
 .ft-signature::before,
 .ft-final::before {
   content: "";
@@ -153,7 +150,102 @@ textarea {
 
   background: var(--ft-divider-gradient);
 }
+/* =========================================================
+   SERVICES → FLOWSTART
+   PREMIUM DARK SEAM + MOVING GLINT
+========================================================= */
 
+.ft-premium-seam {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 10px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #020405 0%,
+      #0b1116 28%,
+      #18242d 48%,
+      #0b1116 72%,
+      #020405 100%
+    );
+
+  box-shadow:
+    0 -2px 10px rgba(0, 0, 0, 0.34),
+    0 2px 12px rgba(0, 0, 0, 0.30);
+}
+
+/* --------------------------------------------------
+   CENTER PULSE GLOW
+-------------------------------------------------- */
+
+.ft-premium-seam-glint {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 260px;
+  height: 5px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(56, 182, 255, 0.10) 14%,
+      rgba(142, 220, 255, 0.40) 30%,
+      rgba(223, 247, 255, 0.90) 45%,
+      #ffffff 50%,
+      rgba(223, 247, 255, 0.90) 55%,
+      rgba(142, 220, 255, 0.40) 70%,
+      rgba(56, 182, 255, 0.10) 86%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 6px rgba(255, 255, 255, 0.42),
+    0 0 14px rgba(142, 220, 255, 0.34),
+    0 0 28px rgba(56, 182, 255, 0.20),
+    0 0 46px rgba(9, 94, 255, 0.12);
+
+  opacity: 0.62;
+
+  animation: ft-premium-pulse 5s ease-in-out infinite;
+}
+
+
+@keyframes ft-premium-pulse {
+  0%,
+  100% {
+    width: 220px;
+    opacity: 0.48;
+
+    box-shadow:
+      0 0 5px rgba(255, 255, 255, 0.30),
+      0 0 11px rgba(142, 220, 255, 0.24),
+      0 0 22px rgba(56, 182, 255, 0.14);
+  }
+
+  50% {
+    width: 340px;
+    opacity: 1;
+
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.62),
+      0 0 18px rgba(142, 220, 255, 0.48),
+      0 0 34px rgba(56, 182, 255, 0.28),
+      0 0 56px rgba(9, 94, 255, 0.16);
+  }
+}
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -612,7 +704,15 @@ textarea {
 .ft-services {
   padding-bottom: 84px;
 
-  background: linear-gradient(180deg, #1d2328 0%, #1b2025 78%, #202a31 100%);
+  background:
+  linear-gradient(
+    180deg,
+    #1d2328 0%,
+    #1c2328 58%,
+    #25313a 76%,
+    #354955 90%,
+    #536d80 100%
+  );
 }
 
 .ft-services-layout {
@@ -626,15 +726,20 @@ textarea {
 }
 
 .ft-services-menu {
-  border-top: 1px solid var(--ft-line);
+  border-top:
+    1px solid
+    rgba(142, 220, 255, 0.14);
 }
+
 
 /* ==========================================================================
    SERVICE ACCORDIONS
 ========================================================================== */
 
 .ft-service-group {
-  border-bottom: 1px solid var(--ft-line);
+  border-bottom:
+    1px solid
+    rgba(142, 220, 255, 0.14);
 }
 
 .ft-service-group summary {
@@ -681,6 +786,7 @@ textarea {
   text-transform: uppercase;
 }
 
+
 /* --------------------------------------------------
    SERVICES — PREMIUM TYPE SCALE
 -------------------------------------------------- */
@@ -690,7 +796,10 @@ textarea {
 
   color: #ffffff;
 
-  font-family: "Playfair Display", Georgia, serif;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
   font-size: 1.18rem;
   font-weight: 600;
@@ -700,8 +809,9 @@ textarea {
   letter-spacing: -0.01em;
 }
 
+
 /* --------------------------------------------------
-   PLUS / MINUS
+   PLUS / MINUS — PREMIUM HALO
 -------------------------------------------------- */
 
 .ft-service-group summary b {
@@ -712,18 +822,43 @@ textarea {
   align-items: center;
   justify-content: center;
 
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
+
+  border:
+    1px solid
+    rgba(142, 220, 255, 0.12);
+
+  border-radius: 50%;
 
   color: var(--ft-blue-light);
 
-  font-family: "Inter", Arial, sans-serif;
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 182, 255, 0.10) 0%,
+      rgba(56, 182, 255, 0.03) 52%,
+      transparent 74%
+    );
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
 
   font-size: 0;
 
   font-weight: 500;
 
   line-height: 1;
+
+  box-shadow:
+    0 0 8px rgba(56, 182, 255, 0.08);
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .ft-service-group summary b::before {
@@ -736,18 +871,126 @@ textarea {
   content: "\2212";
 }
 
+.ft-service-group[open] summary b {
+  border-color:
+    rgba(142, 220, 255, 0.24);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 182, 255, 0.16) 0%,
+      rgba(56, 182, 255, 0.05) 54%,
+      transparent 76%
+    );
+
+  box-shadow:
+    0 0 10px rgba(56, 182, 255, 0.14),
+    0 0 18px rgba(9, 94, 255, 0.06);
+}
+
+
 .ft-service-content {
-  padding-bottom: 20px;
+  padding-bottom: 22px;
 }
 
 .ft-service-intro {
-  margin: 4px 0 17px;
+  margin: 4px 0 18px;
 
-  color: #d4d4d6;
+  color: #cbd5db;
 
   font-size: 0.82rem;
 
   line-height: 1.7;
+}
+/* ==========================================================================
+   09. SIMPLE SERVICE ROWS
+   SPECIALTY SERVICES + SPAFLOW
+========================================================================== */
+
+.ft-simple-service {
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 0.34fr)
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  align-items: start;
+
+  padding: 15px 16px;
+
+  border-bottom:
+    1px solid
+    rgba(142, 220, 255, 0.10);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 20, 27, 0.94) 0%,
+      rgba(14, 27, 35, 0.94) 52%,
+      rgba(17, 33, 42, 0.92) 100%
+    );
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ft-simple-service:first-child {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.ft-simple-service:last-child {
+  border-bottom: 0;
+
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.ft-simple-service:nth-child(even) {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 23, 31, 0.96) 0%,
+      rgba(17, 31, 40, 0.96) 52%,
+      rgba(19, 36, 46, 0.94) 100%
+    );
+}
+
+.ft-simple-service:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 29, 39, 0.98) 0%,
+      rgba(21, 43, 55, 0.98) 56%,
+      rgba(24, 48, 62, 0.96) 100%
+    );
+
+  border-color:
+    rgba(142, 220, 255, 0.18);
+
+  box-shadow:
+    inset 3px 0 0 rgba(56, 182, 255, 0.46);
+}
+
+.ft-simple-service strong {
+  color: #f7fbfd;
+
+  font-size: 0.84rem;
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+.ft-simple-service span {
+  color: #c4d0d7;
+
+  font-size: 0.76rem;
+
+  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -766,17 +1009,41 @@ textarea {
   width: 100%;
   min-width: 0;
 
-  padding: 17px 14px;
+  padding: 17px 16px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom:
+    1px solid
+    rgba(142, 220, 255, 0.10);
 
-  background: rgba(255, 255, 255, 0.055);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 20, 27, 0.94) 0%,
+      rgba(14, 27, 35, 0.94) 52%,
+      rgba(17, 33, 42, 0.92) 100%
+    );
 
   color: inherit;
 
   text-decoration: none;
 
-  transition: background 0.18s ease;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.ft-service-row:first-of-type {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.ft-service-row:last-of-type {
+  border-bottom: 0;
+
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 
 .ft-service-row > * {
@@ -784,17 +1051,37 @@ textarea {
 }
 
 .ft-service-row:nth-of-type(even) {
-  background: rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 23, 31, 0.96) 0%,
+      rgba(17, 31, 40, 0.96) 52%,
+      rgba(19, 36, 46, 0.94) 100%
+    );
 }
 
 .ft-service-row:hover {
-  background: #2b353d;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 29, 39, 0.98) 0%,
+      rgba(21, 43, 55, 0.98) 56%,
+      rgba(24, 48, 62, 0.96) 100%
+    );
+
+  border-color:
+    rgba(142, 220, 255, 0.20);
+
+  box-shadow:
+    inset 3px 0 0 rgba(56, 182, 255, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    0 0 18px rgba(56, 182, 255, 0.05);
 }
 
 .ft-service-row strong {
   display: block;
 
-  color: #ffffff;
+  color: #f7fbfd;
 
   font-size: 0.84rem;
 }
@@ -804,7 +1091,7 @@ textarea {
 
   margin-top: 4px;
 
-  color: #d9d9d9;
+  color: #c4d0d7;
 
   font-size: 0.74rem;
 
@@ -816,7 +1103,7 @@ textarea {
 
   padding: 4px 0;
 
-  color: var(--ft-blue-light);
+  color: #69cfff;
 
   font-size: 0.76rem;
   font-weight: 700;
@@ -825,26 +1112,55 @@ textarea {
 
   text-align: right;
 
-  text-shadow: 0 0 8px rgba(56, 182, 255, 0.12);
+  text-shadow:
+    0 0 8px rgba(56, 182, 255, 0.12);
 }
-/*=================================================
+
+/* ==========================================================================
    10. SPAFLOW
-   ========================================================================== */
+========================================================================== */
 
 .ft-spaflow-list {
   margin-top: 16px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(142, 220, 255, 0.10);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 18, 24, 0.94) 0%,
+      rgba(15, 29, 38, 0.96) 100%
+    );
 }
+
 
 /* ==========================================================================
    11. FLOWBOOST
-   ========================================================================== */
+========================================================================== */
 
 .ft-boost-list {
   margin-top: 16px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(142, 220, 255, 0.10);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 18, 24, 0.94) 0%,
+      rgba(15, 29, 38, 0.96) 100%
+    );
 }
 
 .ft-boost-row {
@@ -859,25 +1175,61 @@ textarea {
 
   align-items: start;
 
-  padding: 15px 10px;
+  padding: 15px 14px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom:
+    1px solid
+    rgba(142, 220, 255, 0.10);
 
-  background: rgba(255, 255, 255, 0.055);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 20, 27, 0.94) 0%,
+      rgba(14, 27, 35, 0.94) 100%
+    );
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ft-boost-row:last-child {
+  border-bottom: 0;
 }
 
 .ft-boost-row:nth-child(even) {
-  background: rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 23, 31, 0.96) 0%,
+      rgba(18, 33, 43, 0.96) 100%
+    );
+}
+
+.ft-boost-row:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 29, 39, 0.98) 0%,
+      rgba(22, 43, 55, 0.98) 100%
+    );
+
+  border-color:
+    rgba(142, 220, 255, 0.18);
+
+  box-shadow:
+    inset 3px 0 0 rgba(56, 182, 255, 0.48);
 }
 
 .ft-boost-row strong {
-  color: #ffffff;
+  color: #f7fbfd;
 
   font-size: 0.84rem;
 }
 
 .ft-boost-row span {
-  color: #d9d9d9;
+  color: #c4d0d7;
 
   font-size: 0.76rem;
 
@@ -885,7 +1237,7 @@ textarea {
 }
 
 .ft-boost-row b {
-  color: #ffffff;
+  color: #69cfff;
 
   font-size: 0.78rem;
   font-weight: 700;
@@ -904,12 +1256,18 @@ textarea {
   font-weight: 650;
 
   text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    text-shadow 180ms ease;
 }
 
 .ft-service-link:hover {
-  color: #ffffff;
-}
+  color: #dff7ff;
 
+  text-shadow:
+    0 0 8px rgba(56, 182, 255, 0.18);
+}
 /* ==========================================================================
    12. MORE WAYS TO FLOW
 ========================================================================== */
@@ -1136,11 +1494,15 @@ textarea {
 
   border-color: rgba(56, 182, 255, 0.36);
 
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.085) 0%,
-    rgba(255, 255, 255, 0.045) 58%,
-    rgba(56, 139, 251, 0.085) 100%
+  background:
+  linear-gradient(
+    155deg,
+    #18364f 0%,
+    #1b3447 12%,
+    #1d303d 26%,
+    #1e2b33 44%,
+    #1b252b 68%,
+    #172128 100%
   );
 }
 
@@ -1447,7 +1809,7 @@ textarea {
 
   perspective: 1200px;
 
-  transform: translateX(-18px);
+  transform: translateX(28px);
 }
 
 /*
@@ -1456,6 +1818,10 @@ textarea {
    restrained Flow blue bridge toward copy
 */
 
+/* --------------------------------------------------
+   ATMOSPHERE GLOW — ENHANCED
+-------------------------------------------------- */
+
 .ft-services-atmosphere::before {
   content: "";
 
@@ -1463,84 +1829,110 @@ textarea {
 
   z-index: -2;
 
-  top: 6%;
-  right: -4%;
-  bottom: 2%;
-  left: -18%;
+  top: -2%;
+  right: -10%;
+  bottom: -8%;
+  left: -22%;
 
-  border-radius: 42%;
+  border-radius: 46%;
 
   background:
     radial-gradient(
       circle at 68% 48%,
-      rgba(255, 173, 70, 0.17) 0%,
-      rgba(255, 133, 30, 0.075) 28%,
-      transparent 60%
+      rgba(255, 173, 70, 0.24) 0%,
+      rgba(255, 133, 30, 0.11) 30%,
+      transparent 62%
     ),
     radial-gradient(
       ellipse at 18% 52%,
-      rgba(56, 182, 255, 0.09) 0%,
-      rgba(54, 139, 251, 0.035) 36%,
-      transparent 66%
+      rgba(56, 182, 255, 0.13) 0%,
+      rgba(54, 139, 251, 0.05) 38%,
+      transparent 68%
     );
 
-  filter: blur(24px);
+  filter: blur(28px);
 
   pointer-events: none;
 }
 
 /* --------------------------------------------------
-   3D FRAME
+   3D FRAME — DRAMATIC FLOAT
 -------------------------------------------------- */
 
 .ft-services-atmosphere-frame {
   aspect-ratio: 16 / 10;
 
-  transform: rotateX(var(--lamp-x, 2deg)) rotateY(var(--lamp-y, -6deg))
-    rotateZ(-0.8deg);
+  transform:
+    translateY(-12px)
+    rotateX(var(--lamp-x, 4deg))
+    rotateY(var(--lamp-y, -9deg))
+    rotateZ(-1.4deg);
 
   transform-origin: center center;
 
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    transform 240ms ease,
+    box-shadow 240ms ease;
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    -6px 9px 16px rgba(0, 0, 0, 0.18),
-    14px 22px 34px rgba(0, 0, 0, 0.34),
-    0 0 18px rgba(56, 182, 255, 0.12),
-    0 0 34px rgba(255, 145, 45, 0.09);
+    /* Fine highlight along the surface */
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+
+    /* Tight contact shadow */
+    -10px 14px 20px rgba(0, 0, 0, 0.32),
+
+    /* Main floating shadow */
+    24px 38px 58px rgba(0, 0, 0, 0.48),
+
+    /* Deep separation shadow */
+    34px 52px 82px rgba(0, 0, 0, 0.30),
+
+    /* Flow blue atmosphere */
+    -8px 4px 30px rgba(56, 182, 255, 0.22),
+    -14px 8px 58px rgba(9, 94, 255, 0.12),
+
+    /* Salt lamp warmth */
+    18px 12px 38px rgba(255, 145, 45, 0.20),
+    26px 18px 72px rgba(255, 112, 20, 0.12);
 }
 
 /* FlowTherapy luminous edge */
 
-.ft-services-atmosphere-frame::before {
+/* --------------------------------------------------
+   ATMOSPHERE GLOW — DRAMATIC
+-------------------------------------------------- */
+
+.ft-services-atmosphere::before {
   content: "";
 
   position: absolute;
 
-  z-index: 3;
+  z-index: -2;
 
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: -12%;
+  right: -18%;
+  bottom: -18%;
+  left: -28%;
 
-  width: 2px;
+  border-radius: 46%;
 
-  background: linear-gradient(
-    180deg,
-    #dff7ff 0%,
-    #8edcff 20%,
-    #38b6ff 48%,
-    #368bfb 74%,
-    rgba(9, 94, 255, 0.16) 100%
-  );
+  background:
+    radial-gradient(
+      circle at 70% 48%,
+      rgba(255, 173, 70, 0.34) 0%,
+      rgba(255, 126, 25, 0.18) 28%,
+      rgba(255, 104, 15, 0.07) 48%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(142, 220, 255, 0.18) 0%,
+      rgba(56, 182, 255, 0.10) 30%,
+      rgba(9, 94, 255, 0.04) 50%,
+      transparent 70%
+    );
 
-  box-shadow:
-    0 0 5px rgba(223, 247, 255, 0.36),
-    0 0 11px rgba(142, 220, 255, 0.34),
-    0 0 20px rgba(56, 182, 255, 0.18);
+  filter: blur(32px);
 
   pointer-events: none;
 }
@@ -1837,28 +2229,6 @@ textarea {
   }
 }
 
-/* ==========================================================================
-   14. FLOWSTART
-   INTERACTIVE FLIP EXPERIENCE
-========================================================================== */
-
-.ft-flowstart {
-  position: relative;
-
-  padding: 58px 0;
-
-  overflow: hidden;
-
-  background: linear-gradient(
-    115deg,
-    #eef0f2 0%,
-    #d9d9d9 26%,
-    #b9c5cf 50%,
-    #819bb2 74%,
-    #416d9b 90%,
-    #0f3699 100%
-  );
-}
 
 /* --------------------------------------------------
    FLIP CARD WRAPPER
@@ -2428,9 +2798,24 @@ textarea {
 
 .ft-about {
   position: relative;
+
   overflow: hidden;
+
   padding: 82px 0 90px;
-  background: linear-gradient(145deg, #202a31 0%, #1d282f 45%, #172128 100%);
+
+  border-top: 0;
+  border-bottom: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #18364f 0%,
+      #1b3448 12%,
+      #1d303f 28%,
+      #1e2b34 48%,
+      #1c272e 72%,
+      #182229 100%
+    );
 }
 
 /* --------------------------------------------------
@@ -2886,70 +3271,22 @@ textarea {
     gap: 6px 13px;
   }
 }
-/* --------------------------------------------------
-   ABOUT → CLIENT EXPERIENCES PREMIUM DIVIDER
--------------------------------------------------- */
-
-.ft-reviews::before {
-  height: 2px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(232, 237, 242, 0.45) 0%,
-    #c7cdd4 16%,
-    #8edcff 36%,
-    #38b6ff 58%,
-    #368bfb 78%,
-    #0f3699 100%
-  );
-
-  box-shadow:
-    0 0 5px rgba(199, 205, 212, 0.18),
-    0 0 10px rgba(56, 182, 255, 0.24),
-    0 0 16px rgba(9, 94, 255, 0.12);
-}
 
 /* ==========================================================================
    16. CLIENT EXPERIENCES
    PREMIUM CLIENT GRATITUDE
 ========================================================================== */
+/* CLIENT EXPERIENCES */
 
 .ft-reviews {
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
-  padding:
-    84px 0 88px;
-
   background:
-    /* cool silver light behind the heading */
-    radial-gradient(
-      ellipse at 27% 20%,
-      rgba(220, 232, 240, 0.14) 0%,
-      rgba(175, 202, 220, 0.07) 28%,
-      transparent 55%
-    ),
-
-    /* restrained Flow blue depth */
-    radial-gradient(
-      ellipse at 92% 62%,
-      rgba(9, 94, 255, 0.22) 0%,
-      rgba(54, 139, 251, 0.09) 34%,
-      transparent 65%
-    ),
-
-    /* dark steel foundation */
     linear-gradient(
-      118deg,
-      #26343d 0%,
-      #23343f 24%,
-      #203746 48%,
-      #1d3b50 70%,
-      #1a3f5d 86%,
-      #173f69 100%
+      180deg,
+      #25465b 0%,
+      #21425a 58%,
+      #1b354a 78%,
+      #142836 90%,
+      #0b141b 100%
     );
 }
 
@@ -4972,7 +5309,7 @@ textarea {
 
   overflow: hidden;
 
-  padding: 22px 0 28px;
+  padding: 8px 0 28px;
 
   background: #06090c;
 }
@@ -5286,18 +5623,20 @@ textarea {
   -------------------------------------------------- */
 
   .ft-services {
-    background:
-      linear-gradient(
-        180deg,
-        #06090c 0%,
-        #0d1217 7%,
-        #141b20 14%,
-        #1a2025 24%,
-        #1d2328 36%,
-        #1b2025 78%,
-        #202a31 100%
-      );
-  }
+  padding-top: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #06090c 0%,
+      #0d1217 7%,
+      #141b20 14%,
+      #1a2025 24%,
+      #1d2328 36%,
+      #1b2025 78%,
+      #202a31 100%
+    );
+}
   /* --------------------------------------------------
    FLOWSTART — DESKTOP TWO-CARD LAYOUT
 -------------------------------------------------- */
@@ -5639,16 +5978,19 @@ textarea {
     60px;
 
   background:
-    linear-gradient(
-      180deg,
-      #06090c 0%,
-      #0d1217 7%,
-      #141b20 14%,
-      #1a2025 24%,
-      #1d2328 36%,
-      #1b2025 78%,
-      #202a31 100%
-    );
+  linear-gradient(
+    180deg,
+    #06090c 0%,
+    #0d1217 8%,
+    #141b20 18%,
+    #1a2025 30%,
+    #202a31 44%,
+    #2b3943 58%,
+    #374b59 70%,
+    #435d70 82%,
+    #4c6980 91%,
+    #536d80 100%
+  );
 }
 /* --------------------------------------------------
    23F. FLOWSTART
@@ -6253,4 +6595,25 @@ textarea {
   .ft-review-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  /* --------------------------------------------------
+   FLOWSTART → ABOUT
+   SEAMLESS BACKGROUND HANDOFF
+-------------------------------------------------- */
+
+.ft-flowstart {
+  border-bottom: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #eef0f2 0%,
+      #d9d9d9 18%,
+      #b9c5cf 36%,
+      #819bb2 54%,
+      #416d9b 68%,
+      #285477 80%,
+      #20435f 90%,
+      #18364f 100%
+    );
+}
 }
