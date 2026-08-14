@@ -5139,7 +5139,94 @@ textarea {
 
     background-position: center center;
   }
+/* --------------------------------------------------
+   DESKTOP — REVIEWS + FLOWHUB SHARED RAIL
+-------------------------------------------------- */
 
+.ft-reviews .ft-shell,
+.ft-flowhub .ft-shell {
+  width: min(calc(100% - 80px), 1180px);
+
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+/* --------------------------------------------------
+   DESKTOP — REVIEW HEADING ALIGNMENT
+-------------------------------------------------- */
+
+.ft-reviews .ft-eyebrow,
+.ft-reviews h2,
+.ft-flowhub .ft-eyebrow,
+.ft-flowhub h2 {
+  margin-left: 0;
+}
+  /* --------------------------------------------------
+   DESKTOP — MASTER CONTENT RAIL
+-------------------------------------------------- */
+
+.ft-shell {
+  width: min(calc(100% - 80px), 1180px);
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+/* --------------------------------------------------
+   HERO META — TRUE HERO CENTER
+-------------------------------------------------- */
+
+.ft-hero-meta {
+  position: absolute;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px 14px;
+
+  width: max-content;
+  max-width: calc(100% - 64px);
+
+  margin: 0;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+/* --------------------------------------------------
+   HERO META GLOW ORB
+-------------------------------------------------- */
+
+.ft-hero-meta-orb {
+  flex: 0 0 auto;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #8edcff 30%,
+    #38b6ff 58%,
+    #095eff 100%
+  );
+
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.55),
+    0 0 8px rgba(142, 220, 255, 0.7),
+    0 0 14px rgba(56, 182, 255, 0.48),
+    0 0 22px rgba(9, 94, 255, 0.22);
+}
   /* --------------------------------------------------
      HERO — DESKTOP CONTENT RAIL
   -------------------------------------------------- */
@@ -5152,11 +5239,153 @@ textarea {
     margin-inline: auto;
 
     padding-inline: 0;
+
+    position: relative;
   }
 
   .ft-hero-content {
     padding: 72px 0 60px;
   }
+/* --------------------------------------------------
+   DESKTOP — SHARED MAIN CONTENT RAIL
+-------------------------------------------------- */
+
+.ft-services-layout,
+.ft-wellness-grid,
+.ft-about-grid,
+.ft-review-grid,
+.ft-flowhub-intro,
+.ft-flowhub-grid,
+.ft-final-grid,
+.ft-footer-grid {
+  width: min(calc(100% - 80px), 1180px);
+
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+  /* --------------------------------------------------
+     SERVICES — DESKTOP DARK GRADIENT
+  -------------------------------------------------- */
+
+  .ft-services {
+    background:
+      linear-gradient(
+        180deg,
+        #06090c 0%,
+        #0d1217 7%,
+        #141b20 14%,
+        #1a2025 24%,
+        #1d2328 36%,
+        #1b2025 78%,
+        #202a31 100%
+      );
+  }
+  /* --------------------------------------------------
+   FLOWSTART — DESKTOP TWO-CARD LAYOUT
+-------------------------------------------------- */
+
+.ft-flowstart-desktop {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+
+  width: 100%;
+}
+
+.ft-flowstart-desktop-card {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 42px 40px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(232, 237, 242, 0.28);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #223642 0%,
+      #1a2b35 48%,
+      #13232d 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 54px rgba(10, 25, 38, 0.22),
+    0 0 28px rgba(56, 182, 255, 0.07);
+}
+
+.ft-flowstart-desktop-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38b6ff 0%,
+      #8edcff 30%,
+      #ffffff 50%,
+      #38b6ff 70%,
+      #095eff 100%
+    );
+
+  box-shadow:
+    0 0 8px rgba(142, 220, 255, 0.42),
+    0 0 18px rgba(56, 182, 255, 0.25);
+}
+
+.ft-flowstart-desktop-card h2,
+.ft-flowstart-desktop-card h3 {
+  margin-top: 0;
+}
+
+.ft-flowstart-desktop-card h2 {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(2.7rem, 4vw, 4rem);
+
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.ft-flowstart-desktop-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(2.2rem, 3vw, 3rem);
+
+  line-height: 1.08;
+
+  color: #ffffff;
+}
+
+.ft-flowstart-desktop-card h2 em,
+.ft-flowstart-desktop-card h3 em {
+  color: #8edcff;
+
+  font-style: italic;
+}
+
+/* Hide mobile flip card on desktop */
+
+.ft-flowstart-flip {
+  display: none;
+}
 }
 /* ==========================================================================
    23. MOBILE
@@ -5188,6 +5417,7 @@ textarea {
 
     margin-right: auto;
   }
+  
   /* --------------------------------------------------
      23B. HEADER
   -------------------------------------------------- */
@@ -5406,11 +5636,29 @@ textarea {
 }
 /* --------------------------------------------------
    23F. FLOWSTART
+   MOBILE — ORIGINAL FLIP CARD
 -------------------------------------------------- */
 
 .ft-flowstart {
   padding-top: 44px;
   padding-bottom: 44px;
+}
+
+/* Hide desktop two-card version */
+
+.ft-flowstart-desktop {
+  display: none;
+}
+
+/* Restore mobile flip card */
+
+.ft-flowstart-flip {
+  display: block;
+
+  width: 100%;
+  max-width: 420px;
+
+  margin-inline: auto;
 }
   /* --------------------------------------------------
      23G. ABOUT
