@@ -5650,14 +5650,6 @@ letter-spacing: 0.012em;
 
     margin-inline: auto;
   }
-
-  /* KEEP MAJOR PAGE AREAS CENTERED */
-  .flowtherapy-home main,
-  .flowtherapy-home footer {
-    margin-left: auto;
-
-    margin-right: auto;
-  }
   
   /* --------------------------------------------------
      23B. HEADER
@@ -5700,10 +5692,11 @@ letter-spacing: 0.012em;
   -------------------------------------------------- */
 
   .ft-hero {
-  width: 100vw;
+  width: 100%;
+  max-width: none;
 
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-left: 0;
+  margin-right: 0;
 
   min-height: 650px;
 
