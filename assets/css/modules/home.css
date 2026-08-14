@@ -5730,8 +5730,10 @@ letter-spacing: 0.012em;
     padding: 235px 14px 45px;
   }
   .ft-hero-inner {
-    width: 100%;
-  }
+  width: calc(100% - 32px);
+  max-width: 420px;
+  margin-inline: auto;
+}
   .ft-hero h1 {
     font-size: clamp(2.85rem, 13vw, 4.2rem);
   }
