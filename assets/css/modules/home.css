@@ -132,7 +132,7 @@ textarea {
    SECTION DIVIDERS
    ========================================================================== */
 
-.ft-services::before,
+
 .ft-reviews::before,
 .ft-signature::before,
 .ft-final::before {
@@ -991,7 +991,6 @@ textarea {
 
   line-height: 1.55;
 }
-
 /* ==========================================================================
    08. SIGNATURE FLOW ROWS
 ========================================================================== */
@@ -1127,104 +1126,74 @@ textarea {
 ========================================================================== */
 
 .ft-boost-list {
-  margin-top: 16px;
+  margin-top: 18px;
 
   overflow: hidden;
-
-  border:
-    1px solid
-    rgba(142, 220, 255, 0.10);
 
   border-radius: 14px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(9, 18, 24, 0.94) 0%,
-      rgba(15, 29, 38, 0.96) 100%
+      rgba(9, 22, 30, 0.96) 0%,
+      rgba(13, 31, 41, 0.98) 100%
     );
 }
 
 .ft-boost-row {
-  display: grid;
+  display: block;
 
-  grid-template-columns:
-    minmax(160px, 0.34fr)
-    minmax(0, 1fr)
-    auto;
-
-  gap: 22px;
-
-  align-items: start;
-
-  padding: 15px 14px;
+  padding: 18px 16px;
 
   border-bottom:
     1px solid
-    rgba(142, 220, 255, 0.10);
+    rgba(142, 220, 255, 0.12);
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 20, 27, 0.94) 0%,
-      rgba(14, 27, 35, 0.94) 100%
-    );
+  background: transparent;
 
   transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+    background 180ms ease;
 }
 
 .ft-boost-row:last-child {
   border-bottom: 0;
 }
 
-.ft-boost-row:nth-child(even) {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(12, 23, 31, 0.96) 0%,
-      rgba(18, 33, 43, 0.96) 100%
-    );
-}
-
 .ft-boost-row:hover {
   background:
-    linear-gradient(
-      90deg,
-      rgba(14, 29, 39, 0.98) 0%,
-      rgba(22, 43, 55, 0.98) 100%
-    );
-
-  border-color:
-    rgba(142, 220, 255, 0.18);
-
-  box-shadow:
-    inset 3px 0 0 rgba(56, 182, 255, 0.48);
+    rgba(56, 182, 255, 0.035);
 }
 
 .ft-boost-row strong {
+  display: block;
+
+  margin-bottom: 6px;
+
   color: #f7fbfd;
 
-  font-size: 0.84rem;
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .ft-boost-row span {
-  color: #c4d0d7;
+  display: block;
 
-  font-size: 0.76rem;
+  color: #d5e0e6;
+
+  font-size: 0.78rem;
 
   line-height: 1.55;
 }
 
 .ft-boost-row b {
+  display: block;
+
+  margin-top: 6px;
+
   color: #69cfff;
 
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-
-  white-space: nowrap;
 }
 
 .ft-service-link {
@@ -1589,26 +1558,25 @@ textarea {
 
   z-index: -1;
 
-  top: 50%;
-  right: -70px;
+  right: -40px;
+  bottom: -30px;
 
-  width: 520px;
-  height: 420px;
+  width: 600px;
+  height: 500px;
 
-  transform: translateY(-50%);
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 171, 74, 0.26) 0%,
+      rgba(226, 123, 39, 0.18) 22%,
+      rgba(160, 79, 27, 0.09) 44%,
+      transparent 72%
+    );
 
-  background: radial-gradient(
-    circle,
-    rgba(211, 118, 35, 0.1) 0%,
-    rgba(150, 77, 24, 0.05) 32%,
-    transparent 70%
-  );
-
-  filter: blur(22px);
+  filter: blur(30px);
 
   pointer-events: none;
 }
-
 /* --------------------------------------------------
    THERAPEUTIC CARE — COPY
 -------------------------------------------------- */
@@ -3149,7 +3117,6 @@ textarea {
     line-height: 1.75;
   }
 }
-
 /* ==========================================================================
    ABOUT — MOBILE
 ========================================================================== */
@@ -3185,7 +3152,18 @@ textarea {
 
 @media (max-width: 700px) {
   .ft-about {
-    padding: 52px 0 92px;
+    padding: 92px 0 20px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #06111b 0%,
+        #081824 14%,
+        #0a2233 32%,
+        #0c2f46 54%,
+        #103c57 76%,
+        #154765 100%
+      );
   }
 
   .ft-about-layout {
@@ -3193,6 +3171,7 @@ textarea {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
 
   /* PORTRAIT */
 
@@ -3215,7 +3194,37 @@ textarea {
     object-fit: cover;
     object-position: center top;
   }
+  /* PORTRAIT */
+
+.ft-about-photo-wrap {
+  width: min(76vw, 350px);
+  max-width: 350px;
+  margin-inline: auto;
+  justify-self: center;
 }
+
+.ft-about-photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px 18px 52px 18px;
+}
+
+.ft-about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* More breathing room below therapist credential */
+
+.ft-about-photo-caption {
+  margin-bottom: 20px;
+}
+
+} /* END max-width: 700px */
+
+
 
 /* ==========================================================================
    ABOUT SMALL MOBILE
@@ -3263,14 +3272,18 @@ textarea {
 ========================================================================== */
 /* CLIENT EXPERIENCES */
 
-.ft-reviews {
+.ft-section.ft-reviews {
+  padding-top: 16px;
+
   background:
     linear-gradient(
       180deg,
-      #25465b 0%,
-      #21425a 58%,
-      #1b354a 78%,
-      #142836 90%,
+      #154765 0%,
+      #194b66 12%,
+      #1b465f 28%,
+      #193e54 46%,
+      #163448 64%,
+      #112736 82%,
       #0b141b 100%
     );
 }
@@ -3281,11 +3294,11 @@ textarea {
 
 .ft-reviews .ft-eyebrow,
 .ft-reviews h2 {
-  width: 100%;
+  width: calc(100% - 48px);
   max-width: 900px;
 
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 32px;
+  margin-right: 16px;
 }
 
 .ft-reviews .ft-eyebrow {
@@ -3298,59 +3311,6 @@ textarea {
   text-shadow:
     0 0 6px rgba(142, 220, 255, 0.2),
     0 0 12px rgba(56, 182, 255, 0.1);
-}
-
-/* --------------------------------------------------
-   HEADING
--------------------------------------------------- */
-
-.ft-reviews h2 {
-  margin-top: 0;
-  margin-bottom: 42px;
-
-  color: #ffffff;
-
-  font-family: "Playfair Display", Georgia, serif;
-
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
-
-  font-weight: 600;
-
-  line-height: 1;
-
-  letter-spacing: -0.035em;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.16),
-    0 4px 18px rgba(30, 65, 95, 0.16);
-}
-
-/* "remember." */
-
-.ft-reviews h2 em {
-  display: inline-block;
-
-  background: linear-gradient(
-    110deg,
-    #8edcff 0%,
-    #38b6ff 28%,
-    #2f9dff 52%,
-    #368bfb 76%,
-    #095eff 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  color: transparent;
-
-  font-style: italic;
-  font-weight: 500;
-
-  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.46))
-    drop-shadow(0 0 6px rgba(56, 182, 255, 0.26))
-    drop-shadow(0 0 12px rgba(54, 139, 251, 0.14));
 }
 
 /* --------------------------------------------------
@@ -3752,6 +3712,81 @@ textarea {
       150px;
   }
 }
+/* --------------------------------------------------
+   CLIENT EXPERIENCES — HEADING
+-------------------------------------------------- */
+
+.ft-reviews h2 {
+  margin-top: 0;
+  margin-bottom: 42px;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16),
+    0 4px 18px rgba(30, 65, 95, 0.16);
+}
+
+/* "remember." */
+
+.ft-reviews h2 em {
+  display: block;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      105deg,
+      #8edcff 0%,
+      #56c7ff 20%,
+      #38b6ff 42%,
+      #2fa7ff 66%,
+      #368bfb 84%,
+      #248cff 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-style: italic;
+  font-weight: 600;
+
+  text-shadow: none;
+
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.38))
+    drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
+    drop-shadow(0 0 11px rgba(54, 139, 251, 0.15));
+}
+
+/* --------------------------------------------------
+   CLIENT EXPERIENCES — MOBILE HEADING
+-------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .ft-reviews h2 {
+    font-size: clamp(2.15rem, 8.5vw, 2.55rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.03em;
+
+    margin-bottom: 34px;
+  }
+}
 /* ==========================================================================
    17. FLOWHUB
    PREMIUM WELLNESS PORTAL
@@ -4054,15 +4089,20 @@ textarea {
 
   margin: 0;
 
-  color: #f7fafc;
+ color: #c9dbe6;
 
-  font-size: 1.03rem;
+font-size: 0.96rem;
 
-  font-weight: 500;
+font-weight: 400;
 
-  line-height: 1.72;
+line-height: 1.78;
 
-  text-shadow: 0 1px 3px rgba(14, 38, 55, 0.2);
+letter-spacing: 0.012em;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0 8px rgba(142, 220, 255, 0.08),
+    0 2px 8px rgba(8, 22, 32, 0.34);
 }
 
 /* --------------------------------------------------
@@ -4500,7 +4540,44 @@ textarea {
 
   text-align: center;
 }
+/* --------------------------------------------------
+   LOW HORIZON GLOW
+-------------------------------------------------- */
 
+.ft-flow-statement::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: min(320px, 32%);
+
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(142, 220, 255, 0.08) 12%,
+    rgba(142, 220, 255, 0.48) 34%,
+    rgba(238, 250, 255, 0.92) 50%,
+    rgba(56, 182, 255, 0.42) 68%,
+    rgba(9, 94, 255, 0.12) 86%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 5px rgba(223, 247, 255, 0.28),
+    0 0 11px rgba(142, 220, 255, 0.32),
+    0 0 22px rgba(56, 182, 255, 0.2);
+
+  pointer-events: none;
+}
 /* --------------------------------------------------
    CONTENT RAIL
 -------------------------------------------------- */
@@ -5043,15 +5120,16 @@ textarea {
    LINK / CONTACT COLUMNS
 -------------------------------------------------- */
 
-.ft-footer-grid > div:nth-child(2),
 .ft-footer-grid > div:nth-child(3) {
-  display: flex;
+  padding-left: 8px;
 
-  flex-direction: column;
+  border-left: 1px solid rgba(142, 220, 255, 0.14);
 
-  align-items: flex-start;
+  align-self: stretch;
 
-  gap: 9px;
+  justify-content: flex-start;
+
+  gap: 0;
 }
 
 /* --------------------------------------------------
@@ -5141,7 +5219,7 @@ textarea {
   .ft-footer-grid > div:nth-child(3) {
     padding-left: 22px;
 
-    gap: 10px;
+    gap: 9px;
   }
 
   .ft-footer small {
@@ -5155,45 +5233,6 @@ textarea {
   .ft-footer span {
     font-size: 0.8rem;
   }
-}
-
-/* --------------------------------------------------
-   LOW HORIZON GLOW
--------------------------------------------------- */
-
-.ft-flow-statement::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 3px;
-
-  width: min(320px, 32%);
-
-  height: 2px;
-
-  transform: translateX(-50%);
-
-  border-radius: 999px;
-
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(142, 220, 255, 0.08) 12%,
-    rgba(142, 220, 255, 0.48) 34%,
-    rgba(238, 250, 255, 0.92) 50%,
-    rgba(56, 182, 255, 0.42) 68%,
-    rgba(9, 94, 255, 0.12) 86%,
-    transparent 100%
-  );
-
-  box-shadow:
-    0 0 5px rgba(223, 247, 255, 0.28),
-    0 0 11px rgba(142, 220, 255, 0.32),
-    0 0 22px rgba(56, 182, 255, 0.2);
-
-  pointer-events: none;
 }
 
 
@@ -5460,23 +5499,23 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 }
-  /* --------------------------------------------------
-     SERVICES — DESKTOP DARK GRADIENT
-  -------------------------------------------------- */
+ /* --------------------------------------------------
+   SERVICES — DEEP NAVY / TEAL ATMOSPHERE
+-------------------------------------------------- */
 
-  .ft-services {
+.ft-services {
   padding-top: 24px;
 
   background:
     linear-gradient(
       180deg,
-      #06090c 0%,
-      #0d1217 7%,
-      #141b20 14%,
-      #1a2025 24%,
-      #1d2328 36%,
-      #1b2025 78%,
-      #202a31 100%
+      #05090d 0%,
+      #071018 12%,
+      #081722 28%,
+      #0a2230 46%,
+      #0b2d3c 64%,
+      #0c3544 78%,
+      #081d27 100%
     );
 }
   /* --------------------------------------------------
@@ -5656,14 +5695,17 @@ textarea {
   -------------------------------------------------- */
 
   .ft-hero {
-    min-height: 650px;
+  width: 100vw;
 
-    background-size: cover;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 
-    background-position: 58% center;
+  min-height: 650px;
 
-    background-repeat: no-repeat;
-  }
+  background-size: cover;
+  background-position: 58% center;
+  background-repeat: no-repeat;
+}
 
   .ft-hero-overlay {
   background:
@@ -5691,7 +5733,55 @@ textarea {
   .ft-hero-actions {
     display: none;
   }
+  
+  /* --------------------------------------------------
+   23D. MOBILE SERVICE ROWS
+-------------------------------------------------- */
 
+.ft-simple-service {
+  grid-template-columns: 1fr;
+
+  gap: 6px;
+
+  padding: 15px 16px;
+}
+
+.ft-simple-service strong,
+.ft-simple-service span {
+  width: 100%;
+}
+
+.ft-simple-service span {
+  line-height: 1.5;
+}
+/* --------------------------------------------------
+   SIGNATURE FLOW — MOBILE STACK
+-------------------------------------------------- */
+
+.ft-service-row {
+  display: block;
+
+  padding: 16px 16px;
+}
+
+.ft-service-row strong {
+  display: block;
+
+  margin-bottom: 6px;
+}
+
+.ft-service-row span {
+  display: block;
+
+  width: 100%;
+
+  line-height: 1.55;
+}
+
+/* Session lengths are hidden on mobile */
+.ft-service-row .ft-duration {
+  display: none;
+}
 /* ==========================================================================
    FLOW STATEMENT
    FLOWTHERAPY PREMIUM — SLIM RIBBON
@@ -5704,18 +5794,9 @@ textarea {
 
   overflow: hidden;
 
-  padding: 4px 0 8px;
+  padding: 4px 0 18px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #e8edf2 0%,
-      #d5dce3 18%,
-      #b9c7d2 38%,
-      #8faabd 58%,
-      #587fa1 78%,
-      #244f8d 100%
-    );
+  background: #06090c;
 }
 
 
@@ -5729,7 +5810,7 @@ textarea {
   position: absolute;
 
   left: 50%;
-  bottom: 8px;
+  bottom: 4px;
 
   width: min(320px, 32%);
 
@@ -5764,10 +5845,10 @@ textarea {
    FLOW STATEMENT CONTENT RAIL
 -------------------------------------------------- */
 
-.ft-flow-statement .ft-shell {
-  width: min(calc(100% - 64px), 1120px);
+.ft-shell {
+  width: calc(100% - 16px);
 
-  max-width: 1120px;
+  max-width: 460px;
 
   margin-inline: auto;
 }
@@ -5786,7 +5867,7 @@ textarea {
 
   margin: 0 auto;
 
-  color: #172b3a;
+  color: #f7fbfd;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -5801,32 +5882,34 @@ textarea {
   text-align: center;
 
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55),
-    0 0 10px rgba(255, 255, 255, 0.16);
+    0 0 8px rgba(255, 255, 255, 0.08),
+    0 0 14px rgba(56, 182, 255, 0.08);
 }
   /* --------------------------------------------------
    23E. SERVICES
 -------------------------------------------------- */
 
 .ft-services {
-  padding-bottom:
-    60px;
+  position: relative;
+
+  padding-bottom: 60px;
+
+  overflow: hidden;
 
   background:
-  linear-gradient(
-    180deg,
-    #06090c 0%,
-    #0d1217 8%,
-    #141b20 18%,
-    #1a2025 30%,
-    #202a31 44%,
-    #2b3943 58%,
-    #374b59 70%,
-    #435d70 82%,
-    #4c6980 91%,
-    #536d80 100%
-  );
+    linear-gradient(
+      180deg,
+      #05090e 0%,
+      #06101a 12%,
+      #071522 26%,
+      #081a29 42%,
+      #091f31 58%,
+      #0a2336 72%,
+      #081a29 86%,
+      #050d15 100%
+    );
 }
+
 /* --------------------------------------------------
    23F. FLOWSTART
    MOBILE — ORIGINAL FLIP CARD
@@ -5834,7 +5917,18 @@ textarea {
 
 .ft-flowstart {
   padding-top: 44px;
-  padding-bottom: 44px;
+  padding-bottom: 24px;
+
+  border-bottom: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0a1b29 0%,
+      #091a28 42%,
+      #071620 76%,
+      #06111b 100%
+    );
 }
 
 /* Hide desktop two-card version */
@@ -5860,6 +5954,18 @@ textarea {
   .ft-about-grid {
     gap: 34px;
   }
+  .ft-about {
+  background:
+    linear-gradient(
+      180deg,
+      #06111b 0%,
+      #071722 14%,
+      #091f2e 32%,
+      #0c2b40 54%,
+      #103852 76%,
+      #154765 100%
+    );
+}
 
   /* --------------------------------------------------
      23H. REVIEWS
@@ -5971,8 +6077,9 @@ textarea {
 .ft-final-actions {
   display: none;
 }
-  /* --------------------------------------------------
+/* --------------------------------------------------
    23K. FOOTER
+   MOBILE — CLEAN AUTHORITATIVE VERSION
 -------------------------------------------------- */
 
 .ft-footer {
@@ -5981,23 +6088,21 @@ textarea {
 
   margin-inline: 0;
 
-  padding: 44px 0 42px;
+  padding: 34px 0 12px;
 }
 
 
-/* --------------------------------------------------
-   FOOTER GRID
--------------------------------------------------- */
+/* FOOTER GRID */
 
 .ft-footer-grid {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.68fr)
-    minmax(0, 1.32fr);
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
 
-  column-gap: 22px;
-  row-gap: 24px;
+  column-gap: 18px;
+  row-gap: 18px;
 
   align-items: start;
 
@@ -6006,15 +6111,11 @@ textarea {
 
   margin-inline: auto;
 
-  padding-inline: 0;
-
-  box-sizing: border-box;
+  padding: 0;
 }
 
 
-/* --------------------------------------------------
-   BRAND — FULL WIDTH
--------------------------------------------------- */
+/* BRAND — FULL WIDTH */
 
 .ft-footer-grid > div:first-child {
   grid-column: 1 / -1;
@@ -6023,9 +6124,7 @@ textarea {
 }
 
 
-/* --------------------------------------------------
-   QUICK LINKS + CONTACT COLUMNS
--------------------------------------------------- */
+/* QUICK LINKS + CONTACT */
 
 .ft-footer-grid > div:nth-child(2),
 .ft-footer-grid > div:nth-child(3) {
@@ -6035,17 +6134,15 @@ textarea {
 
   align-items: flex-start;
 
-  gap: 9px;
-
   min-width: 0;
 
   padding-left: 0;
+
+  gap: 8px;
 }
 
 
-/* --------------------------------------------------
-   REMOVE DESKTOP DIVIDERS
--------------------------------------------------- */
+/* REMOVE DESKTOP DECORATIVE DIVIDERS */
 
 .ft-footer-grid > div:nth-child(2)::before,
 .ft-footer-grid > div:nth-child(3)::before {
@@ -6053,54 +6150,24 @@ textarea {
 }
 
 
-/* --------------------------------------------------
-   CONTACT DIVIDER
--------------------------------------------------- */
+/* CONTACT DIVIDER */
 
 .ft-footer-grid > div:nth-child(3) {
-  padding-left: 8px;
+  padding-left: 10px;
 
   border-left: 1px solid rgba(142, 220, 255, 0.14);
 }
 
 
-/* --------------------------------------------------
-   COLUMN LABELS
--------------------------------------------------- */
+/* COLUMN LABELS */
 
 .ft-footer-grid > div:nth-child(2) > small,
 .ft-footer-grid > div:nth-child(3) > small {
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
 
-/* --------------------------------------------------
-   FIRST LINK UNDER EACH LABEL
--------------------------------------------------- */
-
-.ft-footer-grid > div:nth-child(2) > small + a,
-.ft-footer-grid > div:nth-child(3) > small + a {
-  min-height: 34px;
-
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-
-/* --------------------------------------------------
-   ALIGNMENT
--------------------------------------------------- */
-
-.ft-footer,
-.ft-footer-grid,
-.ft-footer-grid > div {
-  text-align: left;
-}
-
-
-/* --------------------------------------------------
-   FOOTER CONTENT WIDTH
--------------------------------------------------- */
+/* MOBILE CONTENT */
 
 .ft-footer-grid p,
 .ft-footer-grid a,
@@ -6117,49 +6184,38 @@ textarea {
 }
 
 
-/* --------------------------------------------------
-   MOBILE LINK TARGETS
--------------------------------------------------- */
+/* LINKS */
 
 .ft-footer-grid a {
-  display: flex;
+  display: block;
 
-  align-items: center;
+  width: auto;
 
-  width: 100%;
+  min-height: 0;
 
-  min-height: 34px;
+  padding: 0;
 
-  padding: 3px 0;
-
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 
-/* --------------------------------------------------
-   MOBILE FOOTER TYPE
--------------------------------------------------- */
+/* QUICK LINKS */
 
 .ft-footer-grid > div:nth-child(2) a {
   font-size: 0.78rem;
+
+  overflow-wrap: normal;
+  word-break: normal;
 }
+
+
+/* CONTACT */
 
 .ft-footer-grid > div:nth-child(3) a,
 .ft-footer-grid > div:nth-child(3) span {
   font-size: 0.72rem;
 
-  line-height: 1.45;
-}
-
-
-/* --------------------------------------------------
-   QUICK LINKS — PREVENT AWKWARD WORD BREAKS
--------------------------------------------------- */
-
-.ft-footer-grid > div:nth-child(2) a {
-  overflow-wrap: normal;
-
-  word-break: normal;
+  line-height: 1.4;
 }
   /* --------------------------------------------------
    23L. MOBILE BOOKING BAR
@@ -6430,25 +6486,5 @@ textarea {
   .ft-review-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  /* --------------------------------------------------
-   FLOWSTART → ABOUT
-   SEAMLESS BACKGROUND HANDOFF
--------------------------------------------------- */
 
-.ft-flowstart {
-  border-bottom: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #eef0f2 0%,
-      #d9d9d9 18%,
-      #b9c5cf 36%,
-      #819bb2 54%,
-      #416d9b 68%,
-      #285477 80%,
-      #20435f 90%,
-      #18364f 100%
-    );
-}
 }
