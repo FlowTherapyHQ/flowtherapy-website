@@ -5102,6 +5102,7 @@ textarea {
    ========================================================================== */
 
 @media (max-width: 900px) {
+
   .ft-services-layout {
     grid-template-columns: 1fr;
   }
@@ -5247,20 +5248,35 @@ textarea {
     padding: 72px 0 60px;
   }
 /* --------------------------------------------------
-   DESKTOP — SHARED MAIN CONTENT RAIL
+   SERVICES — DESKTOP INNER CENTERING
 -------------------------------------------------- */
 
-.ft-services-layout,
-.ft-wellness-grid,
-.ft-about-grid,
-.ft-review-grid,
-.ft-flowhub-intro,
-.ft-flowhub-grid,
-.ft-final-grid,
-.ft-footer-grid {
-  width: min(calc(100% - 80px), 1180px);
+.ft-services-layout {
+  display: grid;
 
-  max-width: 1180px;
+  grid-template-columns: 1fr;
+
+  width: min(calc(100% - 80px), 980px);
+
+  max-width: 980px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ft-services-main {
+  width: 100%;
+
+  max-width: none;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ft-services-side {
+  width: 100%;
+
+  max-width: none;
 
   margin-left: auto;
   margin-right: auto;
