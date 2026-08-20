@@ -502,9 +502,6 @@ textarea {
   }
 }
 
-/* ==========================================================================
-   05. HERO
-   ========================================================================== */
 
 /* ==========================================================================
    05. HERO
@@ -520,25 +517,10 @@ textarea {
 
   overflow: hidden;
 
-  background: #07090b;
-}
-
-.ft-hero::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  width: min(100%, 1320px);
-  height: 100%;
-
-  margin-inline: auto;
-
   background:
+    #07090b
     url("/assets/images/home/flowtherapy-hero.jpg")
     center center / cover no-repeat;
-
-  z-index: 0;
 }
 
 .ft-hero-overlay {
@@ -5382,11 +5364,28 @@ letter-spacing: 0.012em;
    ========================================================================== */
 
 @media (min-width: 901px) {
-  .ft-hero {
-    background-size: min(1600px, 100%) auto;
+/* --------------------------------------------------
+   DESKTOP — CONTROL CONTENT EXPANSION
+-------------------------------------------------- */
 
-    background-position: center center;
-  }
+body.flowtherapy-home {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+body.flowtherapy-home .ft-header,
+body.flowtherapy-home .ft-hero {
+  width: 100%;
+}
+
+body.flowtherapy-home .ft-header > .ft-shell,
+body.flowtherapy-home .ft-hero > .ft-shell {
+  width: min(calc(100% - 80px), 1180px);
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* --------------------------------------------------
    DESKTOP — REVIEWS + FLOWHUB SHARED RAIL
 -------------------------------------------------- */
