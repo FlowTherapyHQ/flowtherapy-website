@@ -506,23 +506,46 @@ textarea {
    05. HERO
    ========================================================================== */
 
+/* ==========================================================================
+   05. HERO
+   ========================================================================== */
+
 .ft-hero {
   position: relative;
+
   display: flex;
   align-items: flex-end;
+
   min-height: 640px;
+
   overflow: hidden;
 
-  background: #07090b url("/assets/images/home/flowtherapy-hero.jpg") center
-    center / cover no-repeat;
+  background: #07090b;
+}
+
+.ft-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  width: min(100%, 1320px);
+  height: 100%;
+
+  margin-inline: auto;
+
+  background:
+    url("/assets/images/home/flowtherapy-hero.jpg")
+    center center / cover no-repeat;
+
+  z-index: 0;
 }
 
 .ft-hero-overlay {
-  position:
-    absolute;
+  position: absolute;
+  inset: 0;
 
-  inset:
-    0;
+  z-index: 1;
 
   background:
     linear-gradient(
