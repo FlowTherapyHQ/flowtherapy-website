@@ -5,11 +5,38 @@
 @import url("./modules/pages.css");
 @import url("./modules/home.css?v=3");
 @import url("./modules/responsive.css");
-
-
-
-
-
+.ft-library-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  color: #69bfff;
+  vertical-align: -3px;
+}
+.ft-service-row:hover,
+.ft-service-row:focus-visible,
+.ft-simple-service:hover {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+.ft-boost-row:hover {
+  background: #1b3545 !important;
+  box-shadow: inset 3px 0 #58baff;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+.ft-recovery-lab .ft-boost-row:hover {
+  background: rgba(65, 150, 205, 0.13) !important;
+  box-shadow: inset 2px 0 rgba(88, 186, 255, 0.7) !important;
+  border-radius: 16px !important;
+}
+/* Respect Massage checklist */
+.ft-respect-massage li {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-transform: none !important;
+}
 
 
 

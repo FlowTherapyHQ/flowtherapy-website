@@ -3278,6 +3278,7 @@ textarea {
 /* CLIENT EXPERIENCES */
 
 .ft-section.ft-reviews {
+  position: relative;
   padding-top: 16px;
 
   background:
@@ -5353,6 +5354,18 @@ letter-spacing: 0.012em;
   .ft-flowstart-card {
     gap: 34px;
   }
+ .ft-services {
+  background: linear-gradient(
+    180deg,
+    #05090d 0%,
+    #071018 12%,
+    #081722 28%,
+    #0a2230 46%,
+    #0b2d3c 64%,
+    #0c3544 78%,
+    #081d27 100%
+  );
+ } 
 }
 
 .ft-section {
