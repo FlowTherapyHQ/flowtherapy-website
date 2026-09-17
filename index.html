@@ -181,15 +181,17 @@
         }
       }
       .ft-meta-glint {
-  display: inline-block !important;
-  flex: 0 0 3px;
-  width: 3px !important;
-  height: 3px !important;
-  margin-inline: .5rem;
-  border-radius: 50%;
-  background: #e9f8ff !important;
-  box-shadow: 0 0 5px 2px #b9eaff, 0 0 11px 4px rgba(53, 169, 255, .55) !important;
-}
+        display: inline-block !important;
+        flex: 0 0 3px;
+        width: 3px !important;
+        height: 3px !important;
+        margin-inline: 0.5rem;
+        border-radius: 50%;
+        background: #e9f8ff !important;
+        box-shadow:
+          0 0 5px 2px #b9eaff,
+          0 0 11px 4px rgba(53, 169, 255, 0.55) !important;
+      }
       .ft-access-tools {
         display: flex;
         justify-content: center;
@@ -233,22 +235,25 @@
         justify-content: flex-end;
         align-items: center;
         gap: 8px;
-        padding: 10px max(16px, calc((100vw - 1200px) / 2));
-        background: #1b344a;
+        padding: 0px max(16px, calc((100vw - 1200px) / 2));
+        background: transparent;
       }
       .ft-access-tools a,
       .ft-access-tools button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 40px;
-        padding: 0 14px;
+        min-height: 34px;
+        padding: 0 9px;
         border: 1px solid #49647a;
         border-radius: 999px;
-        background: transparent;
+        background: #11171b;
+        box-shadow:
+          0 0 10px rgba(56, 182, 255, 0.65),
+          0 0 20px rgba(9, 94, 255, 0.4);
         color: #fff;
         font:
-          700 14px/1 Inter,
+          700 12px/1 Inter,
           Arial,
           sans-serif;
         text-decoration: none;
@@ -260,7 +265,7 @@
         padding-inline: 12px;
       }
       .ft-access-tools #ft-spanish {
-        border-color: #c99b46;
+        border-color: #8edcff;
       }
       .ft-access-tools a:focus-visible,
       .ft-access-tools button:focus-visible {
@@ -290,6 +295,24 @@
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
 
+          <div class="ft-access-tools" aria-label="Reading options">
+            <a
+              id="ft-spanish"
+              href="./es.html"
+              lang="es"
+              aria-label="Leer esta página en español"
+              >◉ Español ›</a
+            >
+            <button
+              id="ft-text-size"
+              type="button"
+              aria-pressed="false"
+              aria-label="Increase text size"
+              title="Larger text"
+            >
+              Aa
+            </button>
+          </div>
           <a
             class="ft-nav-book"
             href="https://flowtherapy.noterro.com/"
@@ -302,24 +325,6 @@
       </div>
     </header>
 
-    <div class="ft-access-tools" aria-label="Reading options">
-      <a
-        id="ft-spanish"
-        href="./es.html"
-        lang="es"
-        aria-label="Leer esta página en español"
-        >◉ Español ›</a
-      >
-      <button
-        id="ft-text-size"
-        type="button"
-        aria-pressed="false"
-        aria-label="Increase text size"
-        title="Larger text"
-      >
-        Aa
-      </button>
-    </div>
     <main>
       <!-- ===================================================
      HERO
