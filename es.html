@@ -194,80 +194,64 @@
       }
       .ft-access-tools {
         display: flex;
-        justify-content: center;
-        gap: 0.65rem;
-        padding: 0.55rem 1rem;
-        background: #0e1f2d;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        background: transparent;
       }
+
       .ft-access-tools a[aria-disabled="true"] {
         opacity: 0.55;
         cursor: not-allowed;
       }
-      .ft-access-tools a,
-      .ft-access-tools button {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2.5rem;
-        padding: 0.35rem 0.8rem;
-        border: 1px solid #5aa9df;
-        border-radius: 999px;
-        background: #142d42;
-        color: #edf7ff;
-        font:
-          600 0.9rem Inter,
-          Arial,
-          sans-serif;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      html.ft-large-text {
-        font-size: 125% !important;
-      }
-      html.ft-large-text .ft-service-content,
-      html.ft-large-text .ft-about-copy,
-      html.ft-large-text .ft-flowhub {
-        font-size: 1.15rem !important;
-      }
-    </style>
-    <style>
-      .ft-access-tools {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 8px;
-        padding: 10px max(16px, calc((100vw - 1200px) / 2));
-        background: #1b344a;
-      }
+
       .ft-access-tools a,
       .ft-access-tools button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 40px;
-        padding: 0 14px;
+        min-height: 34px;
+        padding: 0 9px;
         border: 1px solid #49647a;
         border-radius: 999px;
-        background: transparent;
+        background: #11171b;
+        box-shadow:
+          0 0 10px rgba(56, 182, 255, 0.65),
+          0 0 20px rgba(9, 94, 255, 0.4);
         color: #fff;
         font:
-          700 14px/1 Inter,
+          700 12px/1 Inter,
           Arial,
           sans-serif;
         text-decoration: none;
         white-space: nowrap;
         cursor: pointer;
       }
+
       .ft-access-tools #ft-text-size {
         min-width: 48px;
         padding-inline: 12px;
       }
+
       .ft-access-tools #ft-spanish {
-        border-color: #c99b46;
+        border-color: #8edcff;
       }
+
       .ft-access-tools a:focus-visible,
       .ft-access-tools button:focus-visible {
         outline: 2px solid #9bdcff;
         outline-offset: 3px;
+      }
+
+      html.ft-large-text {
+        font-size: 125% !important;
+      }
+
+      html.ft-large-text .ft-service-content,
+      html.ft-large-text .ft-about-copy,
+      html.ft-large-text .ft-flowhub {
+        font-size: 1.15rem !important;
       }
     </style>
   </head>
@@ -279,7 +263,7 @@
 
     <header class="ft-header">
       <div class="ft-shell ft-nav">
-        <a href="#home" class="ft-logo-link" aria-label="FlowTherapy home">
+        <a href="#home" class="ft-logo-link" aria-label="Inicio de FlowTherapy">
           <img
             src="./assets/images/flowtherapy-logo.png"
             alt="FlowTherapy"
@@ -287,11 +271,31 @@
           />
         </a>
 
-        <nav class="ft-nav-links" aria-label="Main navigation">
+        <nav class="ft-nav-links" aria-label="Navegación principal">
           <a href="#services">Servicios</a>
           <a href="#about">Sobre mí</a>
           <a href="#flowhub">FlowHub</a>
           <a href="#contact">Contacto</a>
+
+          <div class="ft-access-tools" aria-label="Opciones de lectura">
+            <a
+              id="ft-spanish"
+              href="./index.html"
+              lang="en"
+              aria-label="Read this page in English"
+              >◉ English ›</a
+            >
+
+            <button
+              id="ft-text-size"
+              type="button"
+              aria-pressed="false"
+              aria-label="Aumentar el tamaño del texto"
+              title="Texto más grande"
+            >
+              Aa
+            </button>
+          </div>
 
           <a
             class="ft-nav-book"
@@ -304,25 +308,6 @@
         </nav>
       </div>
     </header>
-
-    <div class="ft-access-tools" aria-label="Reading options">
-      <a
-        id="ft-spanish"
-        href="./index.html"
-        lang="es"
-        aria-label="Read this page in English"
-        >◉ English ›</a
-      >
-      <button
-        id="ft-text-size"
-        type="button"
-        aria-pressed="false"
-        aria-label="Aumentar el tamaño del texto"
-        title="Texto más grande"
-      >
-        Aa
-      </button>
-    </div>
     <main>
       <!-- ===================================================
      HERO
@@ -336,7 +321,7 @@
             <h1>
               Descubre el
               <br />
-              <em>ritmo</em> of
+              <em>ritmo</em> de la
               <br />
               relajación
             </h1>

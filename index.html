@@ -668,6 +668,218 @@
         }
       }
     </style>
+
+    <style>
+      /* Enrollment reveal + modal */
+      .ft-explore-trigger[aria-expanded="true"] {
+        border-left: 2px solid #e6bb7a;
+        background: rgba(35, 82, 111, 0.72);
+        box-shadow: inset 3px 0 rgba(88, 186, 255, 0.72);
+      }
+      .ft-plan-explore[hidden],
+      .ft-enroll-modal[hidden] {
+        display: none !important;
+      }
+      .ft-enroll-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        background: rgba(2, 10, 17, 0.78);
+        backdrop-filter: blur(10px);
+      }
+      .ft-enroll-dialog {
+        position: relative;
+        width: min(620px, 100%);
+        max-height: min(88vh, 760px);
+        overflow: auto;
+        padding: clamp(22px, 5vw, 38px);
+        border: 1px solid rgba(105, 191, 255, 0.34);
+        border-radius: 24px;
+        background:
+          radial-gradient(
+            circle at 95% 0%,
+            rgba(73, 169, 235, 0.18),
+            transparent 34%
+          ),
+          linear-gradient(145deg, #102d42, #081d2b 78%);
+        box-shadow:
+          0 28px 80px rgba(0, 0, 0, 0.52),
+          0 0 28px rgba(73, 169, 235, 0.12);
+        color: #f7fbff;
+      }
+      .ft-enroll-dialog::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 32px;
+        width: 86px;
+        height: 1px;
+        background: #e6bb7a;
+        box-shadow: 0 0 14px rgba(230, 187, 122, 0.55);
+      }
+      .ft-enroll-close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
+        border: 1px solid #49647a;
+        border-radius: 50%;
+        background: #11171b;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .ft-enroll-kicker {
+        margin: 0 42px 8px 0;
+        color: #69bfff;
+        font:
+          700 0.68rem/1.4 Inter,
+          Arial,
+          sans-serif;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .ft-enroll-dialog h2 {
+        margin: 0 0 8px;
+        font:
+          500 clamp(2rem, 7vw, 3rem)/1.04 "Playfair Display",
+          Georgia,
+          serif;
+      }
+      .ft-enroll-selected {
+        margin: 0 0 20px;
+        padding: 14px 16px;
+        border: 1px solid rgba(230, 187, 122, 0.5);
+        border-radius: 14px;
+        background: rgba(31, 78, 106, 0.58);
+      }
+      .ft-enroll-selected strong {
+        color: #f0c77d;
+      }
+      .ft-enroll-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .ft-enroll-field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .ft-enroll-field--full {
+        grid-column: 1 / -1;
+      }
+      .ft-enroll-field label {
+        font:
+          700 0.76rem/1.3 Inter,
+          Arial,
+          sans-serif;
+        color: #dcebf4;
+      }
+      .ft-enroll-field input,
+      .ft-enroll-field textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(112, 187, 236, 0.35);
+        border-radius: 12px;
+        background: rgba(8, 28, 42, 0.82);
+        color: #fff;
+        padding: 12px 13px;
+        font:
+          400 0.92rem/1.4 Inter,
+          Arial,
+          sans-serif;
+      }
+      .ft-enroll-field textarea {
+        min-height: 92px;
+        resize: vertical;
+      }
+      .ft-enroll-note {
+        margin: 2px 0 14px;
+        color: #afc5d3;
+        font:
+          400 0.76rem/1.5 Inter,
+          Arial,
+          sans-serif;
+      }
+      .ft-enroll-ack {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin: 16px 0;
+        color: #d7e5ed;
+        font:
+          400 0.78rem/1.5 Inter,
+          Arial,
+          sans-serif;
+      }
+      .ft-enroll-ack input {
+        margin-top: 3px;
+        accent-color: #e6bb7a;
+      }
+      .ft-enroll-submit {
+        width: 100%;
+        min-height: 46px;
+        border: 1px solid #e6bb7a;
+        border-radius: 999px;
+        background: linear-gradient(
+          135deg,
+          rgba(38, 87, 117, 0.98),
+          rgba(20, 55, 78, 0.98)
+        );
+        color: #fff;
+        font:
+          700 0.8rem/1 Inter,
+          Arial,
+          sans-serif;
+        cursor: pointer;
+      }
+      .ft-enroll-fineprint {
+        margin: 12px 0 0;
+        color: #9fb7c5;
+        font:
+          400 0.7rem/1.5 Inter,
+          Arial,
+          sans-serif;
+        text-align: center;
+      }
+      .ft-enroll-success {
+        text-align: center;
+        padding: 28px 4px 8px;
+      }
+      .ft-enroll-success h3 {
+        margin: 0 0 10px;
+        font:
+          500 2rem/1.1 "Playfair Display",
+          Georgia,
+          serif;
+      }
+      .ft-enroll-success p {
+        color: #cbdbe5;
+        line-height: 1.65;
+      }
+      body.ft-modal-open {
+        overflow: hidden;
+      }
+      @media (max-width: 600px) {
+        .ft-enroll-modal {
+          padding: 0;
+          place-items: end stretch;
+        }
+        .ft-enroll-dialog {
+          width: 100%;
+          max-height: 92vh;
+          border-radius: 24px 24px 0 0;
+        }
+        .ft-enroll-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
 
   <body class="flowtherapy-home">
@@ -1107,45 +1319,49 @@
                   </span>
                   <b aria-hidden="true"></b>
                 </summary>
+
                 <div class="ft-service-content">
                   <p class="ft-service-intro">
                     Find care that fits your schedule, workplace, or someone you
                     love.
                   </p>
+
                   <a
-                    class="ft-service-row"
-                    href="https://hub.discoverflowtherapy.com/pages/flowpass.html"
+                    class="ft-service-row ft-explore-trigger"
+                    href="#flowpass-explore"
+                    data-explore="flowpass-explore"
+                    aria-expanded="false"
                   >
                     <strong>FlowPass</strong>
-                    <span
-                      >Wellness Made Routine. Membership care for a steadier
+                    <span>
+                      Wellness Made Routine. Membership care for a steadier
                       rhythm, with 75- and 90-minute session options and member
-                      savings.</span
-                    >
+                      savings.
+                    </span>
                   </a>
+
                   <a
-                    class="ft-service-row"
-                    href="https://flowtherapy.noterro.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    class="ft-service-row ft-explore-trigger"
+                    href="#flowpack-explore"
+                    data-explore="flowpack-explore"
+                    aria-expanded="false"
                   >
                     <strong>FlowPack</strong>
-                    <span
-                      >Wellness, Your Way. Choose a package of 4, 8, or 12
+                    <span>
+                      Wellness, Your Way. Choose a package of 4, 8, or 12
                       sessions in your preferred 75- or 90-minute length, then
-                      book on your schedule.</span
-                    >
+                      book on your schedule.
+                    </span>
                   </a>
-                  <a
-                    class="ft-service-row"
-                    href="https://hub.discoverflowtherapy.com/pages/corporate.html"
-                  >
+
+                  <a class="ft-service-row" href="./pages/corporate.html">
                     <strong>FlowChair</strong>
-                    <span
-                      >Wellness at Work. Bring focused chair massage to employee
-                      appreciation, conferences, and team wellness days.</span
-                    >
+                    <span>
+                      Wellness at Work. Bring focused chair massage to employee
+                      appreciation, conferences, and team wellness days.
+                    </span>
                   </a>
+
                   <a
                     class="ft-service-row"
                     href="https://app.squareup.com/gift/MLV560DXHSF4H/order"
@@ -1155,18 +1371,176 @@
                     <strong>FlowGift</strong>
                     <span>Share the gift of therapeutic touch.</span>
                   </a>
+
                   <a
                     class="ft-service-row"
-                    href="https://flowtherapy.noterro.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="./pages/inquiry.html?type=private-event"
                   >
                     <strong>Private Flow Events</strong>
-                    <span
-                      >Personalized massage for celebrations, gatherings, and
-                      wellness events.</span
-                    >
+                    <span>
+                      Personalized massage for celebrations, gatherings, and
+                      wellness events.
+                    </span>
                   </a>
+
+                  <section class="ft-plan-explore" id="flowpass-explore" hidden>
+                    <div class="ft-plan-explore-inner">
+                      <p class="ft-eyebrow">FLOWPASS • WELLNESS MADE ROUTINE</p>
+
+                      <h2>
+                        Consistent care.
+                        <em>Built into your rhythm.</em>
+                      </h2>
+
+                      <p class="ft-plan-intro">
+                        Make therapeutic bodywork part of your regular wellness
+                        routine. Choose the session length that fits the way you
+                        care for your body.
+                      </p>
+
+                      <div class="ft-choice-grid ft-choice-grid--pass">
+                        <button
+                          type="button"
+                          class="ft-plan-choice"
+                          data-plan="FlowPass • 75"
+                          data-price="$125"
+                          aria-pressed="false"
+                        >
+                          <span class="ft-choice-label">75 MIN</span>
+                          <strong>$125</strong>
+                        </button>
+
+                        <button
+                          type="button"
+                          class="ft-plan-choice"
+                          data-plan="FlowPass • 90"
+                          data-price="$140"
+                          aria-pressed="false"
+                        >
+                          <span class="ft-choice-label">90 MIN</span>
+                          <strong>$140</strong>
+                        </button>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="ft-plan-enroll"
+                        data-enroll-group="flowpass"
+                        disabled
+                      >
+                        Select Your FlowPass
+                      </button>
+                    </div>
+                  </section>
+
+                  <section class="ft-plan-explore" id="flowpack-explore" hidden>
+                    <div class="ft-plan-explore-inner">
+                      <p class="ft-eyebrow">FLOWPACKS • WELLNESS, YOUR WAY</p>
+
+                      <h2>
+                        More care.
+                        <em>More flexibility.</em>
+                      </h2>
+
+                      <p class="ft-plan-intro">
+                        Choose a collection of 75- or 90-minute sessions and use
+                        them over time, on the schedule that works for you.
+                      </p>
+
+                      <div class="ft-pack-group">
+                        <div class="ft-pack-duration">
+                          <span>75</span>
+                          <small>MINUTES</small>
+                        </div>
+
+                        <div class="ft-choice-grid ft-choice-grid--packs">
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack4 • 75"
+                            data-price="$460"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">4 SESSIONS</span>
+                            <strong>$460</strong>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack8 • 75"
+                            data-price="$900"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">8 SESSIONS</span>
+                            <strong>$900</strong>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack12 • 75"
+                            data-price="$1,320"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">12 SESSIONS</span>
+                            <strong>$1,320</strong>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="ft-pack-group">
+                        <div class="ft-pack-duration">
+                          <span>90</span>
+                          <small>MINUTES</small>
+                        </div>
+
+                        <div class="ft-choice-grid ft-choice-grid--packs">
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack4 • 90"
+                            data-price="$520"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">4 SESSIONS</span>
+                            <strong>$520</strong>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack8 • 90"
+                            data-price="$1,020"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">8 SESSIONS</span>
+                            <strong>$1,020</strong>
+                          </button>
+
+                          <button
+                            type="button"
+                            class="ft-plan-choice"
+                            data-plan="FlowPack12 • 90"
+                            data-price="$1,500"
+                            aria-pressed="false"
+                          >
+                            <span class="ft-choice-label">12 SESSIONS</span>
+                            <strong>$1,500</strong>
+                          </button>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="ft-plan-enroll"
+                        data-enroll-group="flowpack"
+                        disabled
+                      >
+                        Select Your FlowPack
+                      </button>
+                    </div>
+                  </section>
                 </div>
               </details>
               <!-- RESPECT MASSAGE -->
@@ -2214,6 +2588,141 @@
           });
         })();
       </script>
+
+      <!-- FlowPass / FlowPack enrollment request -->
+      <div class="ft-enroll-modal" id="ft-enroll-modal" hidden>
+        <div
+          class="ft-enroll-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="ft-enroll-title"
+        >
+          <button
+            class="ft-enroll-close"
+            type="button"
+            aria-label="Close enrollment form"
+          >
+            ×
+          </button>
+          <div id="ft-enroll-form-view">
+            <p class="ft-enroll-kicker">BEGIN YOUR FLOW</p>
+            <h2 id="ft-enroll-title">Initiate Enrollment</h2>
+            <p class="ft-enroll-selected">
+              You selected <strong id="ft-enroll-plan"></strong>
+            </p>
+            <form
+              id="ft-enrollment-form"
+              action="https://formsubmit.co/Hello@DiscoverFlowTherapy.com"
+              method="POST"
+              target="ft-enroll-submit-frame"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New FlowTherapy Enrollment Request"
+              />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="Enrollment Selection"
+                id="ft-enroll-plan-field"
+              />
+              <input type="hidden" name="Price" id="ft-enroll-price-field" />
+              <div class="ft-enroll-grid">
+                <div class="ft-enroll-field">
+                  <label for="ft-enroll-name">Name</label
+                  ><input
+                    id="ft-enroll-name"
+                    name="Name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="ft-enroll-field">
+                  <label for="ft-enroll-email">Email</label
+                  ><input
+                    id="ft-enroll-email"
+                    name="Email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="ft-enroll-field">
+                  <label for="ft-enroll-phone">Mobile number</label
+                  ><input
+                    id="ft-enroll-phone"
+                    name="Mobile Number"
+                    type="tel"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="ft-enroll-field">
+                  <label for="ft-enroll-start">Preferred start date</label
+                  ><input
+                    id="ft-enroll-start"
+                    name="Preferred Start Date"
+                    type="date"
+                  />
+                </div>
+                <div class="ft-enroll-field ft-enroll-field--full">
+                  <label for="ft-enroll-notes"
+                    >Questions or notes (optional)
+                    <span aria-hidden="true">(optional)</span></label
+                  ><textarea
+                    id="ft-enroll-notes"
+                    name="Enrollment Questions or Notes"
+                  ></textarea>
+                </div>
+              </div>
+              <p class="ft-enroll-note">
+                Please do not include medical or health information here. Health
+                information is collected through FlowTherapy's secure client
+                process.
+              </p>
+              <label class="ft-enroll-ack"
+                ><input
+                  type="checkbox"
+                  name="Enrollment Request Acknowledgment"
+                  value="Acknowledged"
+                  required
+                /><span
+                  >I understand this is an enrollment request. My FlowPass or
+                  FlowPack is not active until the applicable enrollment
+                  agreement, payment, and activation are completed.</span
+                ></label
+              >
+              <button class="ft-enroll-submit" type="submit">
+                Submit Enrollment Request
+              </button>
+              <p class="ft-enroll-fineprint">
+                No payment is collected through this form. FlowTherapy will send
+                the applicable agreement and next steps before activation.
+              </p>
+            </form>
+            <iframe
+              name="ft-enroll-submit-frame"
+              title="Enrollment submission"
+              hidden
+            ></iframe>
+          </div>
+          <div class="ft-enroll-success" id="ft-enroll-success" hidden>
+            <p class="ft-enroll-kicker">ENROLLMENT REQUEST</p>
+            <h3>Your Flow is in motion.</h3>
+            <p>
+              Your enrollment request has been submitted. FlowTherapy will
+              follow up by email with your agreement and secure payment
+              instructions. Your plan will become active once your agreement is
+              completed and payment is received.
+            </p>
+            <button class="ft-enroll-submit" id="ft-enroll-done" type="button">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
     <script>
       (() => {
@@ -2269,5 +2778,108 @@
       })();
     </script>
     <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    <script>
+      (() => {
+        const moreWays = document.querySelector(".ft-more-ways");
+        if (!moreWays) return;
+
+        const triggers = [...moreWays.querySelectorAll(".ft-explore-trigger")];
+        const panels = [...moreWays.querySelectorAll(".ft-plan-explore")];
+        const modal = document.getElementById("ft-enroll-modal");
+        const dialog = modal?.querySelector(".ft-enroll-dialog");
+        const closeButton = modal?.querySelector(".ft-enroll-close");
+        const doneButton = document.getElementById("ft-enroll-done");
+        const form = document.getElementById("ft-enrollment-form");
+        const formView = document.getElementById("ft-enroll-form-view");
+        const successView = document.getElementById("ft-enroll-success");
+        const planText = document.getElementById("ft-enroll-plan");
+        const planField = document.getElementById("ft-enroll-plan-field");
+        const priceField = document.getElementById("ft-enroll-price-field");
+
+        const closeExplorePanels = () => {
+          panels.forEach((panel) => (panel.hidden = true));
+          triggers.forEach((trigger) =>
+            trigger.setAttribute("aria-expanded", "false"),
+          );
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            const target = document.getElementById(trigger.dataset.explore);
+            if (!target) return;
+            const shouldOpen = target.hidden;
+            closeExplorePanels();
+            if (shouldOpen) {
+              trigger.insertAdjacentElement("afterend", target);
+              target.hidden = false;
+              trigger.setAttribute("aria-expanded", "true");
+              requestAnimationFrame(() =>
+                target.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+              );
+            }
+          });
+        });
+
+        moreWays.addEventListener("toggle", () => {
+          if (!moreWays.open) closeExplorePanels();
+        });
+
+        panels.forEach((section) => {
+          const choices = [...section.querySelectorAll(".ft-plan-choice")];
+          const enrollButton = section.querySelector(".ft-plan-enroll");
+          choices.forEach((choice) => {
+            choice.addEventListener("click", () => {
+              choices.forEach((item) =>
+                item.setAttribute("aria-pressed", "false"),
+              );
+              choice.setAttribute("aria-pressed", "true");
+              enrollButton.disabled = false;
+              enrollButton.textContent = "Initiate Enrollment";
+              enrollButton.dataset.plan = choice.dataset.plan;
+              enrollButton.dataset.price = choice.dataset.price;
+            });
+          });
+          enrollButton.addEventListener("click", () => {
+            if (enrollButton.disabled || !modal) return;
+            const plan = enrollButton.dataset.plan;
+            const price = enrollButton.dataset.price;
+            planText.textContent = `${plan} — ${price}`;
+            planField.value = plan;
+            priceField.value = price;
+            formView.hidden = false;
+            successView.hidden = true;
+            modal.hidden = false;
+            document.body.classList.add("ft-modal-open");
+            requestAnimationFrame(() =>
+              dialog?.querySelector("input:not([type=hidden])")?.focus(),
+            );
+          });
+        });
+
+        const closeModal = () => {
+          if (!modal) return;
+          modal.hidden = true;
+          document.body.classList.remove("ft-modal-open");
+        };
+        closeButton?.addEventListener("click", closeModal);
+        doneButton?.addEventListener("click", closeModal);
+        modal?.addEventListener("click", (event) => {
+          if (event.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal && !modal.hidden) closeModal();
+        });
+
+        form?.addEventListener("submit", () => {
+          window.setTimeout(() => {
+            formView.hidden = true;
+            successView.hidden = false;
+            form.reset();
+          }, 350);
+        });
+      })();
+    </script>
   </body>
 </html>
+`
