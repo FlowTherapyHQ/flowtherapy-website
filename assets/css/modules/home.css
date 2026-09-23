@@ -5316,7 +5316,6 @@ letter-spacing: 0.012em;
 .ft-about-grid,
 .ft-review-grid,
 .ft-flowhub-intro,
-.ft-flowhub-grid,
 .ft-final-grid,
 .ft-footer-grid {
   width: min(calc(100% - 64px), 1120px);
@@ -5677,14 +5676,16 @@ body.flowtherapy-home .ft-hero > .ft-shell {
     padding-bottom: 67px;
   }
 
-  /* MOBILE CONTENT RAIL */
-  .ft-shell {
-    width: calc(100% - 32px);
+  /* --------------------------------------------------
+   MOBILE CONTENT RAIL
+   Consistent 12px outer gutter
+-------------------------------------------------- */
 
-    max-width: 420px;
-
-    margin-inline: auto;
-  }
+.ft-shell {
+  width: calc(100% - 24px);
+  max-width: 460px;
+  margin-inline: auto;
+}
   
   /* --------------------------------------------------
      23B. HEADER

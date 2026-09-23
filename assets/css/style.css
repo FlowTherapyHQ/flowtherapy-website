@@ -731,23 +731,3 @@
     margin-bottom: 1rem;
   }
 }
-/* ==========================================================
-   MOBILE — WIDER CONTENT RAIL
-   ========================================================== */
-
-@media (max-width: 700px) {
-  .ft-shell,
-  .ft-services-layout,
-  .ft-flowstart-card,
-  .ft-about-grid,
-  .ft-review-grid,
-  .ft-flowhub-intro,
-  .ft-flowhub-grid,
-  .ft-final-grid,
-  .ft-footer-grid {
-    width: calc(100% - 24px);
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
