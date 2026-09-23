@@ -4117,20 +4117,26 @@ letter-spacing: 0.012em;
 
 .ft-flowhub-grid {
   position: relative;
-
   z-index: 2;
 
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 22px;
 
   width: 100%;
-
   max-width: 1040px;
-
   margin-inline: auto;
+}
+
+/* FlowLibrary + community card layout */
+.ft-library-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 42rem;
+}
+
+.ft-social-cards {
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 /* --------------------------------------------------
@@ -4144,9 +4150,9 @@ letter-spacing: 0.012em;
 
   flex-direction: column;
 
-  min-height: 330px;
+  min-height: 0;
 
-  padding: 32px 30px 30px;
+  padding: 24px;
 
   overflow: hidden;
 
@@ -5315,7 +5321,6 @@ letter-spacing: 0.012em;
 .ft-flowstart-card,
 .ft-about-grid,
 .ft-review-grid,
-.ft-flowhub-intro,
 .ft-final-grid,
 .ft-footer-grid {
   width: min(calc(100% - 64px), 1120px);
