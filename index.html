@@ -2812,6 +2812,49 @@
         moreWays.addEventListener("toggle", () => {
           if (!moreWays.open) closeExplorePanels();
         });
+        // Open FlowPass or FlowPack directly from a shared URL.
+        // Examples:
+        // discoverflowtherapy.com/#flowpass
+        // discoverflowtherapy.com/#flowpack
+
+        const openExploreFromHash = () => {
+          const hashMap = {
+            "#flowpass": "flowpass-explore",
+            "#flowpack": "flowpack-explore",
+          };
+
+          const targetId = hashMap[window.location.hash.toLowerCase()];
+          if (!targetId) return;
+
+          const target = document.getElementById(targetId);
+          const trigger = moreWays.querySelector(
+            `[data-explore="${targetId}"]`,
+          );
+
+          if (!target || !trigger) return;
+
+          // Open "More Ways to Flow"
+          moreWays.open = true;
+
+          // Close the other Explore panel
+          closeExplorePanels();
+
+          // Move this panel directly beneath its card
+          trigger.insertAdjacentElement("afterend", target);
+
+          target.hidden = false;
+          trigger.setAttribute("aria-expanded", "true");
+
+          requestAnimationFrame(() => {
+            trigger.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        };
+
+        openExploreFromHash();
+        window.addEventListener("hashchange", openExploreFromHash);
 
         panels.forEach((section) => {
           const choices = [...section.querySelectorAll(".ft-plan-choice")];
