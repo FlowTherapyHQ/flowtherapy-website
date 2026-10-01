@@ -1241,11 +1241,63 @@
               </p>
             </div>
           </form>
+          <div
+            id="corporate-form-success"
+            style="display: none; text-align: center; padding: 32px 20px"
+          >
+            <h3 style="color: #0a3654; margin-bottom: 10px">
+              Thank you! Your inquiry has been received.
+            </h3>
+            <p style="color: #466b82; margin: 0">
+              FlowTherapy will follow up with availability and next steps.
+            </p>
+          </div>
         </section>
       </div>
     </main>
 
     <script>
+      const corporateForm = document.querySelector(".corporate-inquiry-form");
+      const corporateSuccess = document.getElementById(
+        "corporate-form-success",
+      );
+
+      corporateForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = corporateForm.querySelector(
+          'button[type="submit"]',
+        );
+        const originalButtonText = submitButton.textContent;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
+          const formData = new FormData(corporateForm);
+
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            corporateForm.style.display = "none";
+            corporateSuccess.style.display = "block";
+          } else {
+            throw new Error("Submission failed.");
+          }
+        } catch (error) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+
+          alert(
+            "We couldn't send your inquiry. Please try again or contact FlowTherapy directly.",
+          );
+        }
+      });
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
           navigator.serviceWorker
