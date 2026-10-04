@@ -250,7 +250,7 @@
         justify-content: flex-end;
         align-items: center;
         gap: 8px;
-        padding: 0px max(16px, calc((100vw - 1200px) / 2));
+        padding: 0;
         background: transparent;
       }
       .ft-access-tools a,
@@ -300,15 +300,16 @@
       .ft-gallery {
         position: relative;
         isolation: isolate;
-        padding: clamp(5rem, 9vw, 9rem) 0;
+        padding: 24px 0 clamp(5rem, 9vw, 9rem);
         color: #f6f8fa;
-        background:
-          radial-gradient(
-            circle at 92% 8%,
-            rgba(116, 170, 207, 0.16),
-            transparent 34%
-          ),
-          linear-gradient(155deg, #0b1c2c, #102b42 57%, #081724);
+        background: linear-gradient(
+          180deg,
+          #25465b 0%,
+          #214052 35%,
+          #1c303d 75%,
+          #19262e 100%
+        );
+        border-radius: 0;
       }
       .ft-gallery::before {
         content: "";
@@ -316,7 +317,6 @@
         inset: 0;
         z-index: -1;
         pointer-events: none;
-        border-block: 1px solid rgba(188, 215, 238, 0.16);
       }
       .ft-gallery .ft-gallery-intro {
         max-width: 710px;
@@ -329,14 +329,31 @@
       .ft-gallery h2 {
         margin: 0.35rem 0 1rem;
         font:
-          500 clamp(2.8rem, 7.4vw, 6.3rem)/1.05 "Playfair Display",
+          500 clamp(2.4rem, 5vw, 4.5rem)/1.08 "Playfair Display",
           Georgia,
           serif;
-        letter-spacing: -0.045em;
+        letter-spacing: -0.035em;
       }
+
       .ft-gallery h2 em {
-        color: #c2dcee;
+        display: inline-block;
+        background: linear-gradient(
+          110deg,
+          #38b6ff 0%,
+          #48c2ff 24%,
+          #2f9dff 48%,
+          #368bfb 72%,
+          #247cff 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-style: italic;
         font-weight: 500;
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.42))
+          drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
+          drop-shadow(0 0 11px rgba(9, 94, 255, 0.12));
       }
       .ft-gallery-intro > p:last-child {
         max-width: 34rem;
@@ -554,11 +571,18 @@
       }
       @media (max-width: 700px) {
         .ft-gallery {
-          padding-block: 3.7rem;
+          padding-top: 18px;
+          padding-bottom: 3.7rem;
         }
-        .ft-gallery .ft-gallery-intro {
-          margin-bottom: 1.5rem;
-        }
+       .ft-gallery .ft-gallery-intro {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+  padding-inline: 20px;
+  text-align: left;
+}
         .ft-gallery-stage {
           height: min(112vw, 520px);
           min-height: 390px;
@@ -935,17 +959,18 @@
             >
               Aa
             </button>
+            <button
+              id="ft-soul-button"
+              class="ft-soul-button"
+              type="button"
+              aria-label="Play Soul Flow music"
+              aria-pressed="false"
+              title="Soul Flow music"
+            >
+              ▶
+            </button>
           </div>
-          <button
-            id="ft-soul-button"
-            class="ft-soul-button"
-            type="button"
-            aria-label="Play Soul Flow music"
-            aria-pressed="false"
-            title="Soul Flow music"
-          >
-            ▶
-          </button>
+
           <a
             class="ft-nav-book"
             href="https://flowtherapy.noterro.com/"
@@ -996,6 +1021,11 @@
             </h1>
 
             <div class="ft-hero-meta">
+              <span>FlowTherapy Massage Company</span>
+              <span
+                class="ft-hero-meta-orb ft-meta-glint"
+                aria-hidden="true"
+              ></span>
               <span>Trauma-Informed Therapeutic Massage</span>
 
               <span
@@ -1803,65 +1833,65 @@
           <!-- ===================================================
      ABOUT
      =================================================== -->
+          <div class="ft-about-surround">
+            <section class="ft-section ft-about" id="about">
+              <div class="ft-shell ft-about-layout">
+                <div class="ft-about-photo-wrap">
+                  <div class="ft-about-photo-frame">
+                    <img
+                      class="ft-about-photo"
+                      src="/assets/images/brandy-flowtherapist.png"
+                      alt="Brandy Hennigan, Licensed Massage Therapist"
+                    />
+                  </div>
+                </div>
 
-          <section class="ft-section ft-about" id="about">
-            <div class="ft-shell ft-about-layout">
-              <div class="ft-about-photo-wrap">
-                <div class="ft-about-photo-frame">
-                  <img
-                    class="ft-about-photo"
-                    src="/assets/images/brandy-flowtherapist.png"
-                    alt="Brandy Hennigan, Licensed Massage Therapist"
-                  />
+                <div class="ft-about-content">
+                  <p class="ft-eyebrow">Meet Your FlowTherapist</p>
+
+                  <h2>
+                    Care for the
+                    <span>whole person.</span>
+                  </h2>
+
+                  <p class="ft-about-belief">
+                    Massage is healthcare—not a luxury.
+                  </p>
+
+                  <div class="ft-about-copy">
+                    <p>
+                      Hi, I’m Brandy Hennigan, LMT—a trauma-informed therapeutic
+                      massage therapist, lifelong student of human movement, and
+                      firm believer in the healing power of touch.
+                    </p>
+
+                    <p>
+                      I work with people experiencing persistent tension,
+                      stress, headaches, movement restrictions, recovery needs,
+                      and the everyday wear and tear life places on the body.
+                    </p>
+
+                    <p>
+                      I believe care should be collaborative. You’re encouraged
+                      to ask questions, communicate what you need, and move at a
+                      pace that feels right for you. Every session is tailored
+                      to your goals because no two bodies—or wellness
+                      journeys—are the same.
+                    </p>
+
+                    <p>
+                      My goal is to help you move with greater ease, build
+                      resilience, and feel more at home in your body.
+                    </p>
+                  </div>
+
+                  <div class="ft-about-signature">
+                    <span>Discover the Rhythm of Relaxation.</span>
+                  </div>
                 </div>
               </div>
-
-              <div class="ft-about-content">
-                <p class="ft-eyebrow">Meet Your FlowTherapist</p>
-
-                <h2>
-                  Care for the
-                  <span>whole person.</span>
-                </h2>
-
-                <p class="ft-about-belief">
-                  Massage is healthcare—not a luxury.
-                </p>
-
-                <div class="ft-about-copy">
-                  <p>
-                    Hi, I’m Brandy Hennigan, LMT—a trauma-informed therapeutic
-                    massage therapist, lifelong student of human movement, and
-                    firm believer in the healing power of touch.
-                  </p>
-
-                  <p>
-                    I work with people experiencing persistent tension, stress,
-                    headaches, movement restrictions, recovery needs, and the
-                    everyday wear and tear life places on the body.
-                  </p>
-
-                  <p>
-                    I believe care should be collaborative. You’re encouraged to
-                    ask questions, communicate what you need, and move at a pace
-                    that feels right for you. Every session is tailored to your
-                    goals because no two bodies—or wellness journeys—are the
-                    same.
-                  </p>
-
-                  <p>
-                    My goal is to help you move with greater ease, build
-                    resilience, and feel more at home in your body.
-                  </p>
-                </div>
-
-                <div class="ft-about-signature">
-                  <span>Discover the Rhythm of Relaxation.</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
+            </section>
+          </div>
           <!-- ===================================================
                CARE, IN PRACTICE
                =================================================== -->
@@ -1874,10 +1904,6 @@
               <div class="ft-gallery-intro">
                 <p class="ft-eyebrow">The FlowTherapy Experience</p>
                 <h2 id="ft-gallery-title">Care, <em>in practice.</em></h2>
-                <p>
-                  A closer look at the touch, movement and moments of rest that
-                  shape each session.
-                </p>
               </div>
               <div
                 class="ft-gallery-stage"
@@ -2141,9 +2167,6 @@
                   Ⅱ
                 </button>
               </div>
-              <p class="ft-gallery-note">
-                Every body, every session, its own rhythm.
-              </p>
             </div>
           </section>
           <dialog class="ft-gallery-dialog" aria-label="Enlarged gallery image">
@@ -2219,7 +2242,6 @@
               <div class="ft-flowhub-intro">
                 <p class="ft-eyebrow">Beyond the Table</p>
                 <h2>Stay in the <em>Flow.</em></h2>
-                <p>Thoughtful guidance for the days between sessions.</p>
               </div>
               <div class="ft-flowhub-grid ft-library-grid">
                 <article>

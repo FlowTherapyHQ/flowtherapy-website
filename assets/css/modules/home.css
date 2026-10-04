@@ -81,7 +81,7 @@ body.flowtherapy-home {
 
   margin: 0;
 
-  background: var(--ft-dark);
+  background: #c0ced8;
 
   color: var(--ft-text);
 
@@ -133,7 +133,6 @@ textarea {
    ========================================================================== */
 
 
-.ft-reviews::before,
 .ft-signature::before,
 .ft-final::before {
   content: "";
@@ -324,21 +323,27 @@ textarea {
 
   top: 0;
 
-  border-bottom: 1px solid rgba(15, 54, 153, 0.16);
+  border-bottom: 0;
 
-  background: linear-gradient(
+  background:
+  linear-gradient(
+  180deg,
+  transparent 0%,
+  transparent 55%,
+  rgba(52, 73, 85, 0.25) 75%,
+  rgba(52, 73, 85, 0.65) 90%,
+  #344955 100%
+),
+  linear-gradient(
     90deg,
     #ffffff 0%,
-    #f6f7f8 14%,
     #efeef1 30%,
-    #d9d9d9 48%,
     #aeb8c1 63%,
-    #7a91a6 77%,
     #436e98 89%,
     #0f3699 100%
   );
 
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.11);
+  box-shadow: none;
 }
 
 .ft-nav {
@@ -384,14 +389,14 @@ textarea {
 .ft-nav-links > a {
   position: relative;
 
-  color: #ffffff;
+  color: #18364f;
 
   font-size: 0.75rem;
   font-weight: 600;
 
   text-decoration: none;
 
-  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.26);
+  text-shadow: none;
 
   transition:
     color 180ms ease,
@@ -434,9 +439,9 @@ textarea {
 
 @media (hover: hover) {
   .ft-nav-links > a:not(.ft-nav-book):hover {
-    color: #dff7ff;
+    color: #095eff;
 
-    text-shadow: 0 0 5px rgba(142, 220, 255, 0.22);
+    text-shadow: none;
   }
 
   .ft-nav-links > a:not(.ft-nav-book):hover::after {
@@ -530,20 +535,27 @@ textarea {
   z-index: 1;
 
   background:
-    linear-gradient(
-      90deg,
-      rgba(7, 9, 11, 0.9) 0%,
-      rgba(7, 9, 11, 0.72) 32%,
-      rgba(7, 9, 11, 0.3) 63%,
-      rgba(7, 9, 11, 0.04) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(4, 7, 10, 0.94) 0%,
-      rgba(5, 8, 11, 0.78) 18%,
-      rgba(6, 9, 12, 0.38) 40%,
-      transparent 64%
-    );
+  linear-gradient(
+    180deg,
+    #344955 0px,
+    rgba(52, 73, 85, 0.55) 25px,
+    rgba(52, 73, 85, 0.12) 60px,
+    transparent 95px
+  ),
+  linear-gradient(
+    90deg,
+    rgba(7, 9, 11, 0.9) 0%,
+    rgba(7, 9, 11, 0.72) 32%,
+    rgba(7, 9, 11, 0.3) 63%,
+    rgba(7, 9, 11, 0.04) 100%
+  ),
+  linear-gradient(
+    0deg,
+    rgba(4, 7, 10, 0.94) 0%,
+    rgba(5, 8, 11, 0.78) 18%,
+    rgba(6, 9, 12, 0.38) 40%,
+    transparent 64%
+  );
 }
 
 .ft-hero-inner {
@@ -713,7 +725,7 @@ textarea {
 
 .ft-review-cta p {
   margin: 0;
-  color: #e6bb7a;
+  color: #e8edf2;
   font: 500 clamp(1.15rem, 2vw, 1.4rem)/1.5 "Playfair Display", Georgia, serif;
   letter-spacing: -0.01em;
   text-shadow:
@@ -738,8 +750,10 @@ textarea {
   text-decoration: none;
 
   box-shadow:
-    0 0 12px rgba(70, 177, 255, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+  0 0 8px rgba(142, 220, 255, 0.5),
+  0 0 20px rgba(56, 182, 255, 0.35),
+  0 0 36px rgba(9, 94, 255, 0.2),
+  inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 
   transition:
     border-color 0.2s ease,
@@ -750,9 +764,10 @@ textarea {
 .ft-review-cta a:hover {
   border-color: #69bfff;
   box-shadow:
-    0 0 16px rgba(70, 177, 255, 0.28),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  transform: translateY(-1px);
+  0 0 10px rgba(142, 220, 255, 0.65),
+  0 0 26px rgba(56, 182, 255, 0.48),
+  0 0 44px rgba(9, 94, 255, 0.28),
+  inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
 .ft-review-cta a:focus-visible {
@@ -788,11 +803,13 @@ textarea {
 }
 
 .ft-services-menu {
-  border-top:
-    1px solid
-    rgba(142, 220, 255, 0.14);
+  box-sizing: border-box;
+  padding: clamp(20px, 3vw, 36px);
+  border: 0;
+  border-radius: 22px;
+  background: #1a2b35;
+  box-shadow: 0 16px 36px rgba(15, 30, 42, 0.16);
 }
-
 
 /* ==========================================================================
    SERVICE ACCORDIONS
@@ -2278,6 +2295,7 @@ textarea {
   transform-style: preserve-3d;
 
   transition: transform 820ms cubic-bezier(0.22, 0.72, 0.18, 1);
+  
 }
 
 .ft-flowstart-flip.is-flipped .ft-flowstart-flip-inner {
@@ -2290,8 +2308,8 @@ textarea {
 
 .ft-flowstart-face {
   position: absolute;
+inset: 0;
 
-  inset: 0;
 
   display: flex;
 
@@ -2813,8 +2831,8 @@ textarea {
   position: relative;
 
   overflow: hidden;
-
-  padding: 82px 0 90px;
+  border-radius: 22px 22px 0 0;
+  padding: 82px 0 36px;
 
   border-top: 0;
   border-bottom: 0;
@@ -3020,6 +3038,12 @@ textarea {
   text-shadow:
     none;
 }
+/* ABOUT CONTENT */
+
+.ft-about-content {
+  box-sizing: border-box;
+  min-width: 0;
+}
 /* --------------------------------------------------
    HEADLINE
 -------------------------------------------------- */
@@ -3096,7 +3120,7 @@ textarea {
 
 .ft-about-content .ft-about-copy p {
   margin: 0 0 18px;
-  color: #c2ccd3;
+  color: #eef3f5;
   font-size: 0.88rem;
   line-height: 1.82;
 }
@@ -3214,32 +3238,36 @@ textarea {
 }
 
 @media (max-width: 700px) {
-  .ft-about {
-    padding: 92px 0 20px;
+  .ft-section.ft-about {
+    padding: 16px 0 20px;
 
-    background:
-      linear-gradient(
-        180deg,
-        #06111b 0%,
-        #081824 14%,
-        #0a2233 32%,
-        #0c2f46 54%,
-        #103c57 76%,
-        #154765 100%
-      );
+    background: linear-gradient(
+  180deg,
+  #18364f 0%,
+  #1b3448 12%,
+  #1d303f 28%,
+  #1e2b34 48%,
+  #1c272e 68%,
+  #19262e 78%,
+  #1c303d 86%,
+  #214052 94%,
+  #25465b 100%
+);
+border-radius: 0;
   }
-
+.ft-about::after {
+  display: none;
+}
   .ft-about-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
   }
-
 
   /* PORTRAIT */
 
   .ft-about-photo-wrap {
-    width: min(76vw, 350px);
+    width: 88%;
     max-width: 350px;
     margin-inline: auto;
     justify-self: center;
@@ -3257,36 +3285,14 @@ textarea {
     object-fit: cover;
     object-position: center top;
   }
-  /* PORTRAIT */
 
-.ft-about-photo-wrap {
-  width: min(76vw, 350px);
-  max-width: 350px;
-  margin-inline: auto;
-  justify-self: center;
-}
+  /* More breathing room below therapist credential */
 
-.ft-about-photo-frame {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  border-radius: 18px 18px 52px 18px;
-}
-
-.ft-about-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* More breathing room below therapist credential */
-
-.ft-about-photo-caption {
-  margin-bottom: 20px;
-}
+  .ft-about-photo-caption {
+    margin-bottom: 20px;
+  }
 
 } /* END max-width: 700px */
-
 
 
 /* ==========================================================================
@@ -3339,17 +3345,16 @@ textarea {
   position: relative;
   padding-top: 16px;
 
-  background:
-    linear-gradient(
-      180deg,
-      #154765 0%,
-      #194b66 12%,
-      #1b465f 28%,
-      #193e54 46%,
-      #163448 64%,
-      #112736 82%,
-      #0b141b 100%
-    );
+  background: linear-gradient(
+  180deg,
+  #19262e 0%,
+  #1c303d 18%,
+  #214052 42%,
+  #25465b 65%,
+  #1c303d 100%
+);
+border-radius: 0 0 22px 22px;
+overflow: hidden;
 }
 
 /* --------------------------------------------------
@@ -3361,7 +3366,7 @@ textarea {
   width: calc(100% - 48px);
   max-width: 900px;
 
-  margin-left: 32px;
+  margin-left: 80px;
   margin-right: 16px;
 }
 
@@ -3529,7 +3534,7 @@ textarea {
 
   border-top: 1px solid rgba(232, 237, 242, 0.13);
 
-  color: #d8e0e6;
+  color: #e8edf2;
 
   font-size: 0.72rem;
 
@@ -3551,7 +3556,7 @@ textarea {
 
   padding: 20px 34px 0;
 
-  color: #eef2f5;
+  color: #e8edf2;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -3784,7 +3789,7 @@ textarea {
   margin-top: 0;
   margin-bottom: 42px;
 
-  color: #ffffff;
+  color: #f6f8fa;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -3796,28 +3801,24 @@ textarea {
 
   letter-spacing: -0.035em;
 
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.16),
-    0 4px 18px rgba(30, 65, 95, 0.16);
+  text-shadow: none;
 }
 
 /* "remember." */
 
 .ft-reviews h2 em {
   display: block;
-
+  width: fit-content;
   position: relative;
 
-  background:
-    linear-gradient(
-      105deg,
-      #8edcff 0%,
-      #56c7ff 20%,
-      #38b6ff 42%,
-      #2fa7ff 66%,
-      #368bfb 84%,
-      #248cff 100%
-    );
+  background: linear-gradient(
+  110deg,
+  #38b6ff 0%,
+  #48c2ff 24%,
+  #2f9dff 48%,
+  #368bfb 72%,
+  #247cff 100%
+);
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -3831,9 +3832,9 @@ textarea {
   text-shadow: none;
 
   filter:
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.38))
-    drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
-    drop-shadow(0 0 11px rgba(54, 139, 251, 0.15));
+  drop-shadow(0 0 1px rgba(255, 255, 255, 0.42))
+  drop-shadow(0 0 5px rgba(56, 182, 255, 0.26))
+  drop-shadow(0 0 11px rgba(9, 94, 255, 0.12));
 }
 
 /* --------------------------------------------------
@@ -3850,6 +3851,15 @@ textarea {
 
     margin-bottom: 34px;
   }
+  .ft-reviews .ft-shell > .ft-eyebrow,
+.ft-reviews .ft-shell > h2 {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+  margin-inline: auto;
+  padding-inline: 20px;
+  text-align: left;
+}
 }
 /* ==========================================================================
    17. FLOWHUB
@@ -3859,62 +3869,9 @@ textarea {
 .ft-flowhub {
   position: relative;
   overflow: hidden;
-
-  background:
-  /* very restrained blue illumination */
-    radial-gradient(
-      ellipse at 26% 22%,
-      rgba(142, 220, 255, 0.08) 0%,
-      rgba(56, 182, 255, 0.035) 30%,
-      transparent 58%
-    ),
-    /* deeper Flow-blue atmosphere */
-    radial-gradient(
-        ellipse at 92% 64%,
-        rgba(9, 94, 255, 0.14) 0%,
-        rgba(54, 139, 251, 0.055) 34%,
-        transparent 64%
-      ),
-    /* premium charcoal / navy foundation */
-    linear-gradient(
-        135deg,
-        #202a31 0%,
-        #1b2932 28%,
-        #162631 52%,
-        #122432 74%,
-        #0d1d2b 100%
-      );
-}
-
-/* --------------------------------------------------
-   FLOWHUB → FLOW ON TRANSITION
--------------------------------------------------- */
-
-.ft-flowhub::after {
-  content: "";
-
-  position: absolute;
-
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 3px;
-
-  background: linear-gradient(
-    90deg,
-    #e8edf2 0%,
-    #c7cdd4 17%,
-    #8edcff 36%,
-    #38b6ff 58%,
-    #368bfb 78%,
-    #0f3699 100%
-  );
-
-  box-shadow:
-    0 0 6px rgba(199, 205, 212, 0.2),
-    0 0 12px rgba(56, 182, 255, 0.26),
-    0 0 20px rgba(9, 94, 255, 0.12);
+  
+  
+  
 }
 
 /* --------------------------------------------------
@@ -3940,7 +3897,7 @@ textarea {
 
   margin: 0 0 16px;
 
-  color: #76d9ff;
+  color: #18364f;
 
   font-size: 0.76rem;
 
@@ -3950,121 +3907,14 @@ textarea {
 
   text-transform: uppercase;
 
-  text-shadow:
-    0 0 6px rgba(142, 220, 255, 0.26),
-    0 0 12px rgba(56, 182, 255, 0.14);
-}
-
-/* --------------------------------------------------
-   STAY IN THE FLOW — REAL PHOTOGRAPHIC BACKGROUND
--------------------------------------------------- */
-
-.ft-flowhub {
-  position: relative;
-  overflow: hidden;
-
-  padding-top: 74px;
-  padding-bottom: 64px;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7, 10, 12, 0.98) 0%,
-      rgba(7, 10, 12, 0.96) 22%,
-      rgba(7, 10, 12, 0.88) 42%,
-      rgba(7, 10, 12, 0.66) 62%,
-      rgba(7, 10, 12, 0.46) 82%,
-      rgba(7, 10, 12, 0.4) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(5, 8, 10, 0.2) 0%,
-      rgba(5, 8, 10, 0.08) 48%,
-      rgba(5, 8, 10, 0.44) 100%
-    ),
-    url("/assets/images/home/flowtherapy-bodywork-bw1.jpg");
-
-  background-repeat: no-repeat;
-
-  background-size: cover;
-
-  background-position: center center;
-}
-
-/* --------------------------------------------------
-   REAL BODYWORK PHOTOGRAPH — BACKGROUND LAYER
--------------------------------------------------- */
-
-.ft-flowhub::before {
-  content: "";
-
-  position: absolute;
-
-  z-index: 0;
-
-  top: 0;
-  right: 0;
-  bottom: 0;
-
-  width: 58%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #090d10 0%,
-      rgba(9, 13, 16, 0.96) 8%,
-      rgba(9, 13, 16, 0.74) 30%,
-      rgba(9, 13, 16, 0.38) 58%,
-      rgba(9, 13, 16, 0.18) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(7, 10, 12, 0.24) 0%,
-      rgba(7, 10, 12, 0.08) 42%,
-      rgba(7, 10, 12, 0.42) 100%
-    ),
-    url("/assets/images/home/flowtherapy-bodywork-bw1.jpg");
-
-  background-repeat: no-repeat;
-
-  background-size: cover;
-
-  background-position: center 46%;
-
-  filter: grayscale(1) contrast(1.08) brightness(0.56);
-
-  opacity: 0.72;
-
-  pointer-events: none;
+  text-shadow: none;
 }
 /* --------------------------------------------------
    PHOTOGRAPHIC LIGHT FALL-OFF
 -------------------------------------------------- */
 
 .ft-flowhub::after {
-  content: "";
-
-  position: absolute;
-
-  z-index: 1;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      ellipse at 76% 38%,
-      rgba(223, 247, 255, 0.055) 0%,
-      rgba(142, 220, 255, 0.022) 30%,
-      transparent 58%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.05) 0%,
-      rgba(0, 0, 0, 0.02) 55%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-
-  pointer-events: none;
+  content: none;
 }
 /* --------------------------------------------------
    STAY IN THE FLOW
@@ -4089,6 +3939,8 @@ textarea {
   line-height: 0.98;
 
   letter-spacing: -0.045em;
+  color: #18364f;
+text-shadow: none;
 }
 
 /* "Stay in the" — restrained steel-blue */
@@ -4096,17 +3948,14 @@ textarea {
 .ft-flowhub-stay {
   display: inline-block;
 
-  color: #89a3b6;
+  color: #18364f;
 
   font-family: "Playfair Display", Georgia, serif;
 
   font-style: italic;
   font-weight: 500;
 
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.22),
-    0 0 6px rgba(142, 220, 255, 0.11),
-    0 0 14px rgba(56, 182, 255, 0.06);
+  text-shadow: none;
 }
 
 /* "Flow." — luminous focal point */
@@ -4226,9 +4075,9 @@ letter-spacing: 0.012em;
   );
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.055),
-    0 20px 42px rgba(0, 0, 0, 0.36),
-    0 0 18px rgba(56, 182, 255, 0.045);
+  inset 0 1px 0 rgba(255, 255, 255, 0.06),
+  0 12px 28px rgba(10, 25, 38, 0.20),
+  0 0 20px rgba(56, 182, 255, 0.07);
 }
 
 /* --------------------------------------------------
@@ -4606,7 +4455,7 @@ letter-spacing: 0.012em;
 
   padding: 14px 0 18px;
 
-  background: #06090c;
+  background: transparent;
 
   text-align: center;
 }
@@ -4674,7 +4523,7 @@ letter-spacing: 0.012em;
 
   margin: 0 auto;
 
-  color: #f4f7f9;
+  color: #18364f;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -4688,9 +4537,7 @@ letter-spacing: 0.012em;
 
   text-align: center;
 
-  text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.2),
-    0 0 9px rgba(142, 220, 255, 0.1);
+  text-shadow: none;
 }
 
 
@@ -4756,6 +4603,8 @@ letter-spacing: 0.012em;
       #122533 76%,
       #0d2032 100%
     );
+    border-radius: 22px 22px 0 0;
+overflow: hidden;
 }
 
 .ft-final-grid {
@@ -4986,6 +4835,7 @@ letter-spacing: 0.012em;
       #081116 80%,
       #050a0d 100%
     );
+    border-radius: 0 0 22px 22px;
 }
 
 /* --------------------------------------------------
@@ -5340,7 +5190,7 @@ letter-spacing: 0.012em;
 
   margin: 0 auto;
 
-  color: #f4f7f9;
+  color: #18364f;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -5354,9 +5204,7 @@ letter-spacing: 0.012em;
 
   text-align: center;
 
-  text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.2),
-    0 0 9px rgba(142, 220, 255, 0.1);
+  text-shadow: none;
 }
 /* ==========================================================================
    21. MOBILE ACTION BAR
@@ -5416,18 +5264,9 @@ letter-spacing: 0.012em;
   .ft-flowstart-card {
     gap: 34px;
   }
- .ft-services {
-  background: linear-gradient(
-    180deg,
-    #05090d 0%,
-    #071018 12%,
-    #081722 28%,
-    #0a2230 46%,
-    #0b2d3c 64%,
-    #0c3544 78%,
-    #081d27 100%
-  );
- } 
+.ft-services {
+  background: #c0ced8;
+} 
 }
 
 .ft-section {
@@ -5447,17 +5286,30 @@ body.flowtherapy-home {
   width: 100%;
   max-width: none;
   margin: 0;
+  background: #c0ced8;
 }
 
-body.flowtherapy-home .ft-header,
+body.flowtherapy-home .ft-header {
+  width: min(calc(100% - 80px), 1400px);
+  margin-inline: auto;
+  border-radius: 22px 22px 0 0;
+}
 body.flowtherapy-home .ft-hero {
   width: 100%;
 }
 
+@media (min-width: 701px) {
+  body.flowtherapy-home .ft-hero {
+    width: min(calc(100% - 80px), 1400px);
+    margin-inline: auto;
+    border-radius: 0 0 22px 22px;
+  }
+}
+
 body.flowtherapy-home .ft-header > .ft-shell,
 body.flowtherapy-home .ft-hero > .ft-shell {
-  width: min(calc(100% - 80px), 1180px);
-  max-width: 1180px;
+  width: min(calc(100% - 80px), 1400px);
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -5467,9 +5319,9 @@ body.flowtherapy-home .ft-hero > .ft-shell {
 
 .ft-reviews .ft-shell,
 .ft-flowhub .ft-shell {
-  width: min(calc(100% - 80px), 1180px);
+  width: min(calc(100% - 80px), 1400px);
 
-  max-width: 1180px;
+  max-width: 1400px;
 
   margin-left: auto;
   margin-right: auto;
@@ -5478,19 +5330,22 @@ body.flowtherapy-home .ft-hero > .ft-shell {
    DESKTOP — REVIEW HEADING ALIGNMENT
 -------------------------------------------------- */
 
-.ft-reviews .ft-eyebrow,
-.ft-reviews h2,
 .ft-flowhub .ft-eyebrow,
 .ft-flowhub h2 {
   margin-left: 0;
+}
+
+.ft-flowhub .ft-eyebrow,
+.ft-flowhub h2 {
+  margin-left: 48px;
 }
   /* --------------------------------------------------
    DESKTOP — MASTER CONTENT RAIL
 -------------------------------------------------- */
 
 .ft-shell {
-  width: min(calc(100% - 80px), 1180px);
-  max-width: 1180px;
+  width: min(calc(100% - 80px), 1400px);
+  max-width: 1400px;
 
   margin-left: auto;
   margin-right: auto;
@@ -5603,24 +5458,16 @@ body.flowtherapy-home .ft-hero > .ft-shell {
   margin-right: auto;
 }
  /* --------------------------------------------------
-   SERVICES — DEEP NAVY / TEAL ATMOSPHERE
+   SERVICES — COOL GRAY BACKGROUND.
 -------------------------------------------------- */
 
 .ft-services {
   padding-top: 24px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #05090d 0%,
-      #071018 12%,
-      #081722 28%,
-      #0a2230 46%,
-      #0b2d3c 64%,
-      #0c3544 78%,
-      #081d27 100%
-    );
+  background: #c0ced8;
 }
+}
+
+@media (min-width: 701px) {
   /* --------------------------------------------------
    FLOWSTART — DESKTOP TWO-CARD LAYOUT
 -------------------------------------------------- */
@@ -5628,7 +5475,8 @@ body.flowtherapy-home .ft-hero > .ft-shell {
 .ft-flowstart-desktop {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+  repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 
   gap: 28px;
 
@@ -5814,9 +5662,32 @@ body.flowtherapy-home .ft-hero > .ft-shell {
       rgba(7, 9, 11, 0.28) 62%,
       rgba(7, 9, 11, 0.08) 82%,
       transparent 100%
-    );
+    ); 
+}
+.ft-hero-meta {
+  position: static;
+  transform: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 24px auto 0;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.8;
 }
 
+.ft-hero-meta span {
+  display: inline;
+  white-space: normal;
+}
+
+.ft-hero-meta span + span {
+  margin-left: 8px;
+}
+
+.ft-hero-meta .ft-hero-meta-orb {
+  display: none;
+}
   .ft-hero-content {
     padding: 235px 14px 45px;
   }
@@ -5893,9 +5764,15 @@ body.flowtherapy-home .ft-hero > .ft-shell {
 
   overflow: hidden;
 
-  padding: 4px 0 18px;
+  padding: 18px 0 20px;
 
-  background: #06090c;
+background: linear-gradient(
+  180deg,
+  #0b1115 0%,
+  #354955 32%,
+  #849ba9 68%,
+  #c0ced8 100%
+);
 }
 
 
@@ -5965,7 +5842,7 @@ body.flowtherapy-home .ft-hero > .ft-shell {
 
   margin: 0 auto;
 
-  color: #f7fbfd;
+  color: #ffffff;
 
   font-family: "Playfair Display", Georgia, serif;
 
@@ -5973,60 +5850,54 @@ body.flowtherapy-home .ft-hero > .ft-shell {
 
   font-weight: 600;
 
-  line-height: 1.05;
+  line-height: 1.4;
 
   letter-spacing: -0.012em;
 
   text-align: center;
 
-  text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.08),
-    0 0 14px rgba(56, 182, 255, 0.08);
+  text-shadow: none;
 }
   /* --------------------------------------------------
    23E. SERVICES
 -------------------------------------------------- */
 
-.ft-services {
+.ft-section.ft-services {
   position: relative;
-
   padding-bottom: 60px;
-
   overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #05090e 0%,
-      #06101a 12%,
-      #071522 26%,
-      #081a29 42%,
-      #091f31 58%,
-      #0a2336 72%,
-      #081a29 86%,
-      #050d15 100%
-    );
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-
+.ft-services-menu {
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(
+    180deg,
+    #1a2b35 0%,
+    #1a2b35 75%,
+    #102532 92%,
+    #0a1b29 100%
+  );
+  box-shadow: none;
+}
 /* --------------------------------------------------
    23F. FLOWSTART
    MOBILE — ORIGINAL FLIP CARD
 -------------------------------------------------- */
 
 .ft-flowstart {
-  padding-top: 44px;
+  padding-top: 20px;
   padding-bottom: 24px;
 
   border-bottom: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      #0a1b29 0%,
-      #091a28 42%,
-      #071620 76%,
-      #06111b 100%
-    );
+  background: linear-gradient(
+  180deg,
+  #0a1b29 0%,
+  #102532 55%,
+  #18364f 85%,
+  #18364f 100%
+);
 }
 
 /* Hide desktop two-card version */
@@ -6052,18 +5923,6 @@ body.flowtherapy-home .ft-hero > .ft-shell {
   .ft-about-grid {
     gap: 34px;
   }
-  .ft-about {
-  background:
-    linear-gradient(
-      180deg,
-      #06111b 0%,
-      #071722 14%,
-      #091f2e 32%,
-      #0c2b40 54%,
-      #103852 76%,
-      #154765 100%
-    );
-}
 
   /* --------------------------------------------------
      23H. REVIEWS
@@ -6585,4 +6444,10 @@ body.flowtherapy-home .ft-hero > .ft-shell {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+}
+@media (max-width: 700px) {
+  .ft-flowstart-flip.is-flipped .ft-flowstart-back {
+    position: relative;
+    inset: auto;
+  }
 }
