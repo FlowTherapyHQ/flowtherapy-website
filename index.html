@@ -1996,7 +1996,7 @@ body.flowtherapy-home .ft-flow-statement::after{
     max-width: none !important;
     min-height: 70px !important;
     padding: 0 8px !important;
-    gap: 5px !important;
+    gap: 0 5px !important;
     flex-wrap: wrap !important;
   }
   body.flowtherapy-home .ft-logo-link {
@@ -2048,17 +2048,17 @@ body.flowtherapy-home .ft-flow-statement::after{
     justify-content: center !important;
     align-items: center !important;
     gap: 8px !important;
-    min-height: 44px !important;
+    min-height: 40px !important;
     margin: 0 !important;
     padding: 0 !important;
-    border-top: 1px solid rgba(20, 75, 112, .18) !important;
+    border-top: 0 !important;
     color: #16394f !important;
     font-size: .82rem !important;
     font-weight: 700 !important;
     text-shadow: none !important;
   }
   body.flowtherapy-home .ft-nav-services::after { content: none !important; }
-  body.flowtherapy-home #services { scroll-margin-top: 140px; }
+  body.flowtherapy-home #services { scroll-margin-top: 122px; }
 
   /* The statement sits on the light field, so it must not inherit the old white mobile type. */
   body.flowtherapy-home .ft-flow-statement {
@@ -2182,6 +2182,23 @@ body.flowtherapy-home .ft-flow-statement::after{
     max-width: 420px !important;
     margin: 0 auto !important;
     padding-bottom: 10px !important;
+  }
+
+  /* Readable lamp caption and a continuous light-to-navy FlowStart transition. */
+  body.flowtherapy-home .ft-services-atmosphere figcaption {
+    color: #35576b !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    margin-top: 18px !important;
+    line-height: 1.55 !important;
+  }
+  body.flowtherapy-home .ft-flowstart {
+    position: relative;
+    margin-top: 0 !important;
+    padding-top: 100px !important;
+    background: linear-gradient(180deg, #e8f2f8 0, #c2d5e0 24px, #688594 60px, #294858 96px, #0b202c 140px) !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
   }
 
   /* Keep the bottom action bar above iPhone safe-area without covering content. */
@@ -2392,7 +2409,6 @@ body.flowtherapy-home .ft-flow-statement::after{
 <img alt="FlowTherapy" class="ft-logo" src="./assets/images/flowtherapy-logo.png"/>
 </a>
 <nav aria-label="Main navigation" class="ft-nav-links">
-<a class="ft-nav-services" href="#services">Services <span aria-hidden="true">↓</span></a>
 <a href="#about">About</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
