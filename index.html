@@ -616,9 +616,11 @@
         cursor: pointer;
         font-size: 16px;
         line-height: 1;
+        -webkit-appearance: none;
+        appearance: none;
       }
       .ft-soul-button:hover,
-      .ft-soul-button[aria-pressed="true"] {
+      .ft-soul-button[aria-expanded="true"] {
         box-shadow: 0 0 17px rgba(62, 177, 255, 0.95);
       }
       .ft-soul-button:focus-visible,
@@ -628,10 +630,13 @@
         outline-offset: 3px;
       }
       .ft-soul-panel {
-        position: absolute;
-        top: calc(100% + 8px);
-        right: max(12px, calc((100vw - 1200px) / 2));
-        z-index: 100;
+        position: fixed;
+        top: 132px;
+        right: 12px;
+        z-index: 1000;
+        max-height: calc(100dvh - 160px);
+        overflow-y: auto;
+        box-sizing: border-box;
         width: min(340px, calc(100vw - 24px));
         padding: 12px;
         color: #fff;
@@ -1984,7 +1989,7 @@ body.flowtherapy-home .ft-flow-statement::after{
     width: calc(100% - 12px) !important;
     margin: 6px auto 0 !important;
     border-radius: 24px !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
   body.flowtherapy-home .ft-nav {
     width: 100% !important;
@@ -1992,6 +1997,7 @@ body.flowtherapy-home .ft-flow-statement::after{
     min-height: 70px !important;
     padding: 0 8px !important;
     gap: 5px !important;
+    flex-wrap: wrap !important;
   }
   body.flowtherapy-home .ft-logo-link {
     flex: 0 0 80px !important;
@@ -2032,6 +2038,27 @@ body.flowtherapy-home .ft-flow-statement::after{
     font-size: .75rem !important;
     white-space: nowrap !important;
   }
+
+  body.flowtherapy-home .ft-nav-links { display: contents !important; }
+  body.flowtherapy-home .ft-access-tools { margin-left: auto !important; }
+  body.flowtherapy-home .ft-nav-links > .ft-nav-services {
+    display: flex !important;
+    order: 10 !important;
+    flex: 0 0 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 1px solid rgba(20, 75, 112, .18) !important;
+    color: #16394f !important;
+    font-size: .82rem !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+  }
+  body.flowtherapy-home .ft-nav-services::after { content: none !important; }
+  body.flowtherapy-home #services { scroll-margin-top: 140px; }
 
   /* The statement sits on the light field, so it must not inherit the old white mobile type. */
   body.flowtherapy-home .ft-flow-statement {
@@ -2076,10 +2103,17 @@ body.flowtherapy-home .ft-flow-statement::after{
     color: #18364f !important;
   }
   body.flowtherapy-home .ft-services-menu .ft-service-group {
+    display: block !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     height: auto !important;
     min-height: 0 !important;
   }
   body.flowtherapy-home .ft-services-menu .ft-service-group > summary {
+    display: flex !important;
+    position: relative !important;
+    transform: none !important;
     min-height: 66px !important;
     padding: 12px 2px !important;
     color: #18364f !important;
@@ -2358,7 +2392,7 @@ body.flowtherapy-home .ft-flow-statement::after{
 <img alt="FlowTherapy" class="ft-logo" src="./assets/images/flowtherapy-logo.png"/>
 </a>
 <nav aria-label="Main navigation" class="ft-nav-links">
-<a href="#services">Services</a>
+<a class="ft-nav-services" href="#services">Services <span aria-hidden="true">↓</span></a>
 <a href="#about">About</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
@@ -2367,25 +2401,28 @@ body.flowtherapy-home .ft-flow-statement::after{
 <button aria-label="Increase text size" aria-pressed="false" id="ft-text-size" title="Larger text" type="button">
               Aa
             </button>
-<button aria-label="Play Soul Flow music" aria-pressed="false" class="ft-soul-button" id="ft-soul-button" title="Soul Flow music" type="button">
-              ▶
-            </button>
+<button aria-label="Open Soul Flow Spotify player" aria-expanded="false" aria-controls="ft-soul-panel" class="ft-soul-button" id="ft-soul-button" title="Soul Flow on Spotify" type="button">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M8 4.8a1 1 0 0 1 1.5-.86l11 7.2a1 1 0 0 1 0 1.72l-11 7.2A1 1 0 0 1 8 19.2Z"/></svg>
+</button>
 </div>
 <a class="ft-nav-book" href="https://flowtherapy.noterro.com/" rel="noopener" target="_blank">
             Book
           </a>
 </nav>
 </div>
+</header>
 <div class="ft-soul-panel" hidden="" id="ft-soul-panel">
 <div class="ft-soul-panel-head">
 <span>Soul Flow · FlowTherapy</span><button aria-label="Hide music player" class="ft-soul-close" type="button">
             ×
           </button>
 </div>
-<div class="ft-soul-embed" id="ft-soul-embed"></div>
+<div class="ft-soul-embed" id="ft-soul-embed">
+<iframe title="Soul Flow playlist on Spotify" data-src="https://open.spotify.com/embed/playlist/35kOQC6udy7D7cbl1kyhpG?utm_source=generator" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 <a href="https://open.spotify.com/playlist/35kOQC6udy7D7cbl1kyhpG" rel="noopener noreferrer" target="_blank">Listen on Spotify ↗</a>
 </div>
-</header>
+
 <main>
 <!-- ===================================================
      HERO
@@ -3534,59 +3571,27 @@ body.flowtherapy-home .ft-flow-statement::after{
 </div>
 </main>
 <script>
-      (() => {
-        const button = document.getElementById("ft-soul-button");
-        const panel = document.getElementById("ft-soul-panel");
-        let controller = null;
-        let pendingPlay = false;
-        let playing = false;
-        const setPlaying = (value) => {
-          playing = value;
-          button.textContent = value ? "Ⅱ" : "▶";
-          button.setAttribute("aria-pressed", String(value));
-          button.setAttribute(
-            "aria-label",
-            value ? "Pause Soul Flow music" : "Play Soul Flow music",
-          );
-        };
-        button.addEventListener("click", () => {
-          if (playing) {
-            if (controller) controller.pause();
-            setPlaying(false);
-            panel.hidden = true;
-          } else {
-            panel.hidden = false;
-            if (controller) controller.resume();
-            else pendingPlay = true;
-          }
-        });
-        panel.querySelector(".ft-soul-close").addEventListener("click", () => {
-          panel.hidden = true;
-          button.focus();
-        });
-        window.onSpotifyIframeApiReady = (IFrameAPI) => {
-          IFrameAPI.createController(
-            document.getElementById("ft-soul-embed"),
-            {
-              uri: "spotify:playlist:35kOQC6udy7D7cbl1kyhpG",
-              width: "100%",
-              height: 152,
-            },
-            (embed) => {
-              controller = embed;
-              embed.addListener("playback_update", (event) => {
-                setPlaying(!event.data.isPaused && !event.data.isBuffering);
-              });
-              if (pendingPlay) {
-                pendingPlay = false;
-                embed.resume();
-              }
-            },
-          );
-        };
-      })();
-    </script>
-<script async="" src="https://open.spotify.com/embed/iframe-api/v1"></script>
+(() => {
+  const button = document.getElementById('ft-soul-button');
+  const panel = document.getElementById('ft-soul-panel');
+  const frame = panel.querySelector('iframe');
+  const setOpen = (open, restoreFocus = false) => {
+    panel.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Hide Soul Flow Spotify player' : 'Open Soul Flow Spotify player');
+    if (open && !frame.getAttribute('src')) frame.src = frame.dataset.src;
+    if (restoreFocus) button.focus();
+  };
+  button.addEventListener('click', () => setOpen(panel.hidden));
+  panel.querySelector('.ft-soul-close').addEventListener('click', () => setOpen(false, true));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !panel.hidden) setOpen(false, true);
+  });
+  document.addEventListener('click', e => {
+    if (!panel.hidden && !panel.contains(e.target) && !button.contains(e.target)) setOpen(false);
+  });
+})();
+</script>
 <script>
       (() => {
         const moreWays = document.querySelector(".ft-more-ways");
@@ -3751,4 +3756,3 @@ body.flowtherapy-home .ft-flow-statement::after{
     </script>
 </body>
 </html>
-`
