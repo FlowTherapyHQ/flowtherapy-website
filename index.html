@@ -1966,6 +1966,387 @@ body.flowtherapy-home .ft-flow-statement::after{
 .ft-bluesky-icon{width:22px;height:20px;display:inline-block;vertical-align:-3px;margin-right:8px;color:#fff;filter:drop-shadow(0 0 5px rgba(85,190,255,.32));}
 @media(max-width:760px){#flowpack-explore .ft-pack-group{grid-template-columns:82px repeat(2,minmax(0,1fr)) !important;}}
 </style>
+
+<style id="ft-mobile-live-repair-20261006">
+/* Mobile repair after stylesheet consolidation. Desktop remains untouched. */
+@media (max-width: 700px) {
+  html,
+  body.flowtherapy-home,
+  body.flowtherapy-home main,
+  body.flowtherapy-home .ft-flow-statement,
+  body.flowtherapy-home .ft-services {
+    background: #e8f2f8 !important;
+    background-image: none !important;
+  }
+
+  /* Keep the sticky ribbon inside the viewport. */
+  body.flowtherapy-home .ft-header {
+    width: calc(100% - 12px) !important;
+    margin: 6px auto 0 !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+  }
+  body.flowtherapy-home .ft-nav {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 70px !important;
+    padding: 0 8px !important;
+    gap: 5px !important;
+  }
+  body.flowtherapy-home .ft-logo-link {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+  }
+  body.flowtherapy-home .ft-logo { width: 78px !important; }
+  body.flowtherapy-home .ft-nav-links {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    justify-content: flex-end !important;
+    gap: 5px !important;
+  }
+  body.flowtherapy-home .ft-access-tools {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    gap: 5px !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  body.flowtherapy-home #ft-spanish {
+    min-height: 40px !important;
+    padding: 7px 10px !important;
+    font-size: .72rem !important;
+    white-space: nowrap !important;
+  }
+  body.flowtherapy-home #ft-text-size,
+  body.flowtherapy-home #ft-soul-button {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+  }
+  body.flowtherapy-home .ft-nav-links .ft-nav-book {
+    flex: 0 0 auto !important;
+    min-height: 40px !important;
+    padding: 7px 13px !important;
+    font-size: .75rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* The statement sits on the light field, so it must not inherit the old white mobile type. */
+  body.flowtherapy-home .ft-flow-statement {
+    padding: 22px 14px 26px !important;
+    overflow: visible !important;
+  }
+  body.flowtherapy-home .ft-flow-statement p {
+    color: #18364f !important;
+    text-shadow: none !important;
+  }
+  body.flowtherapy-home .ft-flow-statement::before,
+  body.flowtherapy-home .ft-flow-statement::after,
+  body.flowtherapy-home .ft-flow-statement p::before,
+  body.flowtherapy-home .ft-flow-statement p::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Reset the old dark mobile service treatment that survived the CSS consolidation. */
+  body.flowtherapy-home .ft-section.ft-services {
+    padding: 26px 0 46px !important;
+    overflow: visible !important;
+  }
+  body.flowtherapy-home .ft-services-layout {
+    display: block !important;
+    width: calc(100% - 18px) !important;
+    max-width: 680px !important;
+    margin-inline: auto !important;
+    min-height: 0 !important;
+  }
+  body.flowtherapy-home .ft-services-menu.ft-menu-premium,
+  body.flowtherapy-home .ft-services-menu {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 18px 18px 20px !important;
+    border: 1px solid rgba(255,255,255,.94) !important;
+    border-radius: 22px !important;
+    background: linear-gradient(145deg,rgba(252,254,255,.98),rgba(238,247,252,.96)) !important;
+    box-shadow: 0 14px 34px rgba(42,82,108,.08) !important;
+    color: #18364f !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-group {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-group > summary {
+    min-height: 66px !important;
+    padding: 12px 2px !important;
+    color: #18364f !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-group > summary small {
+    color: #0878b7 !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-group > summary strong {
+    color: #173a52 !important;
+    -webkit-text-fill-color: #173a52 !important;
+    text-shadow: none !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-group > summary b,
+  body.flowtherapy-home .ft-services-menu .ft-service-group > summary b::before {
+    color: #0878b7 !important;
+  }
+  body.flowtherapy-home .ft-services-menu .ft-service-content,
+  body.flowtherapy-home .ft-services-menu .ft-service-intro,
+  body.flowtherapy-home .ft-services-menu .ft-clinic-description {
+    color: #35576b !important;
+  }
+
+  /* Therapeutic-care companion block: compact, light and in normal document flow. */
+  body.flowtherapy-home .ft-services-side {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 26px 0 0 !important;
+    padding: 24px 18px 10px !important;
+    border-radius: 20px !important;
+    background: rgba(250,253,255,.62) !important;
+  }
+  body.flowtherapy-home .ft-services-side::before,
+  body.flowtherapy-home .ft-services-side::after {
+    content: none !important;
+    display: none !important;
+  }
+  body.flowtherapy-home .ft-services-side-content {
+    position: static !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+  body.flowtherapy-home .ft-services-side .ft-eyebrow { color: #0878b7 !important; }
+  body.flowtherapy-home .ft-services-side h2 {
+    margin: 0 !important;
+    color: #173a52 !important;
+    font-size: clamp(2.25rem, 11vw, 3.05rem) !important;
+  }
+  body.flowtherapy-home .ft-services-side-content > p:not(.ft-eyebrow) {
+    max-width: none !important;
+    margin-top: 18px !important;
+    color: #35576b !important;
+  }
+  body.flowtherapy-home .ft-services-side-content > a { color: #0878b7 !important; }
+  body.flowtherapy-home .ft-services-atmosphere {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Keep the bottom action bar above iPhone safe-area without covering content. */
+  body.flowtherapy-home { padding-bottom: calc(74px + env(safe-area-inset-bottom)) !important; }
+}
+
+@media (max-width: 390px) {
+  body.flowtherapy-home .ft-logo-link { flex-basis: 72px !important; width: 72px !important; }
+  body.flowtherapy-home .ft-logo { width: 70px !important; }
+  body.flowtherapy-home #ft-spanish { padding-inline: 8px !important; font-size: .68rem !important; }
+  body.flowtherapy-home #ft-text-size,
+  body.flowtherapy-home #ft-soul-button { flex-basis: 38px !important; width: 38px !important; min-width: 38px !important; }
+  body.flowtherapy-home .ft-nav-links .ft-nav-book { padding-inline: 11px !important; }
+}
+</style>
+
+
+<style id="ft-mobile-card-and-pack-refinement-20261006">
+/* Mobile-only refinement: smaller service rails, useful Recovery Lab grid,
+   and two-up FlowPack choices. Desktop is intentionally untouched. */
+@media (max-width: 700px) {
+
+  /* FlowSpa — keep the horizontal rail, but stop each card/image from taking over the screen. */
+  body.flowtherapy-home .ft-spa-card-rail {
+    gap: 10px !important;
+    padding: 2px 2px 10px !important;
+  }
+  body.flowtherapy-home .ft-spa-card {
+    flex: 0 0 54vw !important;
+    width: 54vw !important;
+    min-width: 180px !important;
+    max-width: 215px !important;
+    border-radius: 15px !important;
+  }
+  body.flowtherapy-home .ft-spa-card img {
+    width: 100% !important;
+    height: 142px !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+  }
+  body.flowtherapy-home .ft-spa-card-body {
+    padding: 11px 12px 13px !important;
+  }
+  body.flowtherapy-home .ft-spa-card h3 {
+    font-size: .96rem !important;
+    line-height: 1.18 !important;
+  }
+  body.flowtherapy-home .ft-spa-card-desc {
+    font-size: .70rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* FlowBoost — a touch smaller than the Spa cards. */
+  body.flowtherapy-home .ft-boost-card-rail {
+    gap: 10px !important;
+    padding: 2px 2px 10px !important;
+  }
+  body.flowtherapy-home .ft-boost-card {
+    flex: 0 0 51vw !important;
+    width: 51vw !important;
+    min-width: 172px !important;
+    max-width: 205px !important;
+    border-radius: 15px !important;
+  }
+  body.flowtherapy-home .ft-boost-card img {
+    width: 100% !important;
+    height: 118px !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+  }
+  body.flowtherapy-home .ft-boost-card-body {
+    padding: 10px 11px 12px !important;
+  }
+  body.flowtherapy-home .ft-boost-card h3 {
+    font-size: .94rem !important;
+  }
+
+  /* Recovery Lab — replace the awkward clipped rail with a compact 2-column tool grid. */
+  body.flowtherapy-home .ft-recovery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+  }
+  body.flowtherapy-home .ft-recovery-card {
+    display: block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    border-radius: 13px !important;
+  }
+  body.flowtherapy-home .ft-recovery-image-placeholder,
+  body.flowtherapy-home .ft-recovery-card img {
+    width: 100% !important;
+    height: 92px !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+  }
+  body.flowtherapy-home .ft-recovery-copy {
+    padding: 8px 9px 10px !important;
+  }
+  body.flowtherapy-home .ft-recovery-copy strong,
+  body.flowtherapy-home .ft-recovery-card h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: .70rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* FlowPack — 75/90 label at left; 4- and 6-session choices side by side. */
+  body.flowtherapy-home #flowpack-explore .ft-pack-group {
+    display: grid !important;
+    grid-template-columns: 66px minmax(0, 1fr) !important;
+    gap: 9px !important;
+    align-items: center !important;
+    padding: 7px 0 !important;
+  }
+  body.flowtherapy-home #flowpack-explore .ft-choice-grid--packs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  body.flowtherapy-home #flowpack-explore button.ft-plan-choice {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+    padding: 10px 6px !important;
+  }
+  body.flowtherapy-home #flowpack-explore .ft-pack-duration {
+    width: 66px !important;
+    min-width: 66px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body.flowtherapy-home .ft-spa-card {
+    flex-basis: 58vw !important;
+    width: 58vw !important;
+    min-width: 174px !important;
+  }
+  body.flowtherapy-home .ft-boost-card {
+    flex-basis: 54vw !important;
+    width: 54vw !important;
+    min-width: 166px !important;
+  }
+  body.flowtherapy-home #flowpack-explore .ft-pack-group {
+    grid-template-columns: 58px minmax(0, 1fr) !important;
+  }
+  body.flowtherapy-home #flowpack-explore .ft-pack-duration {
+    width: 58px !important;
+    min-width: 58px !important;
+  }
+}
+</style>
+
+
+<style id="ft-mobile-recovery-smaller-20261006">
+/* Mobile only: keep the Recovery Lab 2-column layout, just make the cards/images smaller. */
+@media (max-width: 700px) {
+  body.flowtherapy-home .ft-recovery-grid {
+    grid-template-columns: repeat(2, minmax(0, 184px)) !important;
+    justify-content: center !important;
+    gap: 9px !important;
+  }
+
+  body.flowtherapy-home .ft-recovery-card {
+    width: 100% !important;
+    max-width: 184px !important;
+    justify-self: center !important;
+  }
+
+  body.flowtherapy-home .ft-recovery-image-placeholder,
+  body.flowtherapy-home .ft-recovery-card img {
+    height: 76px !important;
+  }
+
+  body.flowtherapy-home .ft-recovery-copy {
+    padding: 6px 8px 8px !important;
+  }
+
+  body.flowtherapy-home .ft-recovery-copy strong,
+  body.flowtherapy-home .ft-recovery-card h3 {
+    font-size: .66rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body.flowtherapy-home .ft-recovery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+</style>
+
 </head>
 <body class="flowtherapy-home">
 <!-- =====================================================
